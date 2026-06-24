@@ -1,0 +1,318 @@
+name: ${COMPOSE_PROJECT_NAME:-invoice-workshop}
+
+services:
+  postgres:
+    image: ankane/pgvector
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: app
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres -d app" ]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  cosmosdb:
+    image: mongo:7
+    restart: unless-stopped
+    command: [ "--quiet", "--logpath", "/var/log/mongodb/mongod.log" ]
+    ports:
+      - "27017:27017"
+    volumes:
+      - cosmosdb_data:/data/db
+      - cosmosdb_logs:/var/log/mongodb
+    healthcheck:
+      test: [ "CMD", "mongosh", "--eval", "db.adminCommand('ping')" ]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  blobstorage:
+    image: mcr.microsoft.com/azure-storage/azurite:latest
+    restart: unless-stopped
+    ports:
+      - "10000:10000"
+    volumes:
+      - blobstorage_data:/data
+    environment:
+      # Azurite accounts are configured via env var (the `--accounts` CLI flag is not supported in this image).
+      #
+      # NOTE: these are LOCAL EMULATOR credentials, not real Azure secrets.
+      # The default key below is the well-known *public* Azurite dev key that
+      # Microsoft publishes for the storage emulator, so the stack boots with no
+      # configuration. To use your own account/key instead, set them in your .env:
+      #   AZURE_STORAGE_ACCOUNT_NAME=<account-name>
+      #   AZURE_STORAGE_ACCOUNT_KEY=$(openssl rand -base64 64 | tr -d '\n')
+      # The same two variables feed the backend, the blob viewer, and the test
+      # runner below, so overriding the key here keeps every service in sync.
+      AZURITE_ACCOUNTS: ${AZURE_STORAGE_ACCOUNT_NAME:-warehouselocal}:${AZURE_STORAGE_ACCOUNT_KEY:-Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==}
+    command: [ "azurite-blob", "--blobHost", "0.0.0.0", "--blobPort", "10000", "--location", "/data", "--debug", "/data/debug.log" ]
+
+  backend:
+    build:
+      context: ./backend
+    develop:
+      watch:
+        - action: sync
+          path: ./backend
+          target: /usr/src/app
+          initial_sync: true
+          ignore:
+            - __pycache__/
+            - "**/__pycache__/"
+            - .pytest_cache/
+            - .ruff_cache/
+            - .venv/
+        - action: rebuild
+          path: ./backend/pyproject.toml
+        - action: rebuild
+          path: ./backend/uv.lock
+    restart: unless-stopped
+    entrypoint: [ "bash", "entrypoint.sh" ]
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    environment:
+      # Logging level (DEBUG for local development)
+      LOG_LEVEL: DEBUG
+
+      # Enable uvicorn --reload for local dev hot-reload
+      ENV_RELOAD: "true"
+
+      # Only override DB connectivity to use the local docker-compose Postgres service.
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: app
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+      # Local Cosmos DB (Mongo API) connection string for docker-compose.
+      AZURE_COSMOSDB_CONNECTION_STRING: mongodb://cosmosdb:27017/
+
+      # Local Azurite (Blob Storage emulator) connection for docker-compose.
+      # Account name + key come from .env (see the blobstorage service above for the
+      # public default and how to generate your own). The connection string is
+      # derived from those two values so they can never drift out of sync.
+      AZURE_STORAGE_ACCOUNT_NAME: ${AZURE_STORAGE_ACCOUNT_NAME:-warehouselocal}
+      AZURE_STORAGE_ACCOUNT_KEY: ${AZURE_STORAGE_ACCOUNT_KEY:-Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==}
+      AZURE_STORAGE_CONNECTION_STRING: DefaultEndpointsProtocol=http;AccountName=${AZURE_STORAGE_ACCOUNT_NAME:-warehouselocal};AccountKey=${AZURE_STORAGE_ACCOUNT_KEY:-Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==};BlobEndpoint=http://blobstorage:10000/${AZURE_STORAGE_ACCOUNT_NAME:-warehouselocal};
+
+      # API key for the backend (local shared secret between frontend proxy and backend).
+      API_KEY: backend-secret-api-key
+
+  frontend:
+    build:
+      context: ./frontend
+      target: dev
+    develop:
+      watch:
+        - action: sync
+          path: ./frontend
+          target: /app
+          initial_sync: true
+          ignore:
+            - .next/
+            - node_modules/
+        - action: rebuild
+          path: ./frontend/package.json
+        - action: rebuild
+          path: ./frontend/pnpm-lock.yaml
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "3000:3000"
+    environment:
+      BACKEND_API_URL: http://backend:8000/
+      BACKEND_API_KEY: backend-secret-api-key
+      FRONTEND_PORT: 3000
+
+      # Workshop dev stub: a fake local user is signed in. No identity provider.
+      IS_DEV_ENVIRONMENT: "true"
+
+  dbviewer:
+    image: sosedoff/pgweb:0.16.2
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8081:8081"
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@postgres:5432/app?sslmode=disable
+
+  cosmosdbviewer:
+    image: mongo-express:latest
+    restart: unless-stopped
+    depends_on:
+      cosmosdb:
+        condition: service_healthy
+    ports:
+      - "8082:8081"
+    environment:
+      ME_CONFIG_MONGODB_URL: mongodb://cosmosdb:27017/
+      ME_CONFIG_BASICAUTH: "false"
+
+  blobstorageviewer:
+    image: sebagomez/azurestorageexplorer:latest
+    # This image does not publish an arm64 manifest; force amd64 (Apple Silicon will run it via emulation).
+    platform: linux/amd64
+    restart: unless-stopped
+    depends_on:
+      - blobstorage
+    ports:
+      - "8083:8080"
+    volumes:
+      # Persist ASP.NET DataProtection keys so saved credentials/settings remain decryptable across restarts.
+      - blobstorageviewer_keys:/root/.aspnet/DataProtection-Keys
+    environment:
+      # Required for Azurite/non-prod endpoints.
+      AZURITE: "true"
+      # Same local Azurite account/key as the backend (see blobstorage service above).
+      AZURE_STORAGE_CONNECTIONSTRING: DefaultEndpointsProtocol=http;AccountName=${AZURE_STORAGE_ACCOUNT_NAME:-warehouselocal};AccountKey=${AZURE_STORAGE_ACCOUNT_KEY:-Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==};BlobEndpoint=http://blobstorage:10000/${AZURE_STORAGE_ACCOUNT_NAME:-warehouselocal};
+      AZURE_STORAGE_ACCOUNT: ${AZURE_STORAGE_ACCOUNT_NAME:-warehouselocal}
+      AZURE_STORAGE_KEY: ${AZURE_STORAGE_ACCOUNT_KEY:-Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==}
+
+  logviewer:
+    image: amir20/dozzle:v9.0.2
+    restart: unless-stopped
+    ports:
+      - "8084:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    # Required for Docker-in-Docker (DinD) environments to access the Docker socket.
+    # The group_add ensures the container process can read the socket.
+    group_add:
+      - ${DOCKER_GID:-997}
+    environment:
+      DOZZLE_AUTH_PROVIDER: "none"
+
+  # =============================================================================
+  # TEST RUNNER SERVICE
+  # =============================================================================
+  # Runs integration tests against real services with isolated test databases.
+  #
+  # Code sync: Source code is mounted via volumes, so tests always use the
+  # latest local code WITHOUT requiring a rebuild. Only the initial image
+  # build is needed to set up the Python environment.
+  #
+  # Usage:
+  #   docker compose --profile test run --rm backend-test
+  #   docker compose --profile test run --rm backend-test pytest -k "test_specific"
+  #   PYTEST_ARGS="-k openai" docker compose --profile test run --rm backend-test
+  # =============================================================================
+  backend-test:
+    profiles: [ "test" ]
+    build:
+      context: ./backend
+    volumes:
+      # Mount source code directly so tests always use latest local changes
+      # without requiring a rebuild. Only mount specific dirs to preserve venv in image.
+      - ./backend/src:/usr/src/app/src:ro
+      - ./backend/conftest.py:/usr/src/app/conftest.py:ro
+      - ./backend/pyproject.toml:/usr/src/app/pyproject.toml:ro
+      - ./backend/alembic:/usr/src/app/alembic:ro
+      - ./backend/alembic.ini:/usr/src/app/alembic.ini:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+      cosmosdb:
+        condition: service_healthy
+      blobstorage:
+        condition: service_started
+    environment:
+      # Mark as test environment for cleanup fixtures
+      IS_TEST_ENVIRONMENT: "true"
+
+      # Test database (separate from dev to avoid data pollution)
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: "5432"
+      POSTGRES_DB: app_test
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+      # Test Cosmos DB (same server, prefixed databases for isolation)
+      AZURE_COSMOSDB_CONNECTION_STRING: mongodb://cosmosdb:27017/
+      COSMOSDB_DB_PREFIX: "test_"
+
+      # Test Blob Storage (same Azurite account/key as the backend; uses test- prefix in paths)
+      AZURE_STORAGE_ACCOUNT_NAME: ${AZURE_STORAGE_ACCOUNT_NAME:-warehouselocal}
+      AZURE_STORAGE_ACCOUNT_KEY: ${AZURE_STORAGE_ACCOUNT_KEY:-Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==}
+      AZURE_STORAGE_CONNECTION_STRING: DefaultEndpointsProtocol=http;AccountName=${AZURE_STORAGE_ACCOUNT_NAME:-warehouselocal};AccountKey=${AZURE_STORAGE_ACCOUNT_KEY:-Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==};BlobEndpoint=http://blobstorage:10000/${AZURE_STORAGE_ACCOUNT_NAME:-warehouselocal};
+
+      # API key for test requests
+      API_KEY: backend-secret-api-key
+
+      # Pytest arguments (optional override)
+      PYTEST_ARGS: ${PYTEST_ARGS:-}
+      # Pytest marker expression (e.g., "not slow" - handled separately to avoid quote issues)
+      PYTEST_MARKER: ${PYTEST_MARKER:-}
+
+    # Default command runs all tests; can be overridden
+    command:
+      - bash
+      - -c
+      - |
+        source .venv/bin/activate
+
+        # Create test database if it doesn't exist
+        echo "Setting up test database..."
+        python -c "
+        import psycopg2
+        from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
+
+        conn = psycopg2.connect(
+            host='postgres',
+            port=5432,
+            user='postgres',
+            password='postgres',
+            database='app'
+        )
+        conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
+        cur = conn.cursor()
+
+        # Check if test database exists
+        cur.execute(\"SELECT 1 FROM pg_database WHERE datname = 'app_test'\")
+        if not cur.fetchone():
+            cur.execute('CREATE DATABASE app_test')
+            print('Created test database: app_test')
+        else:
+            print('Test database already exists: app_test')
+
+        cur.close()
+        conn.close()
+        "
+
+        # Run migrations on test database
+        echo "Running migrations on test database..."
+        POSTGRES_DB=app_test alembic upgrade head
+
+        # Build pytest command with marker if specified
+        MARKER_ARG=""
+        if [ -n "$${PYTEST_MARKER}" ]; then
+            MARKER_ARG="-m \"$${PYTEST_MARKER}\""
+        fi
+
+        # Run pytest with any additional args
+        echo "Running tests..."
+        eval pytest $${MARKER_ARG} $${PYTEST_ARGS:-}
+
+volumes:
+  postgres_data:
+    name: ${COMPOSE_PROJECT_NAME:-invoice-workshop}_postgres_data
+  cosmosdb_data:
+    name: ${COMPOSE_PROJECT_NAME:-invoice-workshop}_cosmosdb_data
+  cosmosdb_logs:
+    name: ${COMPOSE_PROJECT_NAME:-invoice-workshop}_cosmosdb_logs
+  blobstorage_data:
+    name: ${COMPOSE_PROJECT_NAME:-invoice-workshop}_blobstorage_data
+  blobstorageviewer_keys:
+    name: ${COMPOSE_PROJECT_NAME:-invoice-workshop}_blobstorageviewer_keys

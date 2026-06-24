@@ -1,0 +1,26 @@
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "ruff-check"
+name = "ruff (linting)"
+language = "system"
+entry = "uv run ruff check --fix"
+pass_filenames = false
+types = ["python"]
+
+[[repos.hooks]]
+id = "ruff-format"
+name = "ruff (code formatting)"
+language = "system"
+entry = "uv run ruff format"
+pass_filenames = false
+types = ["python"]
+
+[[repos.hooks]]
+id = "ty-check"
+name = "ty (type checking)"
+language = "system"
+entry = "uv run ty check"
+pass_filenames = false
+types = ["python"]

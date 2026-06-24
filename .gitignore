@@ -1,0 +1,46 @@
+# Env files (never commit secrets)
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.cursor/*
+!.cursor/skills
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Node
+**/node_modules/
+**/.pnpm-store/
+**/.next/
+**/.turbo/
+**/dist/
+**/build/
+
+# TypeScript
+*.tsbuildinfo
+
+# Python
+**/__pycache__/
+**/*.py[cod]
+**/.pytest_cache/
+**/.ruff_cache/
+**/.venv/
+
+# Docker local overrides
+docker-compose.override.yml
+
+# Local AI-tool / editor configs (keep out of the public repo)
+opencode.json
+.codex/
+.opencode/

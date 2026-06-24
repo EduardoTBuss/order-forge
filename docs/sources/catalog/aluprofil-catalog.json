@@ -1,0 +1,905 @@
+[
+  {
+    "internal_code": "AE-2024-034",
+    "profile_name": "Equal Angle 20x20x2",
+    "alloy": "EN AW-6060",
+    "alloy_din": "3.3206",
+    "temper": "T66",
+    "dimensions_mm": {
+      "width": 20.0,
+      "height": 20.0,
+      "wall_thickness": 2.0
+    },
+    "profile_type": "angle",
+    "weight_kg_per_m": 0.21,
+    "standard_lengths_mm": [
+      6000,
+      6500
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2"
+    ],
+    "tolerance_standard": "EN 755-9",
+    "category": "architectural",
+    "edi_pia_code": "AE-2024-034"
+  },
+  {
+    "internal_code": "AE-2024-035",
+    "profile_name": "Equal Angle 30x30x3",
+    "alloy": "EN AW-6060",
+    "alloy_din": "3.3206",
+    "temper": "T66",
+    "dimensions_mm": {
+      "width": 30.0,
+      "height": 30.0,
+      "wall_thickness": 3.0
+    },
+    "profile_type": "angle",
+    "weight_kg_per_m": 0.46,
+    "standard_lengths_mm": [
+      6000,
+      6500
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2",
+      "PC7016"
+    ],
+    "tolerance_standard": "EN 755-9",
+    "category": "architectural",
+    "edi_pia_code": "AE-2024-035"
+  },
+  {
+    "internal_code": "AE-2024-036",
+    "profile_name": "Equal Angle 40x40x3",
+    "alloy": "EN AW-6060",
+    "alloy_din": "3.3206",
+    "temper": "T66",
+    "dimensions_mm": {
+      "width": 40.0,
+      "height": 40.0,
+      "wall_thickness": 3.0
+    },
+    "profile_type": "angle",
+    "weight_kg_per_m": 0.63,
+    "standard_lengths_mm": [
+      6000,
+      6500
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2",
+      "PC7016",
+      "PC9016"
+    ],
+    "tolerance_standard": "EN 755-9",
+    "category": "architectural",
+    "edi_pia_code": "AE-2024-036"
+  },
+  {
+    "internal_code": "AE-2024-037",
+    "profile_name": "Equal Angle 50x50x4",
+    "alloy": "EN AW-6082",
+    "alloy_din": "3.2315",
+    "temper": "T6",
+    "dimensions_mm": {
+      "width": 50.0,
+      "height": 50.0,
+      "wall_thickness": 4.0
+    },
+    "profile_type": "angle",
+    "weight_kg_per_m": 1.04,
+    "standard_lengths_mm": [
+      6000,
+      6500
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2",
+      "PC7016",
+      "PC9005"
+    ],
+    "tolerance_standard": "EN 755-9",
+    "category": "structural",
+    "edi_pia_code": "AE-2024-037"
+  },
+  {
+    "internal_code": "AE-2024-038",
+    "profile_name": "Equal Angle 60x60x5",
+    "alloy": "EN AW-6082",
+    "alloy_din": "3.2315",
+    "temper": "T6",
+    "dimensions_mm": {
+      "width": 60.0,
+      "height": 60.0,
+      "wall_thickness": 5.0
+    },
+    "profile_type": "angle",
+    "weight_kg_per_m": 1.55,
+    "standard_lengths_mm": [
+      6000,
+      6500
+    ],
+    "surface_finishes": [
+      "M",
+      "PC7016",
+      "PC9005"
+    ],
+    "tolerance_standard": "EN 755-9",
+    "category": "structural",
+    "edi_pia_code": "AE-2024-038"
+  },
+  {
+    "internal_code": "AE-2024-039",
+    "profile_name": "Unequal Angle 40x30x3",
+    "alloy": "EN AW-6060",
+    "alloy_din": "3.3206",
+    "temper": "T66",
+    "dimensions_mm": {
+      "width": 40.0,
+      "height": 30.0,
+      "wall_thickness": 3.0
+    },
+    "profile_type": "angle",
+    "weight_kg_per_m": 0.54,
+    "standard_lengths_mm": [
+      6000,
+      6500
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2"
+    ],
+    "tolerance_standard": "EN 755-9",
+    "category": "architectural",
+    "edi_pia_code": "AE-2024-039"
+  },
+  {
+    "internal_code": "AE-2024-040",
+    "profile_name": "Unequal Angle 60x40x4",
+    "alloy": "EN AW-6082",
+    "alloy_din": "3.2315",
+    "temper": "T6",
+    "dimensions_mm": {
+      "width": 60.0,
+      "height": 40.0,
+      "wall_thickness": 4.0
+    },
+    "profile_type": "angle",
+    "weight_kg_per_m": 1.04,
+    "standard_lengths_mm": [
+      6000,
+      6500
+    ],
+    "surface_finishes": [
+      "M",
+      "PC7016",
+      "PC9005"
+    ],
+    "tolerance_standard": "EN 755-9",
+    "category": "structural",
+    "edi_pia_code": "AE-2024-040"
+  },
+  {
+    "internal_code": "AE-2024-041",
+    "profile_name": "U-Channel 30x20x3",
+    "alloy": "EN AW-6060",
+    "alloy_din": "3.3206",
+    "temper": "T66",
+    "dimensions_mm": {
+      "width": 20.0,
+      "height": 30.0,
+      "wall_thickness": 3.0
+    },
+    "profile_type": "channel",
+    "weight_kg_per_m": 0.52,
+    "standard_lengths_mm": [
+      6000
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2"
+    ],
+    "tolerance_standard": "EN 755-9",
+    "category": "architectural",
+    "edi_pia_code": "AE-2024-041"
+  },
+  {
+    "internal_code": "AE-2024-042",
+    "profile_name": "U-Channel 40x40x4",
+    "alloy": "EN AW-6060",
+    "alloy_din": "3.3206",
+    "temper": "T66",
+    "dimensions_mm": {
+      "width": 40.0,
+      "height": 40.0,
+      "wall_thickness": 4.0
+    },
+    "profile_type": "channel",
+    "weight_kg_per_m": 1.21,
+    "standard_lengths_mm": [
+      6000,
+      6500
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2",
+      "PC7016",
+      "PC9016"
+    ],
+    "tolerance_standard": "EN 755-9",
+    "category": "architectural",
+    "edi_pia_code": "AE-2024-042"
+  },
+  {
+    "internal_code": "AE-2024-043",
+    "profile_name": "U-Channel 50x30x4",
+    "alloy": "EN AW-6060",
+    "alloy_din": "3.3206",
+    "temper": "T66",
+    "dimensions_mm": {
+      "width": 30.0,
+      "height": 50.0,
+      "wall_thickness": 4.0
+    },
+    "profile_type": "channel",
+    "weight_kg_per_m": 1.1,
+    "standard_lengths_mm": [
+      6000,
+      6500
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2",
+      "PC7016"
+    ],
+    "tolerance_standard": "EN 755-9",
+    "category": "architectural",
+    "edi_pia_code": "AE-2024-043"
+  },
+  {
+    "internal_code": "AE-2024-044",
+    "profile_name": "U-Channel 80x40x5",
+    "alloy": "EN AW-6082",
+    "alloy_din": "3.2315",
+    "temper": "T6",
+    "dimensions_mm": {
+      "width": 40.0,
+      "height": 80.0,
+      "wall_thickness": 5.0
+    },
+    "profile_type": "channel",
+    "weight_kg_per_m": 2.03,
+    "standard_lengths_mm": [
+      5000,
+      6000
+    ],
+    "surface_finishes": [
+      "M",
+      "PC7016",
+      "PC9005"
+    ],
+    "tolerance_standard": "EN 755-9",
+    "category": "structural",
+    "edi_pia_code": "AE-2024-044"
+  },
+  {
+    "internal_code": "AE-2024-050",
+    "profile_name": "Round Tube OD20x2",
+    "alloy": "EN AW-6060",
+    "alloy_din": "3.3206",
+    "temper": "T66",
+    "dimensions_mm": {
+      "width": 20.0,
+      "height": 20.0,
+      "wall_thickness": 2.0
+    },
+    "profile_type": "tube_round",
+    "weight_kg_per_m": 0.31,
+    "standard_lengths_mm": [
+      6000,
+      6500
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2"
+    ],
+    "tolerance_standard": "EN 755-8",
+    "category": "architectural",
+    "edi_pia_code": "AE-2024-050"
+  },
+  {
+    "internal_code": "AE-2024-051",
+    "profile_name": "Round Tube OD30x2.5",
+    "alloy": "EN AW-6060",
+    "alloy_din": "3.3206",
+    "temper": "T66",
+    "dimensions_mm": {
+      "width": 30.0,
+      "height": 30.0,
+      "wall_thickness": 2.5
+    },
+    "profile_type": "tube_round",
+    "weight_kg_per_m": 0.58,
+    "standard_lengths_mm": [
+      6000,
+      6500
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2",
+      "PC7016"
+    ],
+    "tolerance_standard": "EN 755-8",
+    "category": "architectural",
+    "edi_pia_code": "AE-2024-051"
+  },
+  {
+    "internal_code": "AE-2024-052",
+    "profile_name": "Round Tube OD40x3",
+    "alloy": "EN AW-6060",
+    "alloy_din": "3.3206",
+    "temper": "T66",
+    "dimensions_mm": {
+      "width": 40.0,
+      "height": 40.0,
+      "wall_thickness": 3.0
+    },
+    "profile_type": "tube_round",
+    "weight_kg_per_m": 0.94,
+    "standard_lengths_mm": [
+      6000,
+      6500
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2",
+      "PC7016",
+      "PC9016"
+    ],
+    "tolerance_standard": "EN 755-8",
+    "category": "architectural",
+    "edi_pia_code": "AE-2024-052"
+  },
+  {
+    "internal_code": "AE-2024-053",
+    "profile_name": "Round Tube OD50x3",
+    "alloy": "EN AW-6082",
+    "alloy_din": "3.2315",
+    "temper": "T6",
+    "dimensions_mm": {
+      "width": 50.0,
+      "height": 50.0,
+      "wall_thickness": 3.0
+    },
+    "profile_type": "tube_round",
+    "weight_kg_per_m": 1.2,
+    "standard_lengths_mm": [
+      5000,
+      6000
+    ],
+    "surface_finishes": [
+      "M",
+      "PC7016",
+      "PC9005"
+    ],
+    "tolerance_standard": "EN 755-8",
+    "category": "structural",
+    "edi_pia_code": "AE-2024-053"
+  },
+  {
+    "internal_code": "AE-2024-060",
+    "profile_name": "Rectangular Tube 30x20x2",
+    "alloy": "EN AW-6060",
+    "alloy_din": "3.3206",
+    "temper": "T66",
+    "dimensions_mm": {
+      "width": 30.0,
+      "height": 20.0,
+      "wall_thickness": 2.0
+    },
+    "profile_type": "tube_rect",
+    "weight_kg_per_m": 0.5,
+    "standard_lengths_mm": [
+      6000,
+      6500
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2"
+    ],
+    "tolerance_standard": "EN 755-8",
+    "category": "architectural",
+    "edi_pia_code": "AE-2024-060"
+  },
+  {
+    "internal_code": "AE-2024-061",
+    "profile_name": "Rectangular Tube 40x30x2.5",
+    "alloy": "EN AW-6060",
+    "alloy_din": "3.3206",
+    "temper": "T66",
+    "dimensions_mm": {
+      "width": 40.0,
+      "height": 30.0,
+      "wall_thickness": 2.5
+    },
+    "profile_type": "tube_rect",
+    "weight_kg_per_m": 0.88,
+    "standard_lengths_mm": [
+      6000,
+      6500
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2",
+      "PC7016"
+    ],
+    "tolerance_standard": "EN 755-8",
+    "category": "architectural",
+    "edi_pia_code": "AE-2024-061"
+  },
+  {
+    "internal_code": "AE-2024-062",
+    "profile_name": "Rectangular Tube 50x30x3",
+    "alloy": "EN AW-6060",
+    "alloy_din": "3.3206",
+    "temper": "T66",
+    "dimensions_mm": {
+      "width": 50.0,
+      "height": 30.0,
+      "wall_thickness": 3.0
+    },
+    "profile_type": "tube_rect",
+    "weight_kg_per_m": 1.2,
+    "standard_lengths_mm": [
+      6000,
+      6500
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2",
+      "PC7016",
+      "PC9016"
+    ],
+    "tolerance_standard": "EN 755-8",
+    "category": "architectural",
+    "edi_pia_code": "AE-2024-062"
+  },
+  {
+    "internal_code": "AE-2024-063",
+    "profile_name": "Rectangular Tube 60x40x3",
+    "alloy": "EN AW-6082",
+    "alloy_din": "3.2315",
+    "temper": "T6",
+    "dimensions_mm": {
+      "width": 60.0,
+      "height": 40.0,
+      "wall_thickness": 3.0
+    },
+    "profile_type": "tube_rect",
+    "weight_kg_per_m": 1.52,
+    "standard_lengths_mm": [
+      5000,
+      6000
+    ],
+    "surface_finishes": [
+      "M",
+      "PC7016",
+      "PC9005"
+    ],
+    "tolerance_standard": "EN 755-8",
+    "category": "structural",
+    "edi_pia_code": "AE-2024-063"
+  },
+  {
+    "internal_code": "AE-2024-064",
+    "profile_name": "Rectangular Tube 80x40x4",
+    "alloy": "EN AW-6082",
+    "alloy_din": "3.2315",
+    "temper": "T6",
+    "dimensions_mm": {
+      "width": 80.0,
+      "height": 40.0,
+      "wall_thickness": 4.0
+    },
+    "profile_type": "tube_rect",
+    "weight_kg_per_m": 2.42,
+    "standard_lengths_mm": [
+      5000,
+      6000
+    ],
+    "surface_finishes": [
+      "M",
+      "PC7016",
+      "PC9005"
+    ],
+    "tolerance_standard": "EN 755-8",
+    "category": "structural",
+    "edi_pia_code": "AE-2024-064"
+  },
+  {
+    "internal_code": "AE-2024-070",
+    "profile_name": "T-Slot Profile 20x20 Nut 5",
+    "alloy": "EN AW-6060",
+    "alloy_din": "3.3206",
+    "temper": "T66",
+    "dimensions_mm": {
+      "width": 20.0,
+      "height": 20.0,
+      "wall_thickness": 2.0
+    },
+    "profile_type": "tslot",
+    "weight_kg_per_m": 0.38,
+    "standard_lengths_mm": [
+      6000
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2"
+    ],
+    "tolerance_standard": "DIN EN 12020-2",
+    "category": "framing",
+    "edi_pia_code": "AE-2024-070"
+  },
+  {
+    "internal_code": "AE-2024-071",
+    "profile_name": "T-Slot Profile 40x40 Nut 8",
+    "alloy": "EN AW-6060",
+    "alloy_din": "3.3206",
+    "temper": "T66",
+    "dimensions_mm": {
+      "width": 40.0,
+      "height": 40.0,
+      "wall_thickness": 2.5
+    },
+    "profile_type": "tslot",
+    "weight_kg_per_m": 1.45,
+    "standard_lengths_mm": [
+      6000
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2"
+    ],
+    "tolerance_standard": "DIN EN 12020-2",
+    "category": "framing",
+    "edi_pia_code": "AE-2024-071"
+  },
+  {
+    "internal_code": "AE-2024-072",
+    "profile_name": "T-Slot Profile 40x80 Nut 8",
+    "alloy": "EN AW-6060",
+    "alloy_din": "3.3206",
+    "temper": "T66",
+    "dimensions_mm": {
+      "width": 80.0,
+      "height": 40.0,
+      "wall_thickness": 2.5
+    },
+    "profile_type": "tslot",
+    "weight_kg_per_m": 2.8,
+    "standard_lengths_mm": [
+      6000
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2"
+    ],
+    "tolerance_standard": "DIN EN 12020-2",
+    "category": "framing",
+    "edi_pia_code": "AE-2024-072"
+  },
+  {
+    "internal_code": "AE-2024-073",
+    "profile_name": "T-Slot Profile 80x80 Nut 10",
+    "alloy": "EN AW-6082",
+    "alloy_din": "3.2315",
+    "temper": "T6",
+    "dimensions_mm": {
+      "width": 80.0,
+      "height": 80.0,
+      "wall_thickness": 3.0
+    },
+    "profile_type": "tslot",
+    "weight_kg_per_m": 5.6,
+    "standard_lengths_mm": [
+      5000,
+      6000
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2"
+    ],
+    "tolerance_standard": "DIN EN 12020-2",
+    "category": "framing",
+    "edi_pia_code": "AE-2024-073"
+  },
+  {
+    "internal_code": "AE-2024-074",
+    "profile_name": "T-Slot Profile 45x45 Nut 10",
+    "alloy": "EN AW-6060",
+    "alloy_din": "3.3206",
+    "temper": "T66",
+    "dimensions_mm": {
+      "width": 45.0,
+      "height": 45.0,
+      "wall_thickness": 2.5
+    },
+    "profile_type": "tslot",
+    "weight_kg_per_m": 1.7,
+    "standard_lengths_mm": [
+      6000
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2"
+    ],
+    "tolerance_standard": "DIN EN 12020-2",
+    "category": "framing",
+    "edi_pia_code": "AE-2024-074"
+  },
+  {
+    "internal_code": "AE-2024-080",
+    "profile_name": "Flat Bar 20x5",
+    "alloy": "EN AW-6060",
+    "alloy_din": "3.3206",
+    "temper": "T66",
+    "dimensions_mm": {
+      "width": 20.0,
+      "height": 5.0,
+      "wall_thickness": 5.0
+    },
+    "profile_type": "flat_bar",
+    "weight_kg_per_m": 0.27,
+    "standard_lengths_mm": [
+      6000
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2"
+    ],
+    "tolerance_standard": "EN 755-9",
+    "category": "industrial",
+    "edi_pia_code": "AE-2024-080"
+  },
+  {
+    "internal_code": "AE-2024-081",
+    "profile_name": "Flat Bar 30x10",
+    "alloy": "EN AW-6060",
+    "alloy_din": "3.3206",
+    "temper": "T66",
+    "dimensions_mm": {
+      "width": 30.0,
+      "height": 10.0,
+      "wall_thickness": 10.0
+    },
+    "profile_type": "flat_bar",
+    "weight_kg_per_m": 0.81,
+    "standard_lengths_mm": [
+      6000
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2",
+      "PC7016"
+    ],
+    "tolerance_standard": "EN 755-9",
+    "category": "industrial",
+    "edi_pia_code": "AE-2024-081"
+  },
+  {
+    "internal_code": "AE-2024-082",
+    "profile_name": "Flat Bar 50x10",
+    "alloy": "EN AW-6060",
+    "alloy_din": "3.3206",
+    "temper": "T66",
+    "dimensions_mm": {
+      "width": 50.0,
+      "height": 10.0,
+      "wall_thickness": 10.0
+    },
+    "profile_type": "flat_bar",
+    "weight_kg_per_m": 1.35,
+    "standard_lengths_mm": [
+      6000
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2",
+      "PC7016",
+      "PC9016",
+      "PC9005"
+    ],
+    "tolerance_standard": "EN 755-9",
+    "category": "industrial",
+    "edi_pia_code": "AE-2024-082"
+  },
+  {
+    "internal_code": "AE-2024-083",
+    "profile_name": "Flat Bar 80x10",
+    "alloy": "EN AW-6082",
+    "alloy_din": "3.2315",
+    "temper": "T6",
+    "dimensions_mm": {
+      "width": 80.0,
+      "height": 10.0,
+      "wall_thickness": 10.0
+    },
+    "profile_type": "flat_bar",
+    "weight_kg_per_m": 2.16,
+    "standard_lengths_mm": [
+      5000,
+      6000
+    ],
+    "surface_finishes": [
+      "M",
+      "PC7016",
+      "PC9005"
+    ],
+    "tolerance_standard": "EN 755-9",
+    "category": "structural",
+    "edi_pia_code": "AE-2024-083"
+  },
+  {
+    "internal_code": "AE-2025-010",
+    "profile_name": "Curtain Wall Mullion 50x150",
+    "alloy": "EN AW-6060",
+    "alloy_din": "3.3206",
+    "temper": "T66",
+    "dimensions_mm": {
+      "width": 50.0,
+      "height": 150.0,
+      "wall_thickness": 3.0
+    },
+    "profile_type": "mullion",
+    "weight_kg_per_m": 4.5,
+    "standard_lengths_mm": [
+      6000,
+      6500
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2",
+      "PC7016",
+      "PC9016",
+      "PC9005",
+      "PC3003"
+    ],
+    "tolerance_standard": "EN 13830",
+    "category": "architectural",
+    "edi_pia_code": "AE-2025-010"
+  },
+  {
+    "internal_code": "AE-2025-011",
+    "profile_name": "Curtain Wall Mullion 50x200",
+    "alloy": "EN AW-6060",
+    "alloy_din": "3.3206",
+    "temper": "T66",
+    "dimensions_mm": {
+      "width": 50.0,
+      "height": 200.0,
+      "wall_thickness": 3.5
+    },
+    "profile_type": "mullion",
+    "weight_kg_per_m": 6.1,
+    "standard_lengths_mm": [
+      6000,
+      6500
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2",
+      "PC7016",
+      "PC9016",
+      "PC9005",
+      "PC3003"
+    ],
+    "tolerance_standard": "EN 13830",
+    "category": "architectural",
+    "edi_pia_code": "AE-2025-011"
+  },
+  {
+    "internal_code": "AE-2025-012",
+    "profile_name": "Curtain Wall Mullion 65x180",
+    "alloy": "EN AW-6063",
+    "alloy_din": "3.3221",
+    "temper": "T66",
+    "dimensions_mm": {
+      "width": 65.0,
+      "height": 180.0,
+      "wall_thickness": 3.5
+    },
+    "profile_type": "mullion",
+    "weight_kg_per_m": 6.4,
+    "standard_lengths_mm": [
+      6000,
+      6500
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2",
+      "PC7016",
+      "PC9016",
+      "PC9005"
+    ],
+    "tolerance_standard": "EN 13830",
+    "category": "architectural",
+    "edi_pia_code": "AE-2025-012"
+  },
+  {
+    "internal_code": "AE-2025-020",
+    "profile_name": "Solar Mounting Rail 60x40x3",
+    "alloy": "EN AW-6005A",
+    "alloy_din": "3.3210",
+    "temper": "T6",
+    "dimensions_mm": {
+      "width": 60.0,
+      "height": 40.0,
+      "wall_thickness": 3.0
+    },
+    "profile_type": "solar_rail",
+    "weight_kg_per_m": 1.35,
+    "standard_lengths_mm": [
+      4200,
+      6100
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2"
+    ],
+    "tolerance_standard": "EN 755-9",
+    "category": "solar",
+    "edi_pia_code": "AE-2025-020"
+  },
+  {
+    "internal_code": "AE-2025-021",
+    "profile_name": "Solar Clamp Profile 40x30x2.5",
+    "alloy": "EN AW-6005A",
+    "alloy_din": "3.3210",
+    "temper": "T6",
+    "dimensions_mm": {
+      "width": 40.0,
+      "height": 30.0,
+      "wall_thickness": 2.5
+    },
+    "profile_type": "solar_rail",
+    "weight_kg_per_m": 0.92,
+    "standard_lengths_mm": [
+      4200,
+      6100
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2"
+    ],
+    "tolerance_standard": "EN 755-9",
+    "category": "solar",
+    "edi_pia_code": "AE-2025-021"
+  },
+  {
+    "internal_code": "AE-2025-030",
+    "profile_name": "Heat Sink 100x30 20 Fins",
+    "alloy": "EN AW-6063",
+    "alloy_din": "3.3221",
+    "temper": "T5",
+    "dimensions_mm": {
+      "width": 100.0,
+      "height": 30.0,
+      "wall_thickness": 10.0
+    },
+    "profile_type": "heatsink",
+    "weight_kg_per_m": 3.2,
+    "standard_lengths_mm": [
+      3000,
+      6000
+    ],
+    "surface_finishes": [
+      "M",
+      "AE2"
+    ],
+    "tolerance_standard": "EN 755-9",
+    "category": "thermal",
+    "edi_pia_code": "AE-2025-030"
+  }
+]

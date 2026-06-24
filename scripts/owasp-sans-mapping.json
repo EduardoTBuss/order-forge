@@ -1,0 +1,267 @@
+{
+  "owasp_top_10": {
+    "A01:2021": {
+      "name": "Broken Access Control",
+      "description": "Restrictions on what authenticated users are allowed to do are not properly enforced.",
+      "cwes": ["CWE-22", "CWE-23", "CWE-35", "CWE-59", "CWE-200", "CWE-201", "CWE-219", "CWE-264", "CWE-275", "CWE-276", "CWE-284", "CWE-285", "CWE-352", "CWE-359", "CWE-377", "CWE-402", "CWE-425", "CWE-441", "CWE-497", "CWE-538", "CWE-540", "CWE-548", "CWE-552", "CWE-566", "CWE-601", "CWE-639", "CWE-651", "CWE-668", "CWE-706", "CWE-862", "CWE-863", "CWE-913", "CWE-922", "CWE-1275"]
+    },
+    "A02:2021": {
+      "name": "Cryptographic Failures",
+      "description": "Failures related to cryptography which often leads to sensitive data exposure.",
+      "cwes": ["CWE-261", "CWE-296", "CWE-310", "CWE-319", "CWE-321", "CWE-322", "CWE-323", "CWE-324", "CWE-325", "CWE-326", "CWE-327", "CWE-328", "CWE-329", "CWE-330", "CWE-331", "CWE-335", "CWE-336", "CWE-337", "CWE-338", "CWE-340", "CWE-347", "CWE-523", "CWE-720", "CWE-757", "CWE-759", "CWE-760", "CWE-780", "CWE-818", "CWE-916"]
+    },
+    "A03:2021": {
+      "name": "Injection",
+      "description": "User-supplied data is not validated, filtered, or sanitized by the application.",
+      "cwes": ["CWE-20", "CWE-74", "CWE-75", "CWE-77", "CWE-78", "CWE-79", "CWE-80", "CWE-83", "CWE-87", "CWE-88", "CWE-89", "CWE-90", "CWE-91", "CWE-93", "CWE-94", "CWE-95", "CWE-96", "CWE-97", "CWE-98", "CWE-99", "CWE-100", "CWE-113", "CWE-116", "CWE-138", "CWE-184", "CWE-470", "CWE-471", "CWE-564", "CWE-610", "CWE-643", "CWE-644", "CWE-652", "CWE-917"]
+    },
+    "A04:2021": {
+      "name": "Insecure Design",
+      "description": "Missing or ineffective control design. Insecure design cannot be fixed by a perfect implementation.",
+      "cwes": ["CWE-73", "CWE-183", "CWE-209", "CWE-213", "CWE-235", "CWE-256", "CWE-257", "CWE-266", "CWE-269", "CWE-280", "CWE-311", "CWE-312", "CWE-313", "CWE-316", "CWE-419", "CWE-430", "CWE-434", "CWE-444", "CWE-451", "CWE-472", "CWE-501", "CWE-522", "CWE-525", "CWE-539", "CWE-579", "CWE-598", "CWE-602", "CWE-642", "CWE-646", "CWE-650", "CWE-653", "CWE-656", "CWE-657", "CWE-799", "CWE-807", "CWE-840", "CWE-841", "CWE-927", "CWE-1021", "CWE-1173"]
+    },
+    "A05:2021": {
+      "name": "Security Misconfiguration",
+      "description": "Missing appropriate security hardening or improperly configured permissions.",
+      "cwes": ["CWE-2", "CWE-11", "CWE-13", "CWE-15", "CWE-16", "CWE-260", "CWE-315", "CWE-520", "CWE-526", "CWE-537", "CWE-541", "CWE-547", "CWE-611", "CWE-614", "CWE-756", "CWE-776", "CWE-942", "CWE-1004", "CWE-1032", "CWE-1174"]
+    },
+    "A06:2021": {
+      "name": "Vulnerable and Outdated Components",
+      "description": "Using components with known vulnerabilities.",
+      "cwes": ["CWE-937", "CWE-1035", "CWE-1104"]
+    },
+    "A07:2021": {
+      "name": "Identification and Authentication Failures",
+      "description": "Confirmation of the user's identity, authentication, and session management is critical.",
+      "cwes": ["CWE-255", "CWE-259", "CWE-287", "CWE-288", "CWE-290", "CWE-294", "CWE-295", "CWE-297", "CWE-300", "CWE-302", "CWE-304", "CWE-306", "CWE-307", "CWE-346", "CWE-384", "CWE-521", "CWE-613", "CWE-620", "CWE-640", "CWE-798", "CWE-940", "CWE-1216"]
+    },
+    "A08:2021": {
+      "name": "Software and Data Integrity Failures",
+      "description": "Code and infrastructure that does not protect against integrity violations.",
+      "cwes": ["CWE-345", "CWE-353", "CWE-426", "CWE-494", "CWE-502", "CWE-565", "CWE-784", "CWE-829", "CWE-830", "CWE-915"]
+    },
+    "A09:2021": {
+      "name": "Security Logging and Monitoring Failures",
+      "description": "Without logging and monitoring, breaches cannot be detected.",
+      "cwes": ["CWE-117", "CWE-223", "CWE-532", "CWE-778"]
+    },
+    "A10:2021": {
+      "name": "Server-Side Request Forgery (SSRF)",
+      "description": "SSRF flaws occur when a web application fetches a remote resource without validating the user-supplied URL.",
+      "cwes": ["CWE-918"]
+    }
+  },
+  "sans_cwe_top_25": {
+    "CWE-787": {
+      "rank": 1,
+      "name": "Out-of-bounds Write",
+      "description": "The product writes data past the end, or before the beginning, of the intended buffer."
+    },
+    "CWE-79": {
+      "rank": 2,
+      "name": "Cross-site Scripting (XSS)",
+      "description": "The product does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output."
+    },
+    "CWE-89": {
+      "rank": 3,
+      "name": "SQL Injection",
+      "description": "The product constructs all or part of an SQL command using externally-influenced input."
+    },
+    "CWE-416": {
+      "rank": 4,
+      "name": "Use After Free",
+      "description": "Referencing memory after it has been freed can cause a program to crash or execute arbitrary code."
+    },
+    "CWE-78": {
+      "rank": 5,
+      "name": "OS Command Injection",
+      "description": "The product constructs all or part of an OS command using externally-influenced input."
+    },
+    "CWE-20": {
+      "rank": 6,
+      "name": "Improper Input Validation",
+      "description": "The product receives input but does not validate or incorrectly validates that input."
+    },
+    "CWE-125": {
+      "rank": 7,
+      "name": "Out-of-bounds Read",
+      "description": "The product reads data past the end, or before the beginning, of the intended buffer."
+    },
+    "CWE-22": {
+      "rank": 8,
+      "name": "Path Traversal",
+      "description": "The product uses external input to construct a pathname without proper neutralization."
+    },
+    "CWE-352": {
+      "rank": 9,
+      "name": "Cross-Site Request Forgery (CSRF)",
+      "description": "The web application does not verify that a request was intentionally made by the user."
+    },
+    "CWE-434": {
+      "rank": 10,
+      "name": "Unrestricted Upload of File with Dangerous Type",
+      "description": "The product allows the upload of dangerous file types that can be processed by the server."
+    },
+    "CWE-862": {
+      "rank": 11,
+      "name": "Missing Authorization",
+      "description": "The product does not perform an authorization check when an actor attempts to access a resource."
+    },
+    "CWE-476": {
+      "rank": 12,
+      "name": "NULL Pointer Dereference",
+      "description": "A NULL pointer dereference occurs when the application dereferences a pointer that is NULL."
+    },
+    "CWE-287": {
+      "rank": 13,
+      "name": "Improper Authentication",
+      "description": "When an actor claims a specific identity, the product does not prove that the claim is correct."
+    },
+    "CWE-190": {
+      "rank": 14,
+      "name": "Integer Overflow or Wraparound",
+      "description": "The product performs a calculation that can produce an integer overflow or wraparound."
+    },
+    "CWE-502": {
+      "rank": 15,
+      "name": "Deserialization of Untrusted Data",
+      "description": "The product deserializes untrusted data without sufficiently verifying the data is valid."
+    },
+    "CWE-77": {
+      "rank": 16,
+      "name": "Command Injection",
+      "description": "The product constructs all or part of a command using externally-influenced input."
+    },
+    "CWE-119": {
+      "rank": 17,
+      "name": "Improper Restriction of Operations within Memory Buffer",
+      "description": "The product performs operations on a memory buffer with incorrect boundaries."
+    },
+    "CWE-798": {
+      "rank": 18,
+      "name": "Use of Hard-coded Credentials",
+      "description": "The product contains hard-coded credentials for authentication."
+    },
+    "CWE-918": {
+      "rank": 19,
+      "name": "Server-Side Request Forgery (SSRF)",
+      "description": "The web application fetches a remote resource without validating the user-supplied URL."
+    },
+    "CWE-306": {
+      "rank": 20,
+      "name": "Missing Authentication for Critical Function",
+      "description": "The product does not perform authentication for functionality that requires identity."
+    },
+    "CWE-362": {
+      "rank": 21,
+      "name": "Race Condition",
+      "description": "The product contains a code sequence that can run concurrently with other code."
+    },
+    "CWE-269": {
+      "rank": 22,
+      "name": "Improper Privilege Management",
+      "description": "The product does not properly assign or modify privileges for an actor."
+    },
+    "CWE-94": {
+      "rank": 23,
+      "name": "Code Injection",
+      "description": "The product constructs code segments using externally-influenced input."
+    },
+    "CWE-863": {
+      "rank": 24,
+      "name": "Incorrect Authorization",
+      "description": "The product performs an authorization check but does not correctly determine authorization."
+    },
+    "CWE-276": {
+      "rank": 25,
+      "name": "Incorrect Default Permissions",
+      "description": "During installation, the product sets incorrect permissions for an object."
+    }
+  },
+  "semgrep_rule_mappings": {
+    "python.lang.security.audit.dangerous-subprocess-use": ["CWE-78", "A03:2021"],
+    "python.lang.security.audit.exec-detected": ["CWE-94", "A03:2021"],
+    "python.lang.security.audit.eval-detected": ["CWE-94", "A03:2021"],
+    "python.lang.security.deserialization.avoid-pickle": ["CWE-502", "A08:2021"],
+    "python.lang.security.deserialization.avoid-pyyaml-load": ["CWE-502", "A08:2021"],
+    "python.django.security.injection.sql.raw-query": ["CWE-89", "A03:2021"],
+    "python.flask.security.injection.ssrf-requests": ["CWE-918", "A10:2021"],
+    "python.lang.security.audit.hardcoded-password": ["CWE-798", "A07:2021"],
+    "typescript.react.security.audit.react-dangerouslysetinnerhtml": ["CWE-79", "A03:2021"],
+    "typescript.lang.security.audit.sqli.node-sqlite3-sqli": ["CWE-89", "A03:2021"],
+    "typescript.express.security.audit.xss.mustache-escape": ["CWE-79", "A03:2021"],
+    "generic.secrets.security.detected-generic-api-key": ["CWE-798", "A07:2021"]
+  },
+  "bandit_test_mappings": {
+    "B101": {"cwe": "CWE-703", "owasp": null, "name": "assert_used"},
+    "B102": {"cwe": "CWE-78", "owasp": "A03:2021", "name": "exec_used"},
+    "B103": {"cwe": "CWE-732", "owasp": "A01:2021", "name": "set_bad_file_permissions"},
+    "B104": {"cwe": "CWE-200", "owasp": "A01:2021", "name": "hardcoded_bind_all_interfaces"},
+    "B105": {"cwe": "CWE-798", "owasp": "A07:2021", "name": "hardcoded_password_string"},
+    "B106": {"cwe": "CWE-798", "owasp": "A07:2021", "name": "hardcoded_password_funcarg"},
+    "B107": {"cwe": "CWE-798", "owasp": "A07:2021", "name": "hardcoded_password_default"},
+    "B108": {"cwe": "CWE-377", "owasp": "A01:2021", "name": "hardcoded_tmp_directory"},
+    "B110": {"cwe": "CWE-703", "owasp": null, "name": "try_except_pass"},
+    "B112": {"cwe": "CWE-703", "owasp": null, "name": "try_except_continue"},
+    "B201": {"cwe": "CWE-94", "owasp": "A03:2021", "name": "flask_debug_true"},
+    "B301": {"cwe": "CWE-502", "owasp": "A08:2021", "name": "pickle"},
+    "B302": {"cwe": "CWE-327", "owasp": "A02:2021", "name": "marshal"},
+    "B303": {"cwe": "CWE-327", "owasp": "A02:2021", "name": "md5"},
+    "B304": {"cwe": "CWE-327", "owasp": "A02:2021", "name": "des"},
+    "B305": {"cwe": "CWE-327", "owasp": "A02:2021", "name": "cipher"},
+    "B306": {"cwe": "CWE-377", "owasp": "A01:2021", "name": "mktemp_q"},
+    "B307": {"cwe": "CWE-94", "owasp": "A03:2021", "name": "eval"},
+    "B308": {"cwe": "CWE-79", "owasp": "A03:2021", "name": "mark_safe"},
+    "B310": {"cwe": "CWE-22", "owasp": "A01:2021", "name": "urllib_urlopen"},
+    "B311": {"cwe": "CWE-330", "owasp": "A02:2021", "name": "random"},
+    "B312": {"cwe": "CWE-295", "owasp": "A07:2021", "name": "telnetlib"},
+    "B313": {"cwe": "CWE-611", "owasp": "A05:2021", "name": "xml_bad_cElementTree"},
+    "B314": {"cwe": "CWE-611", "owasp": "A05:2021", "name": "xml_bad_ElementTree"},
+    "B315": {"cwe": "CWE-611", "owasp": "A05:2021", "name": "xml_bad_expatreader"},
+    "B316": {"cwe": "CWE-611", "owasp": "A05:2021", "name": "xml_bad_expatbuilder"},
+    "B317": {"cwe": "CWE-611", "owasp": "A05:2021", "name": "xml_bad_sax"},
+    "B318": {"cwe": "CWE-611", "owasp": "A05:2021", "name": "xml_bad_minidom"},
+    "B319": {"cwe": "CWE-611", "owasp": "A05:2021", "name": "xml_bad_pulldom"},
+    "B320": {"cwe": "CWE-611", "owasp": "A05:2021", "name": "xml_bad_etree"},
+    "B321": {"cwe": "CWE-295", "owasp": "A07:2021", "name": "ftplib"},
+    "B323": {"cwe": "CWE-295", "owasp": "A07:2021", "name": "unverified_context"},
+    "B324": {"cwe": "CWE-327", "owasp": "A02:2021", "name": "hashlib_insecure_functions"},
+    "B401": {"cwe": "CWE-295", "owasp": "A07:2021", "name": "import_telnetlib"},
+    "B402": {"cwe": "CWE-295", "owasp": "A07:2021", "name": "import_ftplib"},
+    "B403": {"cwe": "CWE-502", "owasp": "A08:2021", "name": "import_pickle"},
+    "B404": {"cwe": "CWE-78", "owasp": "A03:2021", "name": "import_subprocess"},
+    "B405": {"cwe": "CWE-611", "owasp": "A05:2021", "name": "import_xml_etree"},
+    "B406": {"cwe": "CWE-611", "owasp": "A05:2021", "name": "import_xml_sax"},
+    "B407": {"cwe": "CWE-611", "owasp": "A05:2021", "name": "import_xml_expat"},
+    "B408": {"cwe": "CWE-611", "owasp": "A05:2021", "name": "import_xml_minidom"},
+    "B409": {"cwe": "CWE-611", "owasp": "A05:2021", "name": "import_xml_pulldom"},
+    "B410": {"cwe": "CWE-611", "owasp": "A05:2021", "name": "import_lxml"},
+    "B411": {"cwe": "CWE-611", "owasp": "A05:2021", "name": "import_xmlrpclib"},
+    "B412": {"cwe": "CWE-295", "owasp": "A07:2021", "name": "import_httpoxy"},
+    "B413": {"cwe": "CWE-327", "owasp": "A02:2021", "name": "import_pycrypto"},
+    "B415": {"cwe": "CWE-327", "owasp": "A02:2021", "name": "import_pyghmi"},
+    "B501": {"cwe": "CWE-295", "owasp": "A07:2021", "name": "request_with_no_cert_validation"},
+    "B502": {"cwe": "CWE-295", "owasp": "A07:2021", "name": "ssl_with_bad_version"},
+    "B503": {"cwe": "CWE-295", "owasp": "A07:2021", "name": "ssl_with_bad_defaults"},
+    "B504": {"cwe": "CWE-295", "owasp": "A07:2021", "name": "ssl_with_no_version"},
+    "B505": {"cwe": "CWE-327", "owasp": "A02:2021", "name": "weak_cryptographic_key"},
+    "B506": {"cwe": "CWE-502", "owasp": "A08:2021", "name": "yaml_load"},
+    "B507": {"cwe": "CWE-295", "owasp": "A07:2021", "name": "ssh_no_host_key_verification"},
+    "B508": {"cwe": "CWE-78", "owasp": "A03:2021", "name": "snmp_insecure_version"},
+    "B509": {"cwe": "CWE-78", "owasp": "A03:2021", "name": "snmp_weak_cryptography"},
+    "B601": {"cwe": "CWE-78", "owasp": "A03:2021", "name": "paramiko_calls"},
+    "B602": {"cwe": "CWE-78", "owasp": "A03:2021", "name": "subprocess_popen_with_shell_equals_true"},
+    "B603": {"cwe": "CWE-78", "owasp": "A03:2021", "name": "subprocess_without_shell_equals_true"},
+    "B604": {"cwe": "CWE-78", "owasp": "A03:2021", "name": "any_other_function_with_shell_equals_true"},
+    "B605": {"cwe": "CWE-78", "owasp": "A03:2021", "name": "start_process_with_a_shell"},
+    "B606": {"cwe": "CWE-78", "owasp": "A03:2021", "name": "start_process_with_no_shell"},
+    "B607": {"cwe": "CWE-78", "owasp": "A03:2021", "name": "start_process_with_partial_path"},
+    "B608": {"cwe": "CWE-89", "owasp": "A03:2021", "name": "hardcoded_sql_expressions"},
+    "B609": {"cwe": "CWE-78", "owasp": "A03:2021", "name": "linux_commands_wildcard_injection"},
+    "B610": {"cwe": "CWE-78", "owasp": "A03:2021", "name": "django_extra_used"},
+    "B611": {"cwe": "CWE-78", "owasp": "A03:2021", "name": "django_rawsql_used"},
+    "B701": {"cwe": "CWE-94", "owasp": "A03:2021", "name": "jinja2_autoescape_false"},
+    "B702": {"cwe": "CWE-94", "owasp": "A03:2021", "name": "use_of_mako_templates"},
+    "B703": {"cwe": "CWE-79", "owasp": "A03:2021", "name": "django_mark_safe"}
+  }
+}

@@ -1,0 +1,42 @@
+# Version control
+.git/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches
+.pip_cache/
+.npm/
+.env
+
+# Test directories
+coverage/
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+
+# Logs
+*.log
+logs/
+
+# Configuration files with sensitive information
+*.env
+secrets.yml
+
+# IDE directories
+.idea/
+*.code-workspace
+
+# Dependency directories
+node_modules/
+venv/
+.venv/
+*.pyc
+
+# Docker-specific
+.dockerignore
+Dockerfile

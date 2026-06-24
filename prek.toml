@@ -1,0 +1,60 @@
+[[repos]]
+repo = "builtin"
+hooks = [
+  { id = "check-added-large-files", args = [
+    "--maxkb=1024",
+  ] },
+  { id = "check-case-conflict" },
+  { id = "check-merge-conflict" },
+  { id = "check-json5" },
+  { id = "check-yaml" },
+  { id = "check-toml" },
+  { id = "detect-private-key" },
+  { id = "mixed-line-ending", args = [
+    "--fix=lf",
+  ] },
+  { id = "fix-byte-order-marker" },
+  { id = "end-of-file-fixer" },
+  { id = "trailing-whitespace" },
+]
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "max-file-lines"
+name = "check file line limits"
+entry = "bash scripts/check-file-lines.sh"
+language = "system"
+types = ["text"]
+exclude = """(?x)^(
+  .*generated.*|
+  .*\\.gen\\..*|
+  .*/modules/core/.*|
+  .*tests?\\.py$|
+  .*test_.*\\.py$|
+  .*\\.lock(\\..+)?$|
+  .*pnpm-lock\\.yaml$|
+  .*\\.min\\..*|
+  .*__snapshots__.*|
+  .*\\.md$|
+  .*\\.excalidraw$|
+  .*\\.json$|
+  .*\\.css$|
+  .*\\.ya?ml$|
+  scripts/generate-security-report\\.py$
+)$"""
+
+[[repos.hooks]]
+id = "backend-tests"
+name = "docker integration tests"
+language = "system"
+files = "^backend/src/"
+# Smart wrapper that:
+#   - skips service startup when Docker services are already running
+#   - runs only tests for modules with staged changes
+#   - skips pytest entirely when no testable module was changed
+entry = "bash scripts/pre-commit-backend-tests.sh"
+pass_filenames = false
+verbose = true
+types = ["python"]

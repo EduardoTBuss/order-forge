@@ -1,0 +1,159 @@
+{
+  "name": "invoice-workshop",
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "32gb",
+    "storage": "64gb"
+  },
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  // Persist Claude Code credentials and chat history (~/.claude) across
+  // container rebuilds and reconnects. The volume is scoped per Codespace
+  // via ${devcontainerId}, so each user's state stays isolated. Assumes
+  // the container user is `vscode` (current base image); update the target
+  // if the Dockerfile's base image is ever changed to one with a different
+  // user.
+  "mounts": [
+    "source=claude-code-${devcontainerId},target=/home/vscode/.claude,type=volume"
+  ],
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "moby": false,
+      "installDockerBuildx": true
+    },
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "latest"
+    }
+  },
+  "forwardPorts": [
+    3000, 8000, 8081, 8082, 5432, 8084, 10000, 27017
+  ],
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // general
+        "openai.chatgpt",
+        "EditorConfig.EditorConfig",
+        "eamodio.gitlens",
+        "pomdtr.excalidraw-editor",
+        "ms-azuretools.vscode-docker",
+        "redhat.vscode-extension-bpmn-editor",
+        "anthropic.claude-code",
+        "tomoki1207.pdf",
+        "tamasfe.even-better-toml",
+        // backend
+        "ms-python.python",
+        "-ms-python.vscode-pylance",
+        "astral-sh.ty",
+        "charliermarsh.ruff",
+        // frontend
+        "biomejs.biome",
+        "ms-vscode.vscode-typescript-next",
+        "bradlc.vscode-tailwindcss"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "${workspaceFolder}/backend/.venv/bin/python",
+        "python.analysis.extraPaths": ["${workspaceFolder}/backend/app"],
+        "[python]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "charliermarsh.ruff",
+          "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+            "source.organizeImports": "explicit"
+          }
+        },
+        "prettier.enable": false,
+        "biome.enabled": true,
+        "[javascript]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "biomejs.biome",
+          "editor.codeActionsOnSave": {
+            "source.fixAll.biome": "explicit",
+            "source.organizeImports.biome": "explicit"
+          }
+        },
+        "[typescript]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "biomejs.biome",
+          "editor.codeActionsOnSave": {
+            "source.fixAll.biome": "explicit",
+            "source.organizeImports.biome": "explicit"
+          }
+        },
+        "[typescriptreact]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "biomejs.biome",
+          "editor.codeActionsOnSave": {
+            "source.fixAll.biome": "explicit",
+            "source.organizeImports.biome": "explicit"
+          }
+        },
+        "[css]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "biomejs.biome",
+          "editor.codeActionsOnSave": {
+            "source.fixAll.biome": "explicit",
+            "source.organizeImports.biome": "explicit"
+          }
+        },
+        "[tailwindcss]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "biomejs.biome",
+          "editor.codeActionsOnSave": {
+            "source.fixAll.biome": "explicit",
+            "source.organizeImports.biome": "explicit"
+          }
+        },
+        "[json]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "biomejs.biome",
+          "editor.codeActionsOnSave": {
+            "source.fixAll.biome": "explicit",
+            "source.organizeImports.biome": "explicit"
+          }
+        },
+        "[jsonc]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "biomejs.biome",
+          "editor.codeActionsOnSave": {
+            "source.fixAll.biome": "explicit",
+            "source.organizeImports.biome": "explicit"
+          }
+        }
+      }
+    }
+  },
+  "otherPortsAttributes": {
+    "onAutoForward": "ignore"
+  },
+  "portsAttributes": {
+    "3000": {
+      "label": "Frontend (Next.js)"
+    },
+    "8000": {
+      "label": "Backend (FastAPI)"
+    },
+    "5432": {
+      "label": "PostgreSQL"
+    },
+    "8081": {
+      "label": "PostgreSQL Viewer"
+    },
+    "8082": {
+      "label": "MongoDB Viewer"
+    },
+    "8084": {
+      "label": "Log Viewer (Dozzle)"
+    },
+    "10000": {
+      "label": "Blob Storage"
+    },
+    "27017": {
+      "label": "MongoDB"
+    }
+  }
+}

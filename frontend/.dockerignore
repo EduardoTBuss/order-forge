@@ -1,0 +1,22 @@
+# Dependencies / build output
+node_modules
+.next
+.turbo
+dist
+build
+coverage
+
+# Env / secrets
+.env
+.env.*
+
+# VCS
+.git
+.gitignore
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*

@@ -1,0 +1,32 @@
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "biome"
+name = "biome (formatting and linting)"
+language = "system"
+entry = "pnpm lint --fix"
+pass_filenames = false
+always_run = true
+types = ["javascript", "ts", "tsx"]
+
+[[repos.hooks]]
+id = "typecheck"
+name = "tsc (type checking)"
+language = "system"
+entry = "pnpm typecheck"
+pass_filenames = false
+always_run = true
+types = ["javascript", "ts", "tsx"]
+
+# next build is intentionally skipped in pre-commit (slow, ~30-60s).
+# Lint + typecheck catch most issues; run `pnpm build` manually or let CI
+# handle the full build before merge.
+# [[repos.hooks]]
+# id = "build"
+# name = "next build"
+# language = "system"
+# entry = "BACKEND_API_URL=http://localhost:8000 BACKEND_API_KEY=precommit ORCHESTRATOR_API_URL=http://localhost:8100 AZURE_AD_CLIENT_ID=precommit AZURE_AD_CLIENT_SECRET=precommit pnpm build"
+# pass_filenames = false
+# always_run = true
+# types = ["javascript", "ts", "tsx"]

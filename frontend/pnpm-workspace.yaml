@@ -1,0 +1,14 @@
+packages: []
+
+# Use flat node_modules layout so Next.js standalone tracer
+# captures transitive deps that pnpm's default strict hoisting
+# hides in .pnpm/
+nodeLinker: hoisted
+
+allowBuilds:
+  '@parcel/watcher': true
+  '@swc/core': true
+  cbor-extract: true
+  esbuild: true
+  msw: true
+  sharp: true
