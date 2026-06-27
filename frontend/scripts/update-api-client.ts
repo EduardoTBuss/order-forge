@@ -12,7 +12,13 @@ await createClient({
     {
       name: "@hey-api/sdk",
       operations: { strategy: "single" },
-      validator: { request: "zod" },
+      // Request-side zod validation is disabled: @hey-api/openapi-ts maps an
+      // OpenAPI binary body (`type: string, format: binary`, e.g. a FastAPI
+      // `UploadFile`) to `z.string()`, so it rejects a real `File`/`Blob` before
+      // the request is sent — which breaks every file upload (the core workshop
+      // action). The backend validates all input authoritatively via Pydantic,
+      // so the client-side request validator is redundant here.
+      validator: false,
     },
   ],
 });

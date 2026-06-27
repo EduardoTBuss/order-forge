@@ -30,12 +30,6 @@ fi
 echo "Installing uv..."
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
-echo "Installing excalidraw-render for PNG export..."
-cd scripts/excalidraw-render
-uv sync
-uv tool install .
-cd ../..
-
 PNPM_VERSION="${PNPM_VERSION:-11.1.2}"
 echo "Enabling pnpm..."
 corepack enable
@@ -50,9 +44,6 @@ export PATH="$PNPM_HOME:$PATH"
 
 echo "Setting up biome..."
 pnpm add --global @biomejs/biome@2.4.15
-
-echo "Installing bpmn-to-image for BPMN diagram export..."
-pnpm add --global bpmn-to-image
 
 echo "Installing frontend deps..."
 cd frontend

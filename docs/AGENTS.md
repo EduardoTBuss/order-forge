@@ -1,59 +1,31 @@
 # Documentation Agent Guidelines
 
-Read the root `AGENTS.md` first, then follow these documentation-specific guardrails.
-For detailed conventions, read `.agents/skills/documentation-standards/SKILL.md`.
+Read the root `AGENTS.md` first, then follow these documentation-specific rules.
 
----
+## Mandatory rules
 
-## Mandatory Rules
+1. **All documentation in English** — regardless of the input document's language.
+   (A single Portuguese mirror of the top-level README is allowed as
+   `README.pt.md`; the English version stays the canonical showcase.)
+2. **Diagrams are Mermaid**, inline in the Markdown — they render natively on
+   GitHub, need no build step, and leave no binary image files to maintain.
+   Screenshots are the only images we keep (under `docs/assets/`).
+3. **Keep `docs/project.md` current** — when a capability changes, update the
+   plain-language description there.
 
-1. **All documentation in English** — regardless of input document language
-2. **One Excalidraw file per page/screen** in `docs/interfaces/`
-3. **Per-feature folder structure** in `docs/features/[feature-name]/`
-4. **Every automation MUST have a visualization page** in `docs/interfaces/`
-5. **Export all diagrams to PNG** — Excalidraw via `excalidraw-render`, BPMN via `bpmn-to-image`
-6. **Embed all PNGs in `docs/project.md`** — no diagram without its PNG embedded
+## Where things live
 
----
+| Path | What it holds |
+|------|---------------|
+| [`challenge/`](./challenge/README.md) | the problem statement (context + brief) |
+| [`decisions/`](./decisions/README.md) | Architecture Decision Records |
+| [`architecture/`](./architecture/README.md) | structure + flow (Mermaid diagrams) |
+| [`benchmark/`](./benchmark/README.md) | measured strategy comparison |
+| [`requirements-audit.md`](./requirements-audit.md) | requirements scorecard |
+| [`how-it-was-built.md`](./how-it-was-built.md) | the AI-agent workflow |
+| [`sources/`](./sources/) | client-supplied source materials (read-only) |
+| `assets/` | screenshots embedded in docs |
 
-## Feature Folder Structure
-
-```
-docs/features/[feature-name]/
-├── README.md              # Feature overview (embeds PNGs)
-├── entities.md            # Domain entities
-├── entities.excalidraw    # Entity diagram
-├── endpoints.md           # API design (core vs custom)
-├── migrations/            # SQL files (if DB needed)
-├── automations/           # BPMN workflows (if automated)
-└── tests/                 # Test cases with samples
-```
-
----
-
-## Diagram Export Commands
-
-```bash
-# Excalidraw → PNG
-excalidraw-render docs/features/[feature]/entities.excalidraw \
-  -o docs/features/[feature]/entities.png
-
-# BPMN → PNG
-bpmn-to-image docs/features/[feature]/automations/[workflow]/flow.bpmn:flow.png
-
-# Batch export all
-find docs -name "*.excalidraw" -exec sh -c \
-  'excalidraw-render "$1" -o "${1%.excalidraw}.png"' _ {} \;
-find docs -name "flow.bpmn" -exec sh -c \
-  'bpmn-to-image "$1:${1%.bpmn}.png"' _ {} \;
-```
-
----
-
-## Skills (read before detailed work)
-
-- Documentation structure & BPMN: `.agents/skills/documentation-standards/SKILL.md`
-- Building docs from requirements: `.agents/skills/build-docs/SKILL.md`
-- Updating docs from new sources: `.agents/skills/update-docs/SKILL.md`
-- Excalidraw diagram creation: `.agents/skills/excalidraw/SKILL.md`
-- Changelog workflow: `.agents/skills/changelog-management/SKILL.md`
+The authoritative project identity lives in `docs/project.md` and must stay in
+sync with `backend/src/settings.py`, `frontend/src/config/app-identity.ts`, and
+`frontend/src/messages/*.json`.

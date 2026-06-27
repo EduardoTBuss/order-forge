@@ -38,7 +38,6 @@ exclude = """(?x)^(
   .*\\.min\\..*|
   .*__snapshots__.*|
   .*\\.md$|
-  .*\\.excalidraw$|
   .*\\.json$|
   .*\\.css$|
   .*\\.ya?ml$|

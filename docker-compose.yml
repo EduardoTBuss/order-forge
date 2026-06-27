@@ -107,6 +107,10 @@ services:
 
       # API key for the backend (local shared secret between frontend proxy and backend).
       API_KEY: backend-secret-api-key
+      # Order Intake LLM (Stage 2) — set OI_LLM_BASE_URL in .env to enable
+      OI_LLM_BASE_URL: ${OI_LLM_BASE_URL:-http://ollama:11434/v1}
+      OI_LLM_MODEL: ${OI_LLM_MODEL:-qwen2.5:1.5b}
+      OI_LLM_API_KEY: ${OI_LLM_API_KEY:-ollama}
 
   frontend:
     build:
@@ -250,6 +254,10 @@ services:
 
       # API key for test requests
       API_KEY: backend-secret-api-key
+      # Order Intake LLM (Stage 2) — set OI_LLM_BASE_URL in .env to enable
+      OI_LLM_BASE_URL: ${OI_LLM_BASE_URL:-}
+      OI_LLM_MODEL: ${OI_LLM_MODEL:-qwen2.5:1.5b}
+      OI_LLM_API_KEY: ${OI_LLM_API_KEY:-ollama}
 
       # Pytest arguments (optional override)
       PYTEST_ARGS: ${PYTEST_ARGS:-}
@@ -305,9 +313,19 @@ services:
         echo "Running tests..."
         eval pytest $${MARKER_ARG} $${PYTEST_ARGS:-}
 
+  ollama:
+    image: ollama/ollama:latest
+    restart: unless-stopped
+    volumes:
+      - ollama_data:/root/.ollama
+    ports:
+      - "11434:11434"
+
 volumes:
   postgres_data:
     name: ${COMPOSE_PROJECT_NAME:-invoice-workshop}_postgres_data
+  ollama_data:
+    name: ${COMPOSE_PROJECT_NAME:-invoice-workshop}_ollama_data
   cosmosdb_data:
     name: ${COMPOSE_PROJECT_NAME:-invoice-workshop}_cosmosdb_data
   cosmosdb_logs:

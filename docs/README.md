@@ -1,63 +1,48 @@
-# Domain Documentation
+# Documentation
 
-This folder holds the **workshop's domain documentation**. The invoice intake
-exercise — what participants build, its entities, and its API design — lives here.
-Reference this folder to understand the domain before implementing features.
+The story behind this project, from problem to solution. **All docs are in
+English.** Start at the [root README](../README.md), then dig in here.
 
-**All documentation must be written in English.**
+## Map
 
-See `WORKSHOP.md` (repo root) for the authoritative charter, and
-`docs/project.md` for the current domain state.
+| Folder / file | What's inside |
+|---------------|---------------|
+| 🎯 [`challenge/`](./challenge/README.md) | **What was asked** — the SACOMP 2026 / Machines Like Me mini-course context, the AluProfil problem, the four customers, and the hard constraints. |
+| ⚖️ [`decisions/`](./decisions/README.md) | **Why it's built this way** — Architecture Decision Records, each stress-tested in an adversarial design review. |
+| 🏗️ [`architecture/`](./architecture/README.md) | **How it fits together** — stack, module layout, processing flow (with diagrams). |
+| 📊 [`benchmark/`](./benchmark/README.md) | **Evidence** — 4 customers × 3 extraction strategies, measured for speed and correctness against ground truth. |
+| ✅ [`requirements-audit.md`](./requirements-audit.md) | **Honest scorecard** — every requirement vs. what shipped, including what was deliberately cut. |
+| 🤖 [`how-it-was-built.md`](./how-it-was-built.md) | **The AI workflow** — the multi-agent pipeline (ideate → tribunal → build → review). |
 
-## App Identity — Naming Convention
+## Source materials (client-supplied)
 
-The app has a client name and a project name. The display name follows the
-pattern **"Project Name - Client Name"**.
+The raw inputs the solution is built from live in [`sources/`](./sources/): the
+[discovery transcript](./sources/ORDER_INTAKE_DISCOVERY.md), the
+[EDIFACT spec](./sources/edi/metallsoft-orders-mapping.md), the
+[catalog](./sources/catalog/), and the [sample orders](./sources/orders/).
 
-### Current Identity
+## Run & use
 
-| Field | Value |
-|-------|-------|
-| Client Name | Workshop |
-| Project Name | Invoice Intake |
-| Display Name | Invoice Intake - Workshop |
-| App Slug | invoice-intake-workshop |
+To run the app and use the feature, see the operator guide at
+[`../ORDER_INTAKE.md`](../ORDER_INTAKE.md) and the quick start in the
+[root README](../README.md).
 
-### Sync Requirements
+---
 
-The app identity must stay in sync across these locations:
+<details>
+<summary>About the starter scaffold (upstream)</summary>
 
-| Location | What to Update |
+This repo is a fork of a workshop starter; some scaffolding docs describe that
+template. The authoritative charter is [`../WORKSHOP.md`](../WORKSHOP.md);
+`project.md` holds the domain identity; `AGENTS.md` holds doc conventions.
+
+### App identity (kept in sync across four files)
+
+| Location | What to update |
 |----------|----------------|
-| `docs/project.md` | Authoritative source — update this first |
-| `backend/src/settings.py` | `client_name`, `project_name` fields |
+| `docs/project.md` | authoritative source |
+| `backend/src/settings.py` | `client_name`, `project_name` |
 | `frontend/src/config/app-identity.ts` | `CLIENT_NAME`, `APP_SLUG`, `DEFAULT_PROJECT_NAME` |
-| `frontend/src/messages/en.json` | `common.clientName`, `common.projectName`, `common.appName` |
-| `frontend/src/messages/de.json` | Same fields (`projectName` can be translated) |
+| `frontend/src/messages/{en,de}.json` | `common.clientName`, `common.projectName`, `common.appName` |
 
-### i18n Pattern — Single Source
-
-Build the display name directly in TSX from `clientName` and `projectName`:
-
-```tsx
-<h1>{t('common.projectName')} - {t('common.clientName')}</h1>
-```
-
-This ensures changing the name only requires updating two fields
-(`common.clientName`, `common.projectName`).
-
-## Working with Docs
-
-- Read `docs/AGENTS.md` for documentation conventions (feature folders, diagrams).
-- Use the `build-docs` skill (`.agents/skills/build-docs/SKILL.md`) to generate a
-  feature's docs and diagrams.
-- Use the `excalidraw` skill (`.agents/skills/excalidraw/SKILL.md`) to create UI
-  mockups and entity diagrams; export them to PNG and embed them in `docs/project.md`.
-
-```bash
-# Export all Excalidraw files to PNG
-find docs -name "*.excalidraw" -exec sh -c 'excalidraw-render "$1" -o "${1%.excalidraw}.png"' _ {} \;
-```
-
-The documentation here is the authoritative source for *what* the application
-should do. The code in `backend/` and `frontend/` implements *how* it does it.
+</details>

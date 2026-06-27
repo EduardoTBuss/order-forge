@@ -1,983 +1,1099 @@
 {
-  "errors": {
-    "generic": {
-      "title": "Etwas ist schiefgelaufen",
-      "description": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es erneut oder kehren Sie zur Startseite zurück.",
-      "retry": "Erneut versuchen",
-      "goHome": "Zur Startseite"
-    }
-  },
-  "metadata": {
-    "description": "Ein minimaler Workshop-Starter für eine Rechnungserfassungs-App mit FastAPI-Backend und Next.js-Frontend."
-  },
-  "common": {
-    "clientName": "Workshop",
-    "projectName": "Invoice Intake",
-    "appName": "Invoice Intake - Workshop",
-    "companyName": "Workshop",
-    "companyUrlLabel": "",
-    "externalLinkSuffix": "(öffnet in neuem Tab)"
-  },
-  "auth": {
-    "loginButton": {
-      "default": "Mit Microsoft anmelden",
-      "generic": "Anmelden"
-    },
-    "userMenu": {
-      "adminPanel": "Admin-Bereich",
-      "logout": "Abmelden"
-    },
-    "sessionExpired": "Ihre Sitzung ist abgelaufen. Sie werden zur Anmeldeseite weitergeleitet …"
-  },
-  "controls": {
-    "languageSelector": {
-      "trigger": "Sprache",
-      "ariaLabel": "Sprache wechseln",
-      "locales": {
-        "en": "Englisch",
-        "de": "Deutsch"
-      }
-    },
-    "themeToggle": {
-      "ariaLabel": "Design umschalten"
-    }
-  },
-  "notifications": {
-    "title": "Benachrichtigungen",
-    "description": "Installieren Sie die PWA und erhalten Sie Updates direkt auf diesem Gerät.",
-    "empty": "Noch keine Benachrichtigungen",
-    "actions": {
-      "open": "Benachrichtigungen",
-      "close": "Schließen",
-      "enable": "Push aktivieren",
-      "disable": "Push deaktivieren",
-      "test": "Test-Benachrichtigung senden",
-      "working": "Wird ausgeführt…",
-      "markAllRead": "Alle als gelesen markieren"
-    },
-    "status": {
-      "checking": "Unterstützung wird geprüft…",
-      "disabled": "Deaktiviert",
-      "enabled": "Aktiviert",
-      "denied": "Blockiert",
-      "deniedDetails": "Benachrichtigungen sind im Browser blockiert. Bitte erlauben Sie sie, um Push zu aktivieren.",
-      "unavailable": "Nicht unterstützt",
-      "unavailableDetails": "Dieser Browser unterstützt keine Service Worker oder Push-Nachrichten."
-    },
-    "toggle": {
-      "label": "Push-Benachrichtigungen",
-      "description": "Echtzeit-Benachrichtigungen auf diesem Gerät erhalten"
-    },
-    "form": {
-      "label": "Gerätename",
-      "placeholder": "z. B. MacBook Pro",
-      "help": "Hilft dabei, dieses Gerät später in der Verwaltung zu erkennen."
-    },
-    "errors": {
-      "generic": "Benachrichtigungseinstellungen konnten nicht aktualisiert werden. Bitte versuchen Sie es erneut."
-    },
-    "preview": {
-      "title": "Push aktiviert",
-      "body": "Sie erhalten jetzt Benachrichtigungen auf diesem Gerät."
-    }
-  },
-  "header": {
-    "logoAlt": "Startseite",
-    "navigation": {
-      "endpoints": "Endpunkte",
-      "extract": "Extrahieren",
-      "classify": "Klassifizieren",
-      "consumptions": "Verbrauch",
-      "componentsLibrary": "Komponentenbibliothek",
-      "mobileMenu": "Menü öffnen"
-    }
-  },
-  "footer": {
-    "poweredBy": "Erstellt mit FastAPI und Next.js"
-  },
-  "home": {
-    "hero": {
-      "subheading": "Eine produktionsreife Vorlage für Enterprise-Webanwendungen",
-      "loginCta": "Anmelden"
-    },
-    "authenticated": {
-      "welcome": {
-        "title": "Willkommen bei der Vorlage-App",
-        "subtitle": "Eine produktionsreife Grundlage für Enterprise-Webanwendungen mit FastAPI und Next.js"
-      },
-      "whatIsThis": {
-        "title": "Was ist diese Vorlage?",
-        "description": "Dies ist ein komplettes Starter-Kit für den Aufbau modularer, skalierbarer Webanwendungen. Klonen Sie dieses Repository, passen Sie die App-Identität an und beginnen Sie mit der Entwicklung Ihrer Features—die Infrastruktur ist bereits fertig."
-      },
-      "stack": {
-        "title": "Technologie-Stack",
-        "items": {
-          "backend": "FastAPI Backend — RESTful API mit automatischer OpenAPI-Dokumentation und modularer Architektur",
-          "frontend": "Next.js Frontend — React-basierte UI mit App Router, Server Components und auto-generiertem TypeScript SDK",
-          "auth": "Dev-Stub-Login — ein lokaler Test-Benutzer für den Workshop (kein Identity-Provider)",
-          "storage": "Mehrere Speicheroptionen — PostgreSQL für relationale Daten, CosmosDB für Dokumente, Azure Blob Storage für Dateien",
-          "ai": "KI-Integration — Eingebaute OpenAI-Endpunkte für Chat, Extraktion, Klassifikation und strukturierte Ausgaben",
-          "pwa": "Progressive Web App — Installierbar mit Push-Benachrichtigungen und Offline-Unterstützung"
-        }
-      },
-      "coreModules": {
-        "title": "Vorgefertigte Core-Module",
-        "description": "Diese Endpunkte sind sofort einsatzbereit—keine Programmierung erforderlich:",
-        "items": {
-          "postgresql": "PostgreSQL — CRUD-Operationen für relationale Daten",
-          "cosmosdb": "CosmosDB — Dokumentenspeicher mit Auto-Create für Datenbanken/Collections",
-          "blobStorage": "Blob Storage — Datei-Upload/Download mit SAS-Tokens",
-          "openai": "OpenAI — Chat, Extraktion, Klassifikation mit GPT-Modellen",
-          "pdf": "PDF — Konvertierung, Vorverarbeitung, OCR-Optimierung",
-          "audio": "Audio — Transkription und Synthese",
-          "search": "Suche — Semantische Suchoperationen"
-        },
-        "card": {
-          "postgresql": "CRUD für relationale Daten",
-          "cosmosdb": "Dokumentenspeicher",
-          "blobStorage": "Datei-Upload/Download",
-          "openai": "Chat, Extraktion, Klassifikation",
-          "pdf": "PDF-Verarbeitung & OCR",
-          "audio": "Transkription & Synthese"
-        }
-      },
-      "workflow": {
-        "title": "Entwicklungs-Workflow",
-        "description": "Folgen Sie dieser Pipeline, um neue Features zu erstellen:",
-        "steps": {
-          "docs": "Zuerst dokumentieren — Erstellen Sie Spezifikationen in docs/ mit UI-Mockups und API-Design",
-          "backend": "Backend erstellen — Erstellen Sie Custom-Module in backend/src/app/modules/custom/",
-          "generate": "SDK generieren — Führen Sie pnpm update-api-client aus, um typisierte Frontend-Funktionen zu erhalten",
-          "frontend": "Frontend erstellen — Verwenden Sie das generierte SDK, um Seiten gemäß Ihren Mockups zu erstellen",
-          "commit": "Testen & Committen — Führen Sie Pre-Commit-Hooks, Tests aus und aktualisieren Sie CHANGELOG.md"
-        },
-        "card": {
-          "step1": {
-            "title": "Dokumentieren",
-            "desc": "Spezifikationen in docs/ erstellen"
-          },
-          "step2": { "title": "Backend", "desc": "Custom-Module erstellen" },
-          "step3": {
-            "title": "SDK generieren",
-            "desc": "pnpm update-api-client"
-          },
-          "step4": { "title": "Frontend", "desc": "Seiten mit SDK erstellen" },
-          "step5": { "title": "Ausliefern", "desc": "Testen & Committen" }
-        }
-      },
-      "codexCommands": {
-        "title": "Codex CLI-Befehle",
-        "description": "Nutzen Sie diese Slash-Befehle, um die Entwicklung zu beschleunigen:",
-        "items": {
-          "buildDocs": "/prompts:build-docs — Projektdokumentation aus Anforderungsdokumenten generieren",
-          "buildApp": "/prompts:build-app FEATURE=\"name\" — Ein komplettes Feature gemäß Pipeline erstellen"
-        },
-        "card": {
-          "buildDocsDesc": "Projektdokumentation aus Anforderungsdokumenten generieren",
-          "buildAppDesc": "Ein komplettes Feature gemäß Entwicklungspipeline erstellen"
-        }
-      },
-      "getStarted": {
-        "title": "Erste Schritte",
-        "description": "Erkunden Sie die Funktionen der Vorlage:",
-        "items": {
-          "docs": "📖 Lesen Sie die <docsLink>OpenAPI-Dokumentation</docsLink>, um alle verfügbaren Endpunkte zu sehen",
-          "extract": "🧪 Probieren Sie die <extractLink>Extrahieren</extractLink>-Seite, um KI-gestützte Dokumentenextraktion zu testen",
-          "classify": "🏷️ Probieren Sie die <classifyLink>Klassifizieren</classifyLink>-Seite, um KI-gestützte Klassifikation zu testen",
-          "components": "🧭 Durchsuchen Sie die <componentsLink>Komponentenbibliothek</componentsLink> für produktionsreife UI-Bausteine",
-          "consumptions": "📊 Prüfen Sie die <consumptionsLink>Verbrauch</consumptionsLink>-Seite, um die API-Nutzung zu überwachen"
-        }
-      },
-      "customization": {
-        "title": "Anpassungsleitfaden",
-        "description": "Beim Erstellen Ihrer App aus dieser Vorlage:",
-        "keep": {
-          "title": "Unverändert lassen",
-          "items": "Authentifizierungssystem, Core-Module, Middleware, API-Proxy, i18n-Infrastruktur"
-        },
-        "extend": {
-          "title": "Erweitern",
-          "items": "Navigation, Übersetzungen, App-Identität, Einstellungen"
-        },
-        "replace": {
-          "title": "Ersetzen",
-          "items": "Diese Startseite, Feature-Seiten, Custom-Backend-Module"
-        }
-      }
-    }
-  },
-  "healthStatus": {
-    "connected": "Aktuell verbunden mit <url>{address}</url>.",
-    "checking": "Status wird geprüft...",
-    "live": "Status: aktiv",
-    "down": "Status: ausgefallen"
-  },
-  "extract": {
-    "title": "Extrahieren-Endpunkt",
-    "cards": {
-      "input": {
-        "title": "Eingabe",
-        "description": "PDF-Datei und Extraktionseinstellungen",
-        "fields": {
-          "pdfFile": {
-            "label": "PDF-Datei",
-            "description": "Zu klassifizierender Inhalt. Kann Text, Audio oder eine als Base64 codierte PDF-Datei sein."
-          }
-        }
-      },
-      "output": {
-        "title": "Ausgabe",
-        "description": "Schema für das Ergebnis der Extraktion. Sollte dem OpenAI-Schemaformat entsprechen.",
-        "descriptionWithLink": "Schema für das Extraktionsergebnis. Folgen Sie dem <link>OpenAI Structured Outputs Schema</link>.",
-        "tabs": {
-          "schema": "Schema",
-          "result": "Ergebnis"
-        },
-        "sections": {
-          "extraction": "Extraktion",
-          "metadata": "Metadaten"
-        },
-        "empty": "Führen Sie eine Extraktion aus, um das Ergebnis zu sehen.",
-        "loading": "Extraktion läuft..."
-      }
-    },
-    "buttons": {
-      "run": "Extraktion starten"
-    },
-    "errors": {
-      "missingPdf": "Bitte laden Sie eine PDF-Datei hoch.",
-      "invalidSchema": "Das Ausgabeschema ist kein gültiges JSON.",
-      "requestFailed": "Anfrage fehlgeschlagen",
-      "unexpected": "Unerwarteter Fehler"
-    }
-  },
-  "classify": {
-    "title": "Klassifizieren-Endpunkt",
-    "cards": {
-      "input": {
-        "title": "Eingabe",
-        "description": "Payload für verschiedene Inhaltstypen, die vorverarbeitet und an die OpenAI-API gesendet werden.",
-        "fields": {
-          "contentType": {
-            "label": "Inhaltstyp",
-            "description": "Art des zu klassifizierenden Inhalts.",
-            "options": {
-              "pdf": "PDF",
-              "audio": "Audio",
-              "text": "Text"
-            }
-          },
-          "pdfFile": {
-            "label": "PDF-Datei",
-            "description": "Zu klassifizierender Inhalt. Kann Text, Audio oder eine als Base64 codierte PDF-Datei sein."
-          },
-          "audioFile": {
-            "label": "Audiodatei",
-            "description": "Zu klassifizierender Inhalt. Kann Text, Audio oder eine als Base64 codierte PDF-Datei sein.",
-            "remove": "Entfernen"
-          },
-          "textContent": {
-            "label": "Textinhalt",
-            "description": "Zu klassifizierender Inhalt. Kann Text, Audio oder eine als Base64 codierte PDF-Datei sein.",
-            "placeholder": "Text zum Klassifizieren eingeben"
-          },
-          "preprocessing": {
-            "label": "Vorverarbeitung",
-            "description": "Vorverarbeitungskonfiguration für den Inhalt. Für Text None verwenden.",
-            "show": "Einstellungen anzeigen",
-            "hide": "Einstellungen ausblenden"
-          },
-          "audio": {
-            "targetFormat": {
-              "label": "Zielformat",
-              "description": "Gewünschtes Ausgabeformat. Derzeit wird nur \"mp3\" unterstützt.",
-              "value": "mp3"
-            },
-            "bitrate": {
-              "label": "Audio-Bitrate",
-              "description": "Ausgabe-Bitrate in Kilobit pro Sekunde (kbps)."
-            },
-            "sampleRate": {
-              "label": "Abtastrate",
-              "description": "Ausgabe-Abtastrate in Hertz."
-            },
-            "channels": {
-              "label": "Kanäle",
-              "description": "Anzahl der Kanäle: 1=Mono, 2=Stereo.",
-              "options": {
-                "mono": "Mono",
-                "stereo": "Stereo"
-              }
-            },
-            "window": {
-              "label": "Fensterkonfiguration",
-              "description": "Fensterkonfiguration, die nach der Vorverarbeitung angewendet wird.",
-              "enable": "Aktivieren",
-              "maxMinutes": {
-                "label": "Maximale Minuten",
-                "description": "Maximale Dauer pro Fenster (in Minuten)."
-              },
-              "maxSize": {
-                "label": "Maximale Größe (MB)",
-                "description": "Maximale Dateigröße pro Fenster (in Megabyte)."
-              }
-            }
-          }
-        }
-      },
-      "output": {
-        "title": "Ausgabe",
-        "description": "Liste möglicher Klassen, in die der Inhalt klassifiziert werden soll",
-        "tabs": {
-          "classes": "Klassen",
-          "result": "Ergebnis"
-        },
-        "classes": {
-          "itemTitle": "Klasse {index}",
-          "remove": "Entfernen",
-          "nameLabel": "Name",
-          "nameDescription": "Name der zu klassifizierenden Klasse",
-          "namePlaceholder": "Rechnung",
-          "descriptionLabel": "Beschreibung",
-          "descriptionDescription": "Beschreibung der zu klassifizierenden Klasse",
-          "descriptionPlaceholder": "Ein Dokument, das als Rechnung für Waren oder Dienstleistungen dient.",
-          "add": "Klasse hinzufügen",
-          "defaults": {
-            "invoice": {
-              "name": "Rechnung",
-              "description": "Ein Dokument, das als Rechnung für Waren oder Dienstleistungen dient."
-            },
-            "receipt": {
-              "name": "Beleg",
-              "description": "Ein Dokument, das als Nachweis einer Transaktion dient."
-            }
-          }
-        },
-        "result": {
-          "classification": "Klassifikation",
-          "metadata": "Metadaten",
-          "empty": "Führen Sie eine Klassifikation aus, um das Ergebnis zu sehen."
-        },
-        "loading": "Klassifikation läuft..."
-      }
-    },
-    "errors": {
-      "missingPdf": "Bitte laden Sie eine PDF-Datei hoch.",
-      "missingAudio": "Bitte laden Sie eine Audiodatei hoch.",
-      "missingText": "Bitte geben Sie Text ein.",
-      "missingClass": "Bitte fügen Sie mindestens eine Klasse mit Name und Beschreibung hinzu.",
-      "requestFailed": "Anfrage fehlgeschlagen",
-      "unexpected": "Unerwarteter Fehler"
-    },
-    "buttons": {
-      "run": "Klassifikation starten"
-    }
-  },
-  "consumptions": {
-    "title": "Verbrauch",
-    "description": "Analysieren Sie aktuelle Nutzung, aggregierte Summen und die teuersten Pfade.",
-    "loading": "Verbrauchsdaten werden geladen...",
-    "emptyState": "Verbrauchsmetriken erscheinen, sobald das Backend Nutzung meldet.",
-    "errors": {
-      "load": "Verbrauchsdaten konnten nicht geladen werden.",
-      "aggregatedLoad": "Aggregierte Verbrauchsdaten konnten nicht geladen werden.",
-      "limitsLoad": "Verbrauchslimits konnten nicht geladen werden.",
-      "heading": "Verbrauchsdaten konnten nicht geladen werden.",
-      "aggregatedHeading": "Aggregierte Daten nicht verfügbar.",
-      "aggregatedNone": "Für diesen Zeitraum liegen keine aggregierten Verbrauchsdaten vor.",
-      "recentNone": "Keine aktuellen Verbrauchseinträge verfügbar."
-    },
-    "limits": {
-      "title": "Aktive Limits",
-      "description": "Derzeit geltende Verbrauchslimits.",
-      "none": "Keine Verbrauchslimits konfiguriert.",
-      "global": "Global",
-      "tokens": "Tokens",
-      "configureLink": "Limits in Einstellungen konfigurieren"
-    },
-    "buttons": {
-      "retry": "Erneut versuchen"
-    },
-    "period": {
-      "selectorLabel": "Zeitraum",
-      "labels": {
-        "minute": "Letzte Minute",
-        "daily": "Heute",
-        "monthly": "Diesen Monat"
-      },
-      "descriptions": {
-        "minute": "Aggregierte Nutzung der letzten Minute, gruppiert nach Pfad.",
-        "daily": "Aggregierte Nutzung des aktuellen Tages, gruppiert nach Pfad.",
-        "monthly": "Aggregierte Nutzung des aktuellen Monats, gruppiert nach Pfad."
-      }
-    },
-    "metrics": {
-      "selectorLabel": "Metrik",
-      "options": {
-        "cost": "Kosten (USD)",
-        "tokens": "Tokens"
-      }
-    },
-    "totals": {
-      "cost": {
-        "title": "Gesamtkosten ({period})",
-        "description": "Aufsummiert aus der aggregierten Nutzung für den ausgewählten Zeitraum.",
-        "note": "Bei neueren Modellen sind Kosten möglicherweise nicht verfügbar – Tokens sind die verlässlichste Referenz."
-      },
-      "tokens": {
-        "title": "Gesamte Tokens ({period})",
-        "description": "Aufsummiert aus der aggregierten Nutzung für den ausgewählten Zeitraum."
-      }
-    },
-    "topPaths": {
-      "titleTokens": "Top-Pfade nach Tokens",
-      "titleCost": "Top-Pfade nach Kosten",
-      "refreshing": "Aggregierte Daten werden aktualisiert..."
-    },
-    "recent": {
-      "title": "Aktuelle Verbrauchsdaten",
-      "description": "Die letzten {count} Einträge. Das Limit kann in der Anfrage angepasst werden.",
-      "table": {
-        "path": "Pfad",
-        "tokens": "Tokens",
-        "cost": "Kosten (USD)",
-        "timestamp": "Zeitstempel"
-      }
-    }
-  },
-  "forms": {
-    "pdfPreprocessing": {
-      "title": "PDF-Verarbeitungseinstellungen",
-      "description": "Vorkonfiguration für den Inhalt. Für Textinhalte None verwenden.",
-      "fields": {
-        "dpi": {
-          "label": "DPI",
-          "description": "DPI (dots per inch) für die Umwandlung von PDF-Seiten in Bilder."
-        },
-        "contrast": {
-          "label": "Kontrastfaktor",
-          "description": "> 1.0 erhöht den Kontrast, < 1.0 verringert ihn."
-        },
-        "grayscale": {
-          "label": "Graustufen",
-          "description": "Ob die PDF-Seiten in Graustufen umgewandelt werden sollen.",
-          "options": {
-            "yes": "Ja",
-            "no": "Nein"
-          }
-        },
-        "ocrEnhancement": {
-          "label": "OCR-Optimierung",
-          "description": "Art der OCR-Optimierung. 'none' deaktiviert sie.",
-          "options": {
-            "all": "Alle",
-            "text": "Text",
-            "tables": "Tabellen",
-            "keyPairs": "Schlüssel-Wert-Paare",
-            "ocrOnly": "Nur OCR",
-            "none": "Keine"
-          }
-        },
-        "window": {
-          "label": "Fensterkonfiguration",
-          "description": "Konfiguration für die Fensterverarbeitung des PDFs. Ohne Angaben wird das PDF in einem Durchlauf verarbeitet.",
-          "enable": "Aktivieren"
-        },
-        "windowSize": {
-          "label": "Fenstergröße",
-          "description": "Anzahl der Seiten pro Fenster."
-        },
-        "windowOverlap": {
-          "label": "Fensterüberlappung",
-          "description": "Anzahl der überlappenden Seiten zwischen aufeinanderfolgenden Fenstern."
-        }
-      }
-    },
-    "extractSettings": {
-      "fields": {
-        "model": {
-          "label": "Modell",
-          "description": "Modellname für die OpenAI-Abfrage. Sollte der ID des Modells in Azure OpenAI entsprechen.",
-          "loading": "Modelle werden geladen...",
-          "noModels": "Keine Modelle verfügbar"
-        },
-        "strict": {
-          "label": "Strikt",
-          "description": "Ob das Ausgabeschema strikt validiert werden soll.",
-          "options": {
-            "enabled": "Aktiviert",
-            "disabled": "Deaktiviert"
-          }
-        }
-      }
-    },
-    "classifySettings": {
-      "fields": {
-        "model": {
-          "label": "Modell",
-          "description": "Modellname für die OpenAI-Abfrage. Sollte der ID des Modells in Azure OpenAI entsprechen.",
-          "loading": "Modelle werden geladen...",
-          "noModels": "Keine Modelle verfügbar"
-        }
-      }
-    }
-  },
-  "components": {
-    "pdfUpload": {
-      "errors": {
-        "invalidFile": "Bitte laden Sie eine gültige PDF-Datei hoch"
-      },
-      "dropzone": {
-        "active": "PDF hier ablegen...",
-        "title": "PDF-Datei hierher ziehen und ablegen",
-        "subtitle": "oder klicken, um eine Datei auszuwählen",
-        "button": "Dateien durchsuchen"
-      },
-      "preview": {
-        "title": "PDF-Vorschau",
-        "loading": "Vorschau wird erstellt...",
-        "remove": "Datei entfernen"
-      }
-    }
-  },
-  "roles": {
-    "badges": {
-      "admin": "Admin",
-      "dev": "Entwickler"
-    },
-    "promotedModal": {
-      "title": "Sie sind jetzt Administrator",
-      "description": "Als erster Benutzer wurde Ihnen automatisch die Admin-Rolle zugewiesen.",
-      "permissions": "Sie können jetzt auf die Einstellungsseite zugreifen, um Verbrauchslimits zu verwalten und weitere Administratoren hinzuzufügen.",
-      "confirm": "Verstanden"
-    },
-    "devPromotedModal": {
-      "title": "Entwicklerzugang gewährt",
-      "description": "Sie arbeiten in einer Entwicklungsumgebung und Ihnen wurde automatisch die Entwickler-Rolle zugewiesen.",
-      "permissions": "Sie haben vollen Zugriff auf alle Funktionen einschließlich Einstellungen, Verbrauch und Admin-Funktionen. Diese Rolle wird nur in lokalen und Testumgebungen vergeben.",
-      "confirm": "Verstanden"
-    }
-  },
-  "sidebar": {
-    "toggleMenu": "Menü umschalten",
-    "expand": "Seitenleiste erweitern",
-    "collapse": "Seitenleiste einklappen",
-    "groups": {
-      "features": "Funktionen",
-      "evaluate": "Auswerten",
-      "admin": "Admin"
-    },
-    "navigation": {
-      "home": "Startseite",
-      "extract": "Extrahieren",
-      "classify": "Klassifizieren",
-      "evaluate": "Auswerten",
-      "evaluateExtract": "Extraktionsexperiment",
-      "evaluateClassify": "Klassifizierungsexperiment",
-      "evaluateHistory": "Verlauf",
-      "consumptions": "Verbrauch",
-      "components": "Komponenten",
-      "settings": "Einstellungen",
-      "info": "Info"
-    }
-  },
-  "breadcrumb": {
-    "ariaLabel": "Breadcrumb-Navigation",
-    "home": "Startseite",
-    "extract": "Extrahieren",
-    "classify": "Klassifizieren",
-    "consumptions": "Verbrauch",
-    "components": "Komponenten",
-    "settings": "Einstellungen",
-    "evaluate": "Auswerten",
-    "history": "Verlauf",
-    "info": "Info"
-  },
-  "settings": {
-    "title": "Einstellungen",
-    "description": "Administratoren verwalten und Anwendungseinstellungen konfigurieren.",
-    "loading": "Wird geladen...",
-    "admins": {
-      "title": "Administratoren",
-      "description": "Benutzer mit Administratorzugang zu dieser Anwendung verwalten.",
-      "add": "Admin hinzufügen",
-      "none": "Keine Administratoren konfiguriert.",
-      "addDialog": {
-        "title": "Administrator hinzufügen",
-        "description": "Suchen Sie nach einem Benutzer, um Administratorzugang zu gewähren.",
-        "searchPlaceholder": "Nach Name oder E-Mail suchen...",
-        "searchHint": "Tippen Sie, um nach Benutzern zu suchen",
-        "noResults": "Keine Benutzer gefunden."
-      },
-      "actions": {
-        "add": "Hinzufügen",
-        "remove": "Admin-Zugang entfernen",
-        "cancel": "Abbrechen",
-        "retry": "Erneut versuchen"
-      },
-      "messages": {
-        "added": "Administrator erfolgreich hinzugefügt.",
-        "removed": "Administrator erfolgreich entfernt.",
-        "errorAdd": "Administrator konnte nicht hinzugefügt werden.",
-        "errorRemove": "Administrator konnte nicht entfernt werden.",
-        "errorLoad": "Administratoren konnten nicht geladen werden.",
-        "cannotRemoveLast": "Der letzte Administrator kann nicht entfernt werden."
-      }
-    },
-    "limits": {
-      "title": "Verbrauchslimits",
-      "description": "Kostenlimits festlegen, um die API-Nutzung zu kontrollieren. Limits können global oder pfadspezifisch sein.",
-      "add": "Limit hinzufügen",
-      "none": "Keine Verbrauchslimits konfiguriert. Fügen Sie ein Limit hinzu, um Kosten zu kontrollieren.",
-      "overrideWarning": "Dies überschreibt das bestehende {period}-Limit für {scope}.",
-      "period": {
-        "label": "Zeitraum",
-        "minute": "Pro Minute",
-        "daily": "Täglich",
-        "monthly": "Monatlich"
-      },
-      "path": {
-        "label": "Pfad",
-        "placeholder": "/core/openai/chat",
-        "global": "Global (alle Pfade)",
-        "help": "Leer lassen für ein globales Limit, oder einen Pfad für pfadspezifische Limits angeben."
-      },
-      "maxCost": {
-        "label": "Max. Kosten (USD)",
-        "placeholder": "100.00",
-        "help": "Leer lassen für kein Kostenlimit."
-      },
-      "maxTokens": {
-        "label": "Max. Tokens",
-        "placeholder": "500000",
-        "help": "Leer lassen für kein Token-Limit."
-      },
-      "actions": {
-        "save": "Speichern",
-        "update": "Aktualisieren",
-        "saving": "Wird gespeichert...",
-        "delete": "Löschen",
-        "deleting": "Wird gelöscht...",
-        "cancel": "Abbrechen"
-      },
-      "messages": {
-        "saved": "Limit erfolgreich gespeichert.",
-        "deleted": "Limit erfolgreich gelöscht.",
-        "errorSave": "Limit konnte nicht gespeichert werden.",
-        "errorDelete": "Limit konnte nicht gelöscht werden.",
-        "errorLoad": "Limits konnten nicht geladen werden."
-      },
-      "table": {
-        "period": "Zeitraum",
-        "path": "Pfad",
-        "maxCost": "Max. Kosten",
-        "maxTokens": "Max. Tokens",
-        "actions": "Aktionen",
-        "global": "Global"
-      }
-    },
-    "broadcast": {
-      "title": "Broadcast-Benachrichtigung",
-      "description": "Eine Push-Benachrichtigung an alle Benutzer mit registrierten Geräten senden.",
-      "titleLabel": "Titel",
-      "titlePlaceholder": "Benachrichtigungstitel...",
-      "bodyLabel": "Beschreibung",
-      "bodyPlaceholder": "Optionaler Benachrichtigungstext...",
-      "bodyHelp": "Diese Benachrichtigung wird an alle Benutzer mit registrierten Geräten gesendet.",
-      "send": "Benachrichtigung senden",
-      "sending": "Wird gesendet...",
-      "messages": {
-        "success": "Benachrichtigung erfolgreich an {count} Gerät(e) gesendet.",
-        "error": "Benachrichtigung konnte nicht gesendet werden.",
-        "emptyTitle": "Bitte geben Sie einen Titel ein."
-      }
-    }
-  },
-  "evaluate": {
-    "extract": {
-      "title": "Extraktionsexperiment",
-      "steps": {
-        "folder": {
-          "title": "1) Ordner auswählen oder hochladen",
-          "description": "Jedes PDF muss eine passende JSON-Ground-Truth-Datei mit demselben Namen haben. Wählen Sie einen vorhandenen Ordner oder laden Sie neue Dateien hoch."
-        },
-        "settings": {
-          "title": "2) Extraktionseinstellungen",
-          "description": "Modell- und PDF-Verarbeitungsoptionen konfigurieren."
-        },
-        "schema": {
-          "title": "Ausgabeschema",
-          "description": "JSON-Schema für die Extraktion. Muss mit der Ground-Truth-Struktur übereinstimmen."
-        },
-        "run": {
-          "title": "3) Auswertung starten",
-          "description": "Experimentnamen festlegen und Auswertung starten."
-        }
-      },
-      "experimentName": "Experimentname",
-      "experimentNamePlaceholder": "Experimentnamen eingeben…",
-      "pdfFilesCount": "{count} PDF-Datei(en) im ausgewählten Ordner",
-      "runButton": "Auswertung starten",
-      "processing": "Verarbeitung…",
-      "phases": {
-        "extract": "PDFs extrahieren",
-        "summary": "Ergebnisse auswerten",
-        "aiSummary": "KI-Zusammenfassung erstellen",
-        "store": "Experiment speichern"
-      },
-      "workflowProgress": "Workflow-Fortschritt",
-      "runId": "Lauf-ID: {id}",
-      "workflowStarted": "Workflow gestartet. Verarbeitung…",
-      "results": {
-        "title": "Auswertungsergebnisse",
-        "description": "Zusammenfassung der Extraktionsgenauigkeit über alle Elemente.",
-        "totalItems": "Gesamtanzahl",
-        "successful": "Erfolgreich",
-        "failed": "Fehlgeschlagen",
-        "avgPrecision": "Ø Präzision",
-        "avgRecall": "Ø Recall",
-        "avgF1": "Ø F1",
-        "perItem": "Ergebnisse pro Element",
-        "extractionFailed": "(Extraktion fehlgeschlagen)",
-        "differences": "{count} Abweichungen",
-        "noDiscrepancies": "Keine Abweichungen – perfekte Übereinstimmung!",
-        "complete": "Auswertung abgeschlossen: {successful}/{total} erfolgreich"
-      },
-      "table": {
-        "field": "Feld",
-        "predicted": "Vorhersage",
-        "groundTruth": "Ground Truth",
-        "similarity": "Ähnlichkeit",
-        "empty": "(leer)"
-      },
-      "ai": {
-        "title": "KI-Analyse & Empfehlungen",
-        "description": "KI-generierte Fehleranalyse und Vorschläge zur Schemaverbesserung.",
-        "errorAnalysis": "Fehleranalyse",
-        "recommendations": "Allgemeine Empfehlungen",
-        "suggestedSchema": "Vorgeschlagenes Schema",
-        "suggestedSchemaHint": "Vollständig verbessertes Schema basierend auf der Fehleranalyse. Kopieren und für die nächste Auswertung verwenden."
-      },
-      "errors": {
-        "title": "Auswertungsfehler",
-        "noFolder": "Bitte wählen Sie zuerst einen Ordner mit Dateien aus",
-        "noPdfs": "Keine PDF-Dateien im ausgewählten Ordner gefunden",
-        "invalidSchema": "Das Ausgabeschema ist kein gültiges JSON.",
-        "workflowFailed": "Workflow fehlgeschlagen",
-        "startFailed": "Workflow konnte nicht gestartet werden"
-      }
-    },
-    "classify": {
-      "title": "Klassifizierungsexperiment",
-      "steps": {
-        "folder": {
-          "title": "1) Ordner auswählen oder hochladen",
-          "description": "Jedes PDF muss eine passende JSON-Ground-Truth-Datei mit demselben Namen haben."
-        },
-        "settings": {
-          "title": "2) Klassifizierungseinstellungen",
-          "description": "Modell konfigurieren und Klassifizierungsklassen definieren."
-        },
-        "run": {
-          "title": "3) Klassifizierung starten",
-          "description": "Experimentnamen festlegen und Auswertung starten."
-        }
-      },
-      "classes": "Klassen",
-      "addClass": "Klasse hinzufügen",
-      "removeClass": "Entfernen",
-      "classNamePlaceholder": "Rechnung",
-      "classDescriptionPlaceholder": "Ein Dokument, das als Rechnung für Waren oder Dienstleistungen dient.",
-      "experimentName": "Experimentname",
-      "experimentNamePlaceholder": "Experimentnamen eingeben…",
-      "pdfFilesCount": "{count} PDF-Datei(en) im ausgewählten Ordner",
-      "runButton": "Klassifizierung starten",
-      "processing": "Verarbeitung…",
-      "phases": {
-        "classify": "PDFs klassifizieren",
-        "summary": "Ergebnisse auswerten",
-        "aiSummary": "KI-Zusammenfassung erstellen",
-        "store": "Experiment speichern"
-      },
-      "workflowProgress": "Workflow-Fortschritt",
-      "runId": "Lauf-ID: {id}",
-      "workflowStarted": "Workflow gestartet. Verarbeitung…",
-      "results": {
-        "title": "Klassifizierungsergebnisse",
-        "description": "Zusammenfassung der Klassifizierungsgenauigkeit über alle Elemente.",
-        "totalItems": "Gesamtanzahl",
-        "successful": "Erfolgreich",
-        "failed": "Fehlgeschlagen",
-        "accuracy": "Genauigkeit",
-        "perItem": "Ergebnisse pro Element",
-        "classificationFailed": "(Klassifizierung fehlgeschlagen)",
-        "complete": "Klassifizierung abgeschlossen: {successful}/{total} erfolgreich"
-      },
-      "ai": {
-        "title": "KI-Analyse & Empfehlungen",
-        "description": "KI-generierte Analyse und Vorschläge zur Klassenverbesserung.",
-        "errorAnalysis": "Fehleranalyse",
-        "recommendations": "Allgemeine Empfehlungen",
-        "suggestedClasses": "Vorgeschlagene Klassen",
-        "suggestedClassesHint": "Verbesserte Klassendefinitionen basierend auf der Fehleranalyse."
-      },
-      "errors": {
-        "title": "Auswertungsfehler",
-        "noFolder": "Bitte wählen Sie zuerst einen Ordner mit Dateien aus",
-        "noPdfs": "Keine PDF-Dateien im ausgewählten Ordner gefunden",
-        "workflowFailed": "Workflow fehlgeschlagen",
-        "startFailed": "Workflow konnte nicht gestartet werden"
-      }
-    },
-    "history": {
-      "title": "Experimentverlauf",
-      "refresh": "Aktualisieren",
-      "loading": "Wird geladen…",
-      "empty": "Keine Experimente gefunden. Starten Sie eine Auswertung, um Ergebnisse hier zu sehen.",
-      "backToHistory": "Zurück zum Verlauf",
-      "tabs": {
-        "overview": "Übersicht",
-        "config": "Konfiguration",
-        "aiSummary": "KI-Zusammenfassung",
-        "items": "Elementergebnisse"
-      },
-      "metadata": {
-        "created": "Erstellt",
-        "completed": "Abgeschlossen",
-        "dataset": "Datensatz",
-        "files": "Dateien"
-      },
-      "metrics": {
-        "title": "Auswertungsmetriken",
-        "totalItems": "Gesamtanzahl",
-        "f1Score": "F1-Wert",
-        "accuracy": "Genauigkeit",
-        "precision": "Präzision",
-        "recall": "Recall"
-      },
-      "error": "Fehler",
-      "processedFiles": "Verarbeitete Dateien",
-      "extractionConfig": "Extraktionskonfiguration",
-      "errorAnalysis": "Fehleranalyse",
-      "recommendations": "Empfehlungen",
-      "suggestedSchema": "Vorgeschlagenes Schema",
-      "noAiSummary": "Keine KI-Zusammenfassung für dieses Experiment verfügbar.",
-      "noItemResults": "Keine Elementergebnisse verfügbar.",
-      "filesCount": "{count} Dateien",
-      "itemsCount": "{count} Elemente"
-    }
-  },
-  "info": {
-    "subtitle": "Erfahren Sie, was diese Anwendung leisten kann",
-    "overview": "Diese Anwendung bietet KI-gestützte Dokumentenverarbeitung. Laden Sie Dokumente hoch, extrahieren Sie strukturierte Daten, klassifizieren Sie Inhalte in Kategorien und messen Sie die Genauigkeit mit automatisierten Auswertungen. Nachfolgend finden Sie eine detaillierte Beschreibung jeder Funktion.",
-    "features": {
-      "extract": {
-        "title": "Dokumentenextraktion",
-        "description": "Laden Sie ein PDF-Dokument hoch und extrahieren Sie strukturierte Daten mithilfe von KI. Definieren Sie ein Ausgabeschema, das die gewünschten Felder beschreibt, und das System liefert die Daten in genau dieser Struktur.",
-        "flow": {
-          "upload": "PDF hochladen",
-          "aiProcess": "KI-Verarbeitung",
-          "structuredData": "Strukturierte Daten"
-        },
-        "capabilities": {
-          "upload": "PDF-Dateien hochladen und direkt im Browser anzeigen",
-          "schema": "Ein benutzerdefiniertes JSON-Schema definieren, um genau festzulegen, welche Felder extrahiert werden",
-          "preview": "Extraktionsergebnisse neben dem Originaldokument anzeigen",
-          "models": "Aus verfügbaren KI-Modellen wählen und Verarbeitungseinstellungen konfigurieren"
-        }
-      },
-      "classify": {
-        "title": "Dokumentenklassifizierung",
-        "description": "Klassifizieren Sie Dokumente, Audiodateien oder Text in selbst definierte Kategorien. Erstellen Sie eine Liste von Klassen mit Beschreibungen, und die KI bestimmt, zu welcher Klasse der Inhalt gehört.",
-        "flow": {
-          "input": "Dokumenteingabe",
-          "analyze": "KI-Analyse",
-          "categorize": "Kategorie-Ergebnis"
-        },
-        "capabilities": {
-          "multiFormat": "Unterstützt PDF-Dokumente, Audiodateien und Klartext als Eingabe",
-          "customClasses": "Eigene Klassifizierungskategorien mit Namen und Beschreibungen definieren",
-          "confidence": "Klassifizierungsergebnis zusammen mit Metadaten und Konfidenzdetails anzeigen",
-          "preprocessing": "PDF- und Audio-Vorverarbeitungseinstellungen für optimale Ergebnisse konfigurieren"
-        }
-      },
-      "evaluate": {
-        "title": "Auswertung & Qualitätssicherung",
-        "description": "Messen Sie die Genauigkeit von KI-Extraktion und -Klassifizierung durch Batch-Auswertungen gegen Ground-Truth-Daten. Vergleichen Sie Ergebnisse über Experimente hinweg, um Qualitätsverbesserungen im Zeitverlauf zu verfolgen.",
-        "flow": {
-          "groundTruth": "Ground Truth",
-          "batchRun": "Batch-KI-Lauf",
-          "metrics": "Metriken",
-          "improve": "Verbessern",
-          "track": "Verlauf verfolgen"
-        },
-        "capabilities": {
-          "extractEval": "Extraktionsauswertungen durchführen, die KI-Ausgaben mit Ground-Truth-JSON-Dateien vergleichen und Präzision, Recall und F1-Werte berechnen",
-          "classifyEval": "Klassifizierungsauswertungen durchführen, die Genauigkeit über mehrere Dokumente messen und Konfusionsmatrizen erstellen",
-          "history": "Vergangene Experimente durchsuchen, Metriken vergleichen und detaillierte Einzelergebnisse überprüfen",
-          "aiSummary": "KI-generierte Fehleranalysen und Empfehlungen zur Verbesserung von Extraktionsschemata oder Klassendefinitionen erhalten"
-        }
-      }
-    }
-  },
-  "notFound": {
-    "title": "Seite nicht gefunden",
-    "description": "Die gesuchte Seite existiert nicht.",
-    "goHome": "Zur Startseite"
-  },
-  "blobFolder": {
-    "selectFolder": "Ordner auswählen…",
-    "load": "Laden",
-    "refresh": "Aktualisieren",
-    "blobRoot": "Blob-Pfad: {path}",
-    "matchingPairs": "{count} passende(s) PDF/JSON-Paar(e)",
-    "unmatched": "({count} ohne Zuordnung)",
-    "uploadFiles": "Dateien hochladen",
-    "filesInFolder": "Dateien im Ordner",
-    "processingFiles": "Dateien werden verarbeitet…",
-    "loadingFiles": "Dateien werden geladen…",
-    "noFiles": "Noch keine Dateien. Laden Sie Dateien hoch, um diesen Ordner zu befüllen.",
-    "delete": "Löschen",
-    "errors": {
-      "selectOrEnter": "Wählen oder geben Sie einen Ordnernamen ein",
-      "loadFailed": "Dateien konnten nicht geladen werden"
-    },
-    "messages": {
-      "loaded": "Ordner {name} geladen",
-      "initialized": "Ordner {name} initialisiert",
-      "uploaded": "{count} Datei(en) hochgeladen",
-      "deleted": "{name} gelöscht",
-      "createdFolder": "Ordner erstellt: {name}"
-    }
-  },
-  "pdfDirectory": {
-    "selectFolder": "PDF- und JSON-Ordner auswählen",
-    "selectDifferent": "Anderen Ordner auswählen",
-    "replaceTip": "Wählen Sie einen anderen Ordner, um die aktuelle Auswahl zu ersetzen.",
-    "matchingTip": "Jedes PDF muss eine passende JSON-Datei mit demselben Namen haben",
-    "selectedFiles": "Ausgewählte Dateien",
-    "clear": "Löschen",
-    "errors": {
-      "needBothTypes": "Der Ordner muss mindestens eine PDF- und eine JSON-Datei enthalten.",
-      "unmatched": "Einige Dateien sind nicht zugeordnet: {files}. Nur zugeordnete Paare werden für die Auswertung verwendet."
-    }
-  },
-  "pdfHighlighter": {
-    "drawing": {
-      "start": "Zeichnen starten",
-      "exit": "Zeichnen beenden",
-      "rectangle": "Rechteck",
-      "polygon": "Polygon",
-      "points": "Punkte:",
-      "labelPlaceholder": "Bezeichnung",
-      "drawingActive": "Zeichenmodus aktiv – Klicken und ziehen zum Markieren",
-      "viewHighlights": "Markierungen anzeigen ({count})",
-      "noHighlights": "Noch keine Markierungen erstellt",
-      "viewDetails": "Details anzeigen",
-      "remove": "Entfernen",
-      "close": "Schließen",
-      "highlights": "Markierungen ({count})",
-      "add": "Hinzufügen"
-    }
-  }
+	"errors": {
+		"generic": {
+			"title": "Etwas ist schiefgelaufen",
+			"description": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es erneut oder kehren Sie zur Startseite zurück.",
+			"retry": "Erneut versuchen",
+			"goHome": "Zur Startseite"
+		}
+	},
+	"metadata": {
+		"description": "Ein minimaler Workshop-Starter für eine Rechnungserfassungs-App mit FastAPI-Backend und Next.js-Frontend."
+	},
+	"common": {
+		"clientName": "Workshop",
+		"projectName": "Invoice Intake",
+		"appName": "Invoice Intake - Workshop",
+		"companyName": "Workshop",
+		"companyUrlLabel": "",
+		"externalLinkSuffix": "(öffnet in neuem Tab)"
+	},
+	"auth": {
+		"loginButton": {
+			"default": "Mit Microsoft anmelden",
+			"generic": "Anmelden"
+		},
+		"userMenu": {
+			"adminPanel": "Admin-Bereich",
+			"logout": "Abmelden"
+		},
+		"sessionExpired": "Ihre Sitzung ist abgelaufen. Sie werden zur Anmeldeseite weitergeleitet …"
+	},
+	"controls": {
+		"languageSelector": {
+			"trigger": "Sprache",
+			"ariaLabel": "Sprache wechseln",
+			"locales": {
+				"en": "Englisch",
+				"de": "Deutsch"
+			}
+		},
+		"themeToggle": {
+			"ariaLabel": "Design umschalten"
+		}
+	},
+	"notifications": {
+		"title": "Benachrichtigungen",
+		"description": "Installieren Sie die PWA und erhalten Sie Updates direkt auf diesem Gerät.",
+		"empty": "Noch keine Benachrichtigungen",
+		"actions": {
+			"open": "Benachrichtigungen",
+			"close": "Schließen",
+			"enable": "Push aktivieren",
+			"disable": "Push deaktivieren",
+			"test": "Test-Benachrichtigung senden",
+			"working": "Wird ausgeführt…",
+			"markAllRead": "Alle als gelesen markieren"
+		},
+		"status": {
+			"checking": "Unterstützung wird geprüft…",
+			"disabled": "Deaktiviert",
+			"enabled": "Aktiviert",
+			"denied": "Blockiert",
+			"deniedDetails": "Benachrichtigungen sind im Browser blockiert. Bitte erlauben Sie sie, um Push zu aktivieren.",
+			"unavailable": "Nicht unterstützt",
+			"unavailableDetails": "Dieser Browser unterstützt keine Service Worker oder Push-Nachrichten."
+		},
+		"toggle": {
+			"label": "Push-Benachrichtigungen",
+			"description": "Echtzeit-Benachrichtigungen auf diesem Gerät erhalten"
+		},
+		"form": {
+			"label": "Gerätename",
+			"placeholder": "z. B. MacBook Pro",
+			"help": "Hilft dabei, dieses Gerät später in der Verwaltung zu erkennen."
+		},
+		"errors": {
+			"generic": "Benachrichtigungseinstellungen konnten nicht aktualisiert werden. Bitte versuchen Sie es erneut."
+		},
+		"preview": {
+			"title": "Push aktiviert",
+			"body": "Sie erhalten jetzt Benachrichtigungen auf diesem Gerät."
+		}
+	},
+	"header": {
+		"logoAlt": "Startseite",
+		"navigation": {
+			"endpoints": "Endpunkte",
+			"extract": "Extrahieren",
+			"classify": "Klassifizieren",
+			"consumptions": "Verbrauch",
+			"componentsLibrary": "Komponentenbibliothek",
+			"mobileMenu": "Menü öffnen"
+		}
+	},
+	"footer": {
+		"poweredBy": "Erstellt mit FastAPI und Next.js"
+	},
+	"home": {
+		"hero": {
+			"subheading": "Eine produktionsreife Vorlage für Enterprise-Webanwendungen",
+			"loginCta": "Anmelden"
+		},
+		"authenticated": {
+			"welcome": {
+				"title": "Willkommen bei der Vorlage-App",
+				"subtitle": "Eine produktionsreife Grundlage für Enterprise-Webanwendungen mit FastAPI und Next.js"
+			},
+			"whatIsThis": {
+				"title": "Was ist diese Vorlage?",
+				"description": "Dies ist ein komplettes Starter-Kit für den Aufbau modularer, skalierbarer Webanwendungen. Klonen Sie dieses Repository, passen Sie die App-Identität an und beginnen Sie mit der Entwicklung Ihrer Features—die Infrastruktur ist bereits fertig."
+			},
+			"stack": {
+				"title": "Technologie-Stack",
+				"items": {
+					"backend": "FastAPI Backend — RESTful API mit automatischer OpenAPI-Dokumentation und modularer Architektur",
+					"frontend": "Next.js Frontend — React-basierte UI mit App Router, Server Components und auto-generiertem TypeScript SDK",
+					"auth": "Dev-Stub-Login — ein lokaler Test-Benutzer für den Workshop (kein Identity-Provider)",
+					"storage": "Mehrere Speicheroptionen — PostgreSQL für relationale Daten, CosmosDB für Dokumente, Azure Blob Storage für Dateien",
+					"ai": "KI-Integration — Eingebaute OpenAI-Endpunkte für Chat, Extraktion, Klassifikation und strukturierte Ausgaben",
+					"pwa": "Progressive Web App — Installierbar mit Push-Benachrichtigungen und Offline-Unterstützung"
+				}
+			},
+			"coreModules": {
+				"title": "Vorgefertigte Core-Module",
+				"description": "Diese Endpunkte sind sofort einsatzbereit—keine Programmierung erforderlich:",
+				"items": {
+					"postgresql": "PostgreSQL — CRUD-Operationen für relationale Daten",
+					"cosmosdb": "CosmosDB — Dokumentenspeicher mit Auto-Create für Datenbanken/Collections",
+					"blobStorage": "Blob Storage — Datei-Upload/Download mit SAS-Tokens",
+					"openai": "OpenAI — Chat, Extraktion, Klassifikation mit GPT-Modellen",
+					"pdf": "PDF — Konvertierung, Vorverarbeitung, OCR-Optimierung",
+					"audio": "Audio — Transkription und Synthese",
+					"search": "Suche — Semantische Suchoperationen"
+				},
+				"card": {
+					"postgresql": "CRUD für relationale Daten",
+					"cosmosdb": "Dokumentenspeicher",
+					"blobStorage": "Datei-Upload/Download",
+					"openai": "Chat, Extraktion, Klassifikation",
+					"pdf": "PDF-Verarbeitung & OCR",
+					"audio": "Transkription & Synthese"
+				}
+			},
+			"workflow": {
+				"title": "Entwicklungs-Workflow",
+				"description": "Folgen Sie dieser Pipeline, um neue Features zu erstellen:",
+				"steps": {
+					"docs": "Zuerst dokumentieren — Erstellen Sie Spezifikationen in docs/ mit UI-Mockups und API-Design",
+					"backend": "Backend erstellen — Erstellen Sie Custom-Module in backend/src/app/modules/custom/",
+					"generate": "SDK generieren — Führen Sie pnpm update-api-client aus, um typisierte Frontend-Funktionen zu erhalten",
+					"frontend": "Frontend erstellen — Verwenden Sie das generierte SDK, um Seiten gemäß Ihren Mockups zu erstellen",
+					"commit": "Testen & Committen — Führen Sie Pre-Commit-Hooks, Tests aus und aktualisieren Sie CHANGELOG.md"
+				},
+				"card": {
+					"step1": {
+						"title": "Dokumentieren",
+						"desc": "Spezifikationen in docs/ erstellen"
+					},
+					"step2": {
+						"title": "Backend",
+						"desc": "Custom-Module erstellen"
+					},
+					"step3": {
+						"title": "SDK generieren",
+						"desc": "pnpm update-api-client"
+					},
+					"step4": {
+						"title": "Frontend",
+						"desc": "Seiten mit SDK erstellen"
+					},
+					"step5": {
+						"title": "Ausliefern",
+						"desc": "Testen & Committen"
+					}
+				}
+			},
+			"codexCommands": {
+				"title": "Codex CLI-Befehle",
+				"description": "Nutzen Sie diese Slash-Befehle, um die Entwicklung zu beschleunigen:",
+				"items": {
+					"buildDocs": "/prompts:build-docs — Projektdokumentation aus Anforderungsdokumenten generieren",
+					"buildApp": "/prompts:build-app FEATURE=\"name\" — Ein komplettes Feature gemäß Pipeline erstellen"
+				},
+				"card": {
+					"buildDocsDesc": "Projektdokumentation aus Anforderungsdokumenten generieren",
+					"buildAppDesc": "Ein komplettes Feature gemäß Entwicklungspipeline erstellen"
+				}
+			},
+			"getStarted": {
+				"title": "Erste Schritte",
+				"description": "Erkunden Sie die Funktionen der Vorlage:",
+				"items": {
+					"docs": "📖 Lesen Sie die <docsLink>OpenAPI-Dokumentation</docsLink>, um alle verfügbaren Endpunkte zu sehen",
+					"extract": "🧪 Probieren Sie die <extractLink>Extrahieren</extractLink>-Seite, um KI-gestützte Dokumentenextraktion zu testen",
+					"classify": "🏷️ Probieren Sie die <classifyLink>Klassifizieren</classifyLink>-Seite, um KI-gestützte Klassifikation zu testen",
+					"components": "🧭 Durchsuchen Sie die <componentsLink>Komponentenbibliothek</componentsLink> für produktionsreife UI-Bausteine",
+					"consumptions": "📊 Prüfen Sie die <consumptionsLink>Verbrauch</consumptionsLink>-Seite, um die API-Nutzung zu überwachen"
+				}
+			},
+			"customization": {
+				"title": "Anpassungsleitfaden",
+				"description": "Beim Erstellen Ihrer App aus dieser Vorlage:",
+				"keep": {
+					"title": "Unverändert lassen",
+					"items": "Authentifizierungssystem, Core-Module, Middleware, API-Proxy, i18n-Infrastruktur"
+				},
+				"extend": {
+					"title": "Erweitern",
+					"items": "Navigation, Übersetzungen, App-Identität, Einstellungen"
+				},
+				"replace": {
+					"title": "Ersetzen",
+					"items": "Diese Startseite, Feature-Seiten, Custom-Backend-Module"
+				}
+			}
+		}
+	},
+	"healthStatus": {
+		"connected": "Aktuell verbunden mit <url>{address}</url>.",
+		"checking": "Status wird geprüft...",
+		"live": "Status: aktiv",
+		"down": "Status: ausgefallen"
+	},
+	"extract": {
+		"title": "Extrahieren-Endpunkt",
+		"cards": {
+			"input": {
+				"title": "Eingabe",
+				"description": "PDF-Datei und Extraktionseinstellungen",
+				"fields": {
+					"pdfFile": {
+						"label": "PDF-Datei",
+						"description": "Zu klassifizierender Inhalt. Kann Text, Audio oder eine als Base64 codierte PDF-Datei sein."
+					}
+				}
+			},
+			"output": {
+				"title": "Ausgabe",
+				"description": "Schema für das Ergebnis der Extraktion. Sollte dem OpenAI-Schemaformat entsprechen.",
+				"descriptionWithLink": "Schema für das Extraktionsergebnis. Folgen Sie dem <link>OpenAI Structured Outputs Schema</link>.",
+				"tabs": {
+					"schema": "Schema",
+					"result": "Ergebnis"
+				},
+				"sections": {
+					"extraction": "Extraktion",
+					"metadata": "Metadaten"
+				},
+				"empty": "Führen Sie eine Extraktion aus, um das Ergebnis zu sehen.",
+				"loading": "Extraktion läuft..."
+			}
+		},
+		"buttons": {
+			"run": "Extraktion starten"
+		},
+		"errors": {
+			"missingPdf": "Bitte laden Sie eine PDF-Datei hoch.",
+			"invalidSchema": "Das Ausgabeschema ist kein gültiges JSON.",
+			"requestFailed": "Anfrage fehlgeschlagen",
+			"unexpected": "Unerwarteter Fehler"
+		}
+	},
+	"classify": {
+		"title": "Klassifizieren-Endpunkt",
+		"cards": {
+			"input": {
+				"title": "Eingabe",
+				"description": "Payload für verschiedene Inhaltstypen, die vorverarbeitet und an die OpenAI-API gesendet werden.",
+				"fields": {
+					"contentType": {
+						"label": "Inhaltstyp",
+						"description": "Art des zu klassifizierenden Inhalts.",
+						"options": {
+							"pdf": "PDF",
+							"audio": "Audio",
+							"text": "Text"
+						}
+					},
+					"pdfFile": {
+						"label": "PDF-Datei",
+						"description": "Zu klassifizierender Inhalt. Kann Text, Audio oder eine als Base64 codierte PDF-Datei sein."
+					},
+					"audioFile": {
+						"label": "Audiodatei",
+						"description": "Zu klassifizierender Inhalt. Kann Text, Audio oder eine als Base64 codierte PDF-Datei sein.",
+						"remove": "Entfernen"
+					},
+					"textContent": {
+						"label": "Textinhalt",
+						"description": "Zu klassifizierender Inhalt. Kann Text, Audio oder eine als Base64 codierte PDF-Datei sein.",
+						"placeholder": "Text zum Klassifizieren eingeben"
+					},
+					"preprocessing": {
+						"label": "Vorverarbeitung",
+						"description": "Vorverarbeitungskonfiguration für den Inhalt. Für Text None verwenden.",
+						"show": "Einstellungen anzeigen",
+						"hide": "Einstellungen ausblenden"
+					},
+					"audio": {
+						"targetFormat": {
+							"label": "Zielformat",
+							"description": "Gewünschtes Ausgabeformat. Derzeit wird nur \"mp3\" unterstützt.",
+							"value": "mp3"
+						},
+						"bitrate": {
+							"label": "Audio-Bitrate",
+							"description": "Ausgabe-Bitrate in Kilobit pro Sekunde (kbps)."
+						},
+						"sampleRate": {
+							"label": "Abtastrate",
+							"description": "Ausgabe-Abtastrate in Hertz."
+						},
+						"channels": {
+							"label": "Kanäle",
+							"description": "Anzahl der Kanäle: 1=Mono, 2=Stereo.",
+							"options": {
+								"mono": "Mono",
+								"stereo": "Stereo"
+							}
+						},
+						"window": {
+							"label": "Fensterkonfiguration",
+							"description": "Fensterkonfiguration, die nach der Vorverarbeitung angewendet wird.",
+							"enable": "Aktivieren",
+							"maxMinutes": {
+								"label": "Maximale Minuten",
+								"description": "Maximale Dauer pro Fenster (in Minuten)."
+							},
+							"maxSize": {
+								"label": "Maximale Größe (MB)",
+								"description": "Maximale Dateigröße pro Fenster (in Megabyte)."
+							}
+						}
+					}
+				}
+			},
+			"output": {
+				"title": "Ausgabe",
+				"description": "Liste möglicher Klassen, in die der Inhalt klassifiziert werden soll",
+				"tabs": {
+					"classes": "Klassen",
+					"result": "Ergebnis"
+				},
+				"classes": {
+					"itemTitle": "Klasse {index}",
+					"remove": "Entfernen",
+					"nameLabel": "Name",
+					"nameDescription": "Name der zu klassifizierenden Klasse",
+					"namePlaceholder": "Rechnung",
+					"descriptionLabel": "Beschreibung",
+					"descriptionDescription": "Beschreibung der zu klassifizierenden Klasse",
+					"descriptionPlaceholder": "Ein Dokument, das als Rechnung für Waren oder Dienstleistungen dient.",
+					"add": "Klasse hinzufügen",
+					"defaults": {
+						"invoice": {
+							"name": "Rechnung",
+							"description": "Ein Dokument, das als Rechnung für Waren oder Dienstleistungen dient."
+						},
+						"receipt": {
+							"name": "Beleg",
+							"description": "Ein Dokument, das als Nachweis einer Transaktion dient."
+						}
+					}
+				},
+				"result": {
+					"classification": "Klassifikation",
+					"metadata": "Metadaten",
+					"empty": "Führen Sie eine Klassifikation aus, um das Ergebnis zu sehen."
+				},
+				"loading": "Klassifikation läuft..."
+			}
+		},
+		"errors": {
+			"missingPdf": "Bitte laden Sie eine PDF-Datei hoch.",
+			"missingAudio": "Bitte laden Sie eine Audiodatei hoch.",
+			"missingText": "Bitte geben Sie Text ein.",
+			"missingClass": "Bitte fügen Sie mindestens eine Klasse mit Name und Beschreibung hinzu.",
+			"requestFailed": "Anfrage fehlgeschlagen",
+			"unexpected": "Unerwarteter Fehler"
+		},
+		"buttons": {
+			"run": "Klassifikation starten"
+		}
+	},
+	"consumptions": {
+		"title": "Verbrauch",
+		"description": "Analysieren Sie aktuelle Nutzung, aggregierte Summen und die teuersten Pfade.",
+		"loading": "Verbrauchsdaten werden geladen...",
+		"emptyState": "Verbrauchsmetriken erscheinen, sobald das Backend Nutzung meldet.",
+		"errors": {
+			"load": "Verbrauchsdaten konnten nicht geladen werden.",
+			"aggregatedLoad": "Aggregierte Verbrauchsdaten konnten nicht geladen werden.",
+			"limitsLoad": "Verbrauchslimits konnten nicht geladen werden.",
+			"heading": "Verbrauchsdaten konnten nicht geladen werden.",
+			"aggregatedHeading": "Aggregierte Daten nicht verfügbar.",
+			"aggregatedNone": "Für diesen Zeitraum liegen keine aggregierten Verbrauchsdaten vor.",
+			"recentNone": "Keine aktuellen Verbrauchseinträge verfügbar."
+		},
+		"limits": {
+			"title": "Aktive Limits",
+			"description": "Derzeit geltende Verbrauchslimits.",
+			"none": "Keine Verbrauchslimits konfiguriert.",
+			"global": "Global",
+			"tokens": "Tokens",
+			"configureLink": "Limits in Einstellungen konfigurieren"
+		},
+		"buttons": {
+			"retry": "Erneut versuchen"
+		},
+		"period": {
+			"selectorLabel": "Zeitraum",
+			"labels": {
+				"minute": "Letzte Minute",
+				"daily": "Heute",
+				"monthly": "Diesen Monat"
+			},
+			"descriptions": {
+				"minute": "Aggregierte Nutzung der letzten Minute, gruppiert nach Pfad.",
+				"daily": "Aggregierte Nutzung des aktuellen Tages, gruppiert nach Pfad.",
+				"monthly": "Aggregierte Nutzung des aktuellen Monats, gruppiert nach Pfad."
+			}
+		},
+		"metrics": {
+			"selectorLabel": "Metrik",
+			"options": {
+				"cost": "Kosten (USD)",
+				"tokens": "Tokens"
+			}
+		},
+		"totals": {
+			"cost": {
+				"title": "Gesamtkosten ({period})",
+				"description": "Aufsummiert aus der aggregierten Nutzung für den ausgewählten Zeitraum.",
+				"note": "Bei neueren Modellen sind Kosten möglicherweise nicht verfügbar – Tokens sind die verlässlichste Referenz."
+			},
+			"tokens": {
+				"title": "Gesamte Tokens ({period})",
+				"description": "Aufsummiert aus der aggregierten Nutzung für den ausgewählten Zeitraum."
+			}
+		},
+		"topPaths": {
+			"titleTokens": "Top-Pfade nach Tokens",
+			"titleCost": "Top-Pfade nach Kosten",
+			"refreshing": "Aggregierte Daten werden aktualisiert..."
+		},
+		"recent": {
+			"title": "Aktuelle Verbrauchsdaten",
+			"description": "Die letzten {count} Einträge. Das Limit kann in der Anfrage angepasst werden.",
+			"table": {
+				"path": "Pfad",
+				"tokens": "Tokens",
+				"cost": "Kosten (USD)",
+				"timestamp": "Zeitstempel"
+			}
+		}
+	},
+	"forms": {
+		"pdfPreprocessing": {
+			"title": "PDF-Verarbeitungseinstellungen",
+			"description": "Vorkonfiguration für den Inhalt. Für Textinhalte None verwenden.",
+			"fields": {
+				"dpi": {
+					"label": "DPI",
+					"description": "DPI (dots per inch) für die Umwandlung von PDF-Seiten in Bilder."
+				},
+				"contrast": {
+					"label": "Kontrastfaktor",
+					"description": "> 1.0 erhöht den Kontrast, < 1.0 verringert ihn."
+				},
+				"grayscale": {
+					"label": "Graustufen",
+					"description": "Ob die PDF-Seiten in Graustufen umgewandelt werden sollen.",
+					"options": {
+						"yes": "Ja",
+						"no": "Nein"
+					}
+				},
+				"ocrEnhancement": {
+					"label": "OCR-Optimierung",
+					"description": "Art der OCR-Optimierung. 'none' deaktiviert sie.",
+					"options": {
+						"all": "Alle",
+						"text": "Text",
+						"tables": "Tabellen",
+						"keyPairs": "Schlüssel-Wert-Paare",
+						"ocrOnly": "Nur OCR",
+						"none": "Keine"
+					}
+				},
+				"window": {
+					"label": "Fensterkonfiguration",
+					"description": "Konfiguration für die Fensterverarbeitung des PDFs. Ohne Angaben wird das PDF in einem Durchlauf verarbeitet.",
+					"enable": "Aktivieren"
+				},
+				"windowSize": {
+					"label": "Fenstergröße",
+					"description": "Anzahl der Seiten pro Fenster."
+				},
+				"windowOverlap": {
+					"label": "Fensterüberlappung",
+					"description": "Anzahl der überlappenden Seiten zwischen aufeinanderfolgenden Fenstern."
+				}
+			}
+		},
+		"extractSettings": {
+			"fields": {
+				"model": {
+					"label": "Modell",
+					"description": "Modellname für die OpenAI-Abfrage. Sollte der ID des Modells in Azure OpenAI entsprechen.",
+					"loading": "Modelle werden geladen...",
+					"noModels": "Keine Modelle verfügbar"
+				},
+				"strict": {
+					"label": "Strikt",
+					"description": "Ob das Ausgabeschema strikt validiert werden soll.",
+					"options": {
+						"enabled": "Aktiviert",
+						"disabled": "Deaktiviert"
+					}
+				}
+			}
+		},
+		"classifySettings": {
+			"fields": {
+				"model": {
+					"label": "Modell",
+					"description": "Modellname für die OpenAI-Abfrage. Sollte der ID des Modells in Azure OpenAI entsprechen.",
+					"loading": "Modelle werden geladen...",
+					"noModels": "Keine Modelle verfügbar"
+				}
+			}
+		}
+	},
+	"components": {
+		"pdfUpload": {
+			"errors": {
+				"invalidFile": "Bitte laden Sie eine gültige PDF-Datei hoch"
+			},
+			"dropzone": {
+				"active": "PDF hier ablegen...",
+				"title": "PDF-Datei hierher ziehen und ablegen",
+				"subtitle": "oder klicken, um eine Datei auszuwählen",
+				"button": "Dateien durchsuchen"
+			},
+			"preview": {
+				"title": "PDF-Vorschau",
+				"loading": "Vorschau wird erstellt...",
+				"remove": "Datei entfernen"
+			}
+		}
+	},
+	"roles": {
+		"badges": {
+			"admin": "Admin",
+			"dev": "Entwickler"
+		},
+		"promotedModal": {
+			"title": "Sie sind jetzt Administrator",
+			"description": "Als erster Benutzer wurde Ihnen automatisch die Admin-Rolle zugewiesen.",
+			"permissions": "Sie können jetzt auf die Einstellungsseite zugreifen, um Verbrauchslimits zu verwalten und weitere Administratoren hinzuzufügen.",
+			"confirm": "Verstanden"
+		},
+		"devPromotedModal": {
+			"title": "Entwicklerzugang gewährt",
+			"description": "Sie arbeiten in einer Entwicklungsumgebung und Ihnen wurde automatisch die Entwickler-Rolle zugewiesen.",
+			"permissions": "Sie haben vollen Zugriff auf alle Funktionen einschließlich Einstellungen, Verbrauch und Admin-Funktionen. Diese Rolle wird nur in lokalen und Testumgebungen vergeben.",
+			"confirm": "Verstanden"
+		}
+	},
+	"sidebar": {
+		"toggleMenu": "Menü umschalten",
+		"expand": "Seitenleiste erweitern",
+		"collapse": "Seitenleiste einklappen",
+		"groups": {
+			"features": "Funktionen",
+			"evaluate": "Auswerten",
+			"admin": "Admin"
+		},
+		"navigation": {
+			"home": "Startseite",
+			"extract": "Extrahieren",
+			"classify": "Klassifizieren",
+			"evaluate": "Auswerten",
+			"evaluateExtract": "Extraktionsexperiment",
+			"evaluateClassify": "Klassifizierungsexperiment",
+			"evaluateHistory": "Verlauf",
+			"consumptions": "Verbrauch",
+			"components": "Komponenten",
+			"settings": "Einstellungen",
+			"info": "Info"
+		}
+	},
+	"breadcrumb": {
+		"ariaLabel": "Breadcrumb-Navigation",
+		"home": "Startseite",
+		"extract": "Extrahieren",
+		"classify": "Klassifizieren",
+		"consumptions": "Verbrauch",
+		"components": "Komponenten",
+		"settings": "Einstellungen",
+		"evaluate": "Auswerten",
+		"history": "Verlauf",
+		"info": "Info"
+	},
+	"settings": {
+		"title": "Einstellungen",
+		"description": "Administratoren verwalten und Anwendungseinstellungen konfigurieren.",
+		"loading": "Wird geladen...",
+		"admins": {
+			"title": "Administratoren",
+			"description": "Benutzer mit Administratorzugang zu dieser Anwendung verwalten.",
+			"add": "Admin hinzufügen",
+			"none": "Keine Administratoren konfiguriert.",
+			"addDialog": {
+				"title": "Administrator hinzufügen",
+				"description": "Suchen Sie nach einem Benutzer, um Administratorzugang zu gewähren.",
+				"searchPlaceholder": "Nach Name oder E-Mail suchen...",
+				"searchHint": "Tippen Sie, um nach Benutzern zu suchen",
+				"noResults": "Keine Benutzer gefunden."
+			},
+			"actions": {
+				"add": "Hinzufügen",
+				"remove": "Admin-Zugang entfernen",
+				"cancel": "Abbrechen",
+				"retry": "Erneut versuchen"
+			},
+			"messages": {
+				"added": "Administrator erfolgreich hinzugefügt.",
+				"removed": "Administrator erfolgreich entfernt.",
+				"errorAdd": "Administrator konnte nicht hinzugefügt werden.",
+				"errorRemove": "Administrator konnte nicht entfernt werden.",
+				"errorLoad": "Administratoren konnten nicht geladen werden.",
+				"cannotRemoveLast": "Der letzte Administrator kann nicht entfernt werden."
+			}
+		},
+		"limits": {
+			"title": "Verbrauchslimits",
+			"description": "Kostenlimits festlegen, um die API-Nutzung zu kontrollieren. Limits können global oder pfadspezifisch sein.",
+			"add": "Limit hinzufügen",
+			"none": "Keine Verbrauchslimits konfiguriert. Fügen Sie ein Limit hinzu, um Kosten zu kontrollieren.",
+			"overrideWarning": "Dies überschreibt das bestehende {period}-Limit für {scope}.",
+			"period": {
+				"label": "Zeitraum",
+				"minute": "Pro Minute",
+				"daily": "Täglich",
+				"monthly": "Monatlich"
+			},
+			"path": {
+				"label": "Pfad",
+				"placeholder": "/core/openai/chat",
+				"global": "Global (alle Pfade)",
+				"help": "Leer lassen für ein globales Limit, oder einen Pfad für pfadspezifische Limits angeben."
+			},
+			"maxCost": {
+				"label": "Max. Kosten (USD)",
+				"placeholder": "100.00",
+				"help": "Leer lassen für kein Kostenlimit."
+			},
+			"maxTokens": {
+				"label": "Max. Tokens",
+				"placeholder": "500000",
+				"help": "Leer lassen für kein Token-Limit."
+			},
+			"actions": {
+				"save": "Speichern",
+				"update": "Aktualisieren",
+				"saving": "Wird gespeichert...",
+				"delete": "Löschen",
+				"deleting": "Wird gelöscht...",
+				"cancel": "Abbrechen"
+			},
+			"messages": {
+				"saved": "Limit erfolgreich gespeichert.",
+				"deleted": "Limit erfolgreich gelöscht.",
+				"errorSave": "Limit konnte nicht gespeichert werden.",
+				"errorDelete": "Limit konnte nicht gelöscht werden.",
+				"errorLoad": "Limits konnten nicht geladen werden."
+			},
+			"table": {
+				"period": "Zeitraum",
+				"path": "Pfad",
+				"maxCost": "Max. Kosten",
+				"maxTokens": "Max. Tokens",
+				"actions": "Aktionen",
+				"global": "Global"
+			}
+		},
+		"broadcast": {
+			"title": "Broadcast-Benachrichtigung",
+			"description": "Eine Push-Benachrichtigung an alle Benutzer mit registrierten Geräten senden.",
+			"titleLabel": "Titel",
+			"titlePlaceholder": "Benachrichtigungstitel...",
+			"bodyLabel": "Beschreibung",
+			"bodyPlaceholder": "Optionaler Benachrichtigungstext...",
+			"bodyHelp": "Diese Benachrichtigung wird an alle Benutzer mit registrierten Geräten gesendet.",
+			"send": "Benachrichtigung senden",
+			"sending": "Wird gesendet...",
+			"messages": {
+				"success": "Benachrichtigung erfolgreich an {count} Gerät(e) gesendet.",
+				"error": "Benachrichtigung konnte nicht gesendet werden.",
+				"emptyTitle": "Bitte geben Sie einen Titel ein."
+			}
+		}
+	},
+	"evaluate": {
+		"extract": {
+			"title": "Extraktionsexperiment",
+			"steps": {
+				"folder": {
+					"title": "1) Ordner auswählen oder hochladen",
+					"description": "Jedes PDF muss eine passende JSON-Ground-Truth-Datei mit demselben Namen haben. Wählen Sie einen vorhandenen Ordner oder laden Sie neue Dateien hoch."
+				},
+				"settings": {
+					"title": "2) Extraktionseinstellungen",
+					"description": "Modell- und PDF-Verarbeitungsoptionen konfigurieren."
+				},
+				"schema": {
+					"title": "Ausgabeschema",
+					"description": "JSON-Schema für die Extraktion. Muss mit der Ground-Truth-Struktur übereinstimmen."
+				},
+				"run": {
+					"title": "3) Auswertung starten",
+					"description": "Experimentnamen festlegen und Auswertung starten."
+				}
+			},
+			"experimentName": "Experimentname",
+			"experimentNamePlaceholder": "Experimentnamen eingeben…",
+			"pdfFilesCount": "{count} PDF-Datei(en) im ausgewählten Ordner",
+			"runButton": "Auswertung starten",
+			"processing": "Verarbeitung…",
+			"phases": {
+				"extract": "PDFs extrahieren",
+				"summary": "Ergebnisse auswerten",
+				"aiSummary": "KI-Zusammenfassung erstellen",
+				"store": "Experiment speichern"
+			},
+			"workflowProgress": "Workflow-Fortschritt",
+			"runId": "Lauf-ID: {id}",
+			"workflowStarted": "Workflow gestartet. Verarbeitung…",
+			"results": {
+				"title": "Auswertungsergebnisse",
+				"description": "Zusammenfassung der Extraktionsgenauigkeit über alle Elemente.",
+				"totalItems": "Gesamtanzahl",
+				"successful": "Erfolgreich",
+				"failed": "Fehlgeschlagen",
+				"avgPrecision": "Ø Präzision",
+				"avgRecall": "Ø Recall",
+				"avgF1": "Ø F1",
+				"perItem": "Ergebnisse pro Element",
+				"extractionFailed": "(Extraktion fehlgeschlagen)",
+				"differences": "{count} Abweichungen",
+				"noDiscrepancies": "Keine Abweichungen – perfekte Übereinstimmung!",
+				"complete": "Auswertung abgeschlossen: {successful}/{total} erfolgreich"
+			},
+			"table": {
+				"field": "Feld",
+				"predicted": "Vorhersage",
+				"groundTruth": "Ground Truth",
+				"similarity": "Ähnlichkeit",
+				"empty": "(leer)"
+			},
+			"ai": {
+				"title": "KI-Analyse & Empfehlungen",
+				"description": "KI-generierte Fehleranalyse und Vorschläge zur Schemaverbesserung.",
+				"errorAnalysis": "Fehleranalyse",
+				"recommendations": "Allgemeine Empfehlungen",
+				"suggestedSchema": "Vorgeschlagenes Schema",
+				"suggestedSchemaHint": "Vollständig verbessertes Schema basierend auf der Fehleranalyse. Kopieren und für die nächste Auswertung verwenden."
+			},
+			"errors": {
+				"title": "Auswertungsfehler",
+				"noFolder": "Bitte wählen Sie zuerst einen Ordner mit Dateien aus",
+				"noPdfs": "Keine PDF-Dateien im ausgewählten Ordner gefunden",
+				"invalidSchema": "Das Ausgabeschema ist kein gültiges JSON.",
+				"workflowFailed": "Workflow fehlgeschlagen",
+				"startFailed": "Workflow konnte nicht gestartet werden"
+			}
+		},
+		"classify": {
+			"title": "Klassifizierungsexperiment",
+			"steps": {
+				"folder": {
+					"title": "1) Ordner auswählen oder hochladen",
+					"description": "Jedes PDF muss eine passende JSON-Ground-Truth-Datei mit demselben Namen haben."
+				},
+				"settings": {
+					"title": "2) Klassifizierungseinstellungen",
+					"description": "Modell konfigurieren und Klassifizierungsklassen definieren."
+				},
+				"run": {
+					"title": "3) Klassifizierung starten",
+					"description": "Experimentnamen festlegen und Auswertung starten."
+				}
+			},
+			"classes": "Klassen",
+			"addClass": "Klasse hinzufügen",
+			"removeClass": "Entfernen",
+			"classNamePlaceholder": "Rechnung",
+			"classDescriptionPlaceholder": "Ein Dokument, das als Rechnung für Waren oder Dienstleistungen dient.",
+			"experimentName": "Experimentname",
+			"experimentNamePlaceholder": "Experimentnamen eingeben…",
+			"pdfFilesCount": "{count} PDF-Datei(en) im ausgewählten Ordner",
+			"runButton": "Klassifizierung starten",
+			"processing": "Verarbeitung…",
+			"phases": {
+				"classify": "PDFs klassifizieren",
+				"summary": "Ergebnisse auswerten",
+				"aiSummary": "KI-Zusammenfassung erstellen",
+				"store": "Experiment speichern"
+			},
+			"workflowProgress": "Workflow-Fortschritt",
+			"runId": "Lauf-ID: {id}",
+			"workflowStarted": "Workflow gestartet. Verarbeitung…",
+			"results": {
+				"title": "Klassifizierungsergebnisse",
+				"description": "Zusammenfassung der Klassifizierungsgenauigkeit über alle Elemente.",
+				"totalItems": "Gesamtanzahl",
+				"successful": "Erfolgreich",
+				"failed": "Fehlgeschlagen",
+				"accuracy": "Genauigkeit",
+				"perItem": "Ergebnisse pro Element",
+				"classificationFailed": "(Klassifizierung fehlgeschlagen)",
+				"complete": "Klassifizierung abgeschlossen: {successful}/{total} erfolgreich"
+			},
+			"ai": {
+				"title": "KI-Analyse & Empfehlungen",
+				"description": "KI-generierte Analyse und Vorschläge zur Klassenverbesserung.",
+				"errorAnalysis": "Fehleranalyse",
+				"recommendations": "Allgemeine Empfehlungen",
+				"suggestedClasses": "Vorgeschlagene Klassen",
+				"suggestedClassesHint": "Verbesserte Klassendefinitionen basierend auf der Fehleranalyse."
+			},
+			"errors": {
+				"title": "Auswertungsfehler",
+				"noFolder": "Bitte wählen Sie zuerst einen Ordner mit Dateien aus",
+				"noPdfs": "Keine PDF-Dateien im ausgewählten Ordner gefunden",
+				"workflowFailed": "Workflow fehlgeschlagen",
+				"startFailed": "Workflow konnte nicht gestartet werden"
+			}
+		},
+		"history": {
+			"title": "Experimentverlauf",
+			"refresh": "Aktualisieren",
+			"loading": "Wird geladen…",
+			"empty": "Keine Experimente gefunden. Starten Sie eine Auswertung, um Ergebnisse hier zu sehen.",
+			"backToHistory": "Zurück zum Verlauf",
+			"tabs": {
+				"overview": "Übersicht",
+				"config": "Konfiguration",
+				"aiSummary": "KI-Zusammenfassung",
+				"items": "Elementergebnisse"
+			},
+			"metadata": {
+				"created": "Erstellt",
+				"completed": "Abgeschlossen",
+				"dataset": "Datensatz",
+				"files": "Dateien"
+			},
+			"metrics": {
+				"title": "Auswertungsmetriken",
+				"totalItems": "Gesamtanzahl",
+				"f1Score": "F1-Wert",
+				"accuracy": "Genauigkeit",
+				"precision": "Präzision",
+				"recall": "Recall"
+			},
+			"error": "Fehler",
+			"processedFiles": "Verarbeitete Dateien",
+			"extractionConfig": "Extraktionskonfiguration",
+			"errorAnalysis": "Fehleranalyse",
+			"recommendations": "Empfehlungen",
+			"suggestedSchema": "Vorgeschlagenes Schema",
+			"noAiSummary": "Keine KI-Zusammenfassung für dieses Experiment verfügbar.",
+			"noItemResults": "Keine Elementergebnisse verfügbar.",
+			"filesCount": "{count} Dateien",
+			"itemsCount": "{count} Elemente"
+		}
+	},
+	"info": {
+		"subtitle": "Erfahren Sie, was diese Anwendung leisten kann",
+		"overview": "Diese Anwendung bietet KI-gestützte Dokumentenverarbeitung. Laden Sie Dokumente hoch, extrahieren Sie strukturierte Daten, klassifizieren Sie Inhalte in Kategorien und messen Sie die Genauigkeit mit automatisierten Auswertungen. Nachfolgend finden Sie eine detaillierte Beschreibung jeder Funktion.",
+		"features": {
+			"extract": {
+				"title": "Dokumentenextraktion",
+				"description": "Laden Sie ein PDF-Dokument hoch und extrahieren Sie strukturierte Daten mithilfe von KI. Definieren Sie ein Ausgabeschema, das die gewünschten Felder beschreibt, und das System liefert die Daten in genau dieser Struktur.",
+				"flow": {
+					"upload": "PDF hochladen",
+					"aiProcess": "KI-Verarbeitung",
+					"structuredData": "Strukturierte Daten"
+				},
+				"capabilities": {
+					"upload": "PDF-Dateien hochladen und direkt im Browser anzeigen",
+					"schema": "Ein benutzerdefiniertes JSON-Schema definieren, um genau festzulegen, welche Felder extrahiert werden",
+					"preview": "Extraktionsergebnisse neben dem Originaldokument anzeigen",
+					"models": "Aus verfügbaren KI-Modellen wählen und Verarbeitungseinstellungen konfigurieren"
+				}
+			},
+			"classify": {
+				"title": "Dokumentenklassifizierung",
+				"description": "Klassifizieren Sie Dokumente, Audiodateien oder Text in selbst definierte Kategorien. Erstellen Sie eine Liste von Klassen mit Beschreibungen, und die KI bestimmt, zu welcher Klasse der Inhalt gehört.",
+				"flow": {
+					"input": "Dokumenteingabe",
+					"analyze": "KI-Analyse",
+					"categorize": "Kategorie-Ergebnis"
+				},
+				"capabilities": {
+					"multiFormat": "Unterstützt PDF-Dokumente, Audiodateien und Klartext als Eingabe",
+					"customClasses": "Eigene Klassifizierungskategorien mit Namen und Beschreibungen definieren",
+					"confidence": "Klassifizierungsergebnis zusammen mit Metadaten und Konfidenzdetails anzeigen",
+					"preprocessing": "PDF- und Audio-Vorverarbeitungseinstellungen für optimale Ergebnisse konfigurieren"
+				}
+			},
+			"evaluate": {
+				"title": "Auswertung & Qualitätssicherung",
+				"description": "Messen Sie die Genauigkeit von KI-Extraktion und -Klassifizierung durch Batch-Auswertungen gegen Ground-Truth-Daten. Vergleichen Sie Ergebnisse über Experimente hinweg, um Qualitätsverbesserungen im Zeitverlauf zu verfolgen.",
+				"flow": {
+					"groundTruth": "Ground Truth",
+					"batchRun": "Batch-KI-Lauf",
+					"metrics": "Metriken",
+					"improve": "Verbessern",
+					"track": "Verlauf verfolgen"
+				},
+				"capabilities": {
+					"extractEval": "Extraktionsauswertungen durchführen, die KI-Ausgaben mit Ground-Truth-JSON-Dateien vergleichen und Präzision, Recall und F1-Werte berechnen",
+					"classifyEval": "Klassifizierungsauswertungen durchführen, die Genauigkeit über mehrere Dokumente messen und Konfusionsmatrizen erstellen",
+					"history": "Vergangene Experimente durchsuchen, Metriken vergleichen und detaillierte Einzelergebnisse überprüfen",
+					"aiSummary": "KI-generierte Fehleranalysen und Empfehlungen zur Verbesserung von Extraktionsschemata oder Klassendefinitionen erhalten"
+				}
+			}
+		}
+	},
+	"notFound": {
+		"title": "Seite nicht gefunden",
+		"description": "Die gesuchte Seite existiert nicht.",
+		"goHome": "Zur Startseite"
+	},
+	"blobFolder": {
+		"selectFolder": "Ordner auswählen…",
+		"load": "Laden",
+		"refresh": "Aktualisieren",
+		"blobRoot": "Blob-Pfad: {path}",
+		"matchingPairs": "{count} passende(s) PDF/JSON-Paar(e)",
+		"unmatched": "({count} ohne Zuordnung)",
+		"uploadFiles": "Dateien hochladen",
+		"filesInFolder": "Dateien im Ordner",
+		"processingFiles": "Dateien werden verarbeitet…",
+		"loadingFiles": "Dateien werden geladen…",
+		"noFiles": "Noch keine Dateien. Laden Sie Dateien hoch, um diesen Ordner zu befüllen.",
+		"delete": "Löschen",
+		"errors": {
+			"selectOrEnter": "Wählen oder geben Sie einen Ordnernamen ein",
+			"loadFailed": "Dateien konnten nicht geladen werden"
+		},
+		"messages": {
+			"loaded": "Ordner {name} geladen",
+			"initialized": "Ordner {name} initialisiert",
+			"uploaded": "{count} Datei(en) hochgeladen",
+			"deleted": "{name} gelöscht",
+			"createdFolder": "Ordner erstellt: {name}"
+		}
+	},
+	"pdfDirectory": {
+		"selectFolder": "PDF- und JSON-Ordner auswählen",
+		"selectDifferent": "Anderen Ordner auswählen",
+		"replaceTip": "Wählen Sie einen anderen Ordner, um die aktuelle Auswahl zu ersetzen.",
+		"matchingTip": "Jedes PDF muss eine passende JSON-Datei mit demselben Namen haben",
+		"selectedFiles": "Ausgewählte Dateien",
+		"clear": "Löschen",
+		"errors": {
+			"needBothTypes": "Der Ordner muss mindestens eine PDF- und eine JSON-Datei enthalten.",
+			"unmatched": "Einige Dateien sind nicht zugeordnet: {files}. Nur zugeordnete Paare werden für die Auswertung verwendet."
+		}
+	},
+	"pdfHighlighter": {
+		"drawing": {
+			"start": "Zeichnen starten",
+			"exit": "Zeichnen beenden",
+			"rectangle": "Rechteck",
+			"polygon": "Polygon",
+			"points": "Punkte:",
+			"labelPlaceholder": "Bezeichnung",
+			"drawingActive": "Zeichenmodus aktiv – Klicken und ziehen zum Markieren",
+			"viewHighlights": "Markierungen anzeigen ({count})",
+			"noHighlights": "Noch keine Markierungen erstellt",
+			"viewDetails": "Details anzeigen",
+			"remove": "Entfernen",
+			"close": "Schließen",
+			"highlights": "Markierungen ({count})",
+			"add": "Hinzufügen"
+		}
+	},
+	"orderIntake": {
+		"title": "Auftragserfassung",
+		"subtitle": "Kunden-PDF hochladen, gegen den Katalog abgleichen und EDIFACT exportieren.",
+		"upload": {
+			"label": "Bestell-PDF hochladen",
+			"button": "PDF hochladen",
+			"uploading": "Wird verarbeitet…",
+			"hint": "In dieser Stufe werden Bauprofil-Bestellungen unterstützt.",
+			"error": "Upload fehlgeschlagen"
+		},
+		"list": {
+			"heading": "Bestellungen",
+			"empty": "Noch keine Bestellungen. Laden Sie ein PDF hoch.",
+			"ref": "Referenz",
+			"customer": "Kunde",
+			"status": "Status",
+			"lines": "Positionen",
+			"flags": "Hinweise",
+			"open": "Öffnen",
+			"clear": "Alles löschen",
+			"clearing": "Wird gelöscht…",
+			"clearConfirm": "ALLE Bestellungen und ihre Dateien (gelesene PDFs + generiertes EDIFACT) löschen? Kunden und Katalog bleiben erhalten.",
+			"cleared": "{orders} Bestellung(en) und {files} Datei(en) entfernt.",
+			"clearError": "Bestellungen konnten nicht gelöscht werden"
+		},
+		"status": {
+			"in_review": "In Prüfung",
+			"edifact_generated": "EDIFACT erstellt",
+			"draft": "Entwurf"
+		},
+		"detail": {
+			"readCode": "Gelesen",
+			"mismatchHint": "Der auf dem PDF gedruckte Code verweist auf einen anderen Katalogartikel als den aus den Spezifikationen aufgelösten. Vor der Freigabe prüfen.",
+			"back": "Zurück zu Bestellungen",
+			"pdfTitle": "Original-PDF",
+			"linesTitle": "Extrahierte & abgeglichene Positionen",
+			"pos": "Pos.",
+			"extracted": "Erkannter Code",
+			"resolved": "Interner Code",
+			"qty": "Menge",
+			"unit": "Einheit",
+			"delivery": "Liefertermin",
+			"confidence": "Konfidenz",
+			"ok": "OK",
+			"unmatched": "Kein Treffer",
+			"summary": "{matched} von {total} Positionen aufgelöst"
+		},
+		"flags": {
+			"unmatched_code": "Kein Katalogtreffer — zuweisen",
+			"weak_match": "Schwacher Treffer — prüfen",
+			"ambiguous_unit": "Mehrdeutige/fehlende Einheit",
+			"code_mismatch": "Gelesener Code ≠ aufgelöst",
+			"metadata_mismatch": "JSON ≠ sichtbarer Text"
+		},
+		"edifact": {
+			"generate": "EDIFACT erzeugen",
+			"generating": "Wird erzeugt…",
+			"blockedHint": "Alle Positionen müssen einen internen Code haben.",
+			"blocked": "Blockiert: Positionen {lines} ohne internen Code (MetallSoft lehnt die gesamte Bestellung ab).",
+			"title": "EDIFACT ORDERS D.96A",
+			"download": ".edi herunterladen",
+			"error": "EDIFACT konnte nicht erzeugt werden"
+		},
+		"customer": {
+			"label": "Kunde",
+			"select": "Kunde auswählen…",
+			"new": "+ Neuer Kunde",
+			"create": "Kunde anlegen",
+			"creating": "Wird angelegt…",
+			"cancel": "Abbrechen",
+			"code": "Code (Slug)",
+			"name": "Anzeigename",
+			"country": "Land",
+			"strategy": "Extraktionsstrategie",
+			"error": "Kunde konnte nicht angelegt werden",
+			"needCustomer": "Bitte vor dem Upload einen Kunden auswählen.",
+			"apiKey": "API-Schlüssel",
+			"apiKeyHint": "API-Schlüssel des Anbieters (z. B. OpenAI sk-...). Lokal gespeichert.",
+			"delete": "Löschen",
+			"deleteConfirm": "Kunde {code} löschen?",
+			"codeHint": "Nur Kleinbuchstaben, Ziffern, '-' oder '_' (z. B. acme-fr).",
+			"apiBaseUrl": "Anbieter-Basis-URL (optional, OpenAI-kompatibel)",
+			"apiModel": "Modell (optional)"
+		},
+		"strategy": {
+			"bauprofil_text": "Deterministisch (DIN-Tabelle)",
+			"ollama": "Lokales Modell (Ollama, kostenlos)",
+			"llm_api": "Externes LLM (API-Schlüssel)"
+		},
+		"tier": {
+			"label": "Treffer",
+			"exact": "Exakt",
+			"dimension": "Nach Maß",
+			"fuzzy": "Unscharf",
+			"manual": "Manuell",
+			"learned": "Gelernt",
+			"none": "—"
+		},
+		"assign": {
+			"placeholder": "AE-…",
+			"set": "Setzen",
+			"saving": "…",
+			"confirm": "Bestätigen",
+			"confirming": "…",
+			"confirmHint": "Den aufgelösten Code übernehmen und für diesen Kunden lernen (die nächste Bestellung mit demselben gelesenen Code löst sich von selbst auf)."
+		}
+	}
 }

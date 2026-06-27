@@ -32,6 +32,7 @@ dependencies = [
     "pydantic-settings>=2.14.0",
     "pydantic>=2.13.3",
     "pymongo>=4.17.0",
+    "pymupdf4llm>=0.0.17,<0.1.0",  # light: PyMuPDF only (no onnxruntime/ML layout extras)
     "pypandoc>=1.17",
     "pypdf>=6.10.2",
     "pywebpush>=2.3.0",

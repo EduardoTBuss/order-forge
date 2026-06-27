@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-"""
-Security Report Generator for OWASP Top 10 and SANS/CWE Top 25 Audit.
-
-This script aggregates findings from multiple security scanning tools and generates
-comprehensive reports categorized by OWASP Top 10 and SANS/CWE Top 25 vulnerabilities.
-"""
-
 import argparse
 import json
 import re

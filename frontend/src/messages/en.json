@@ -1,980 +1,1099 @@
 {
-  "errors": {
-    "generic": {
-      "title": "Something went wrong",
-      "description": "An unexpected error occurred. Please try again or return to the homepage.",
-      "retry": "Try again",
-      "goHome": "Go to homepage"
-    }
-  },
-  "metadata": {
-    "description": "A minimal workshop starter for building an invoice intake app with a FastAPI backend and a Next.js frontend."
-  },
-  "common": {
-    "clientName": "Workshop",
-    "projectName": "Invoice Intake",
-    "appName": "Invoice Intake - Workshop",
-    "companyName": "Workshop",
-    "companyUrlLabel": "",
-    "externalLinkSuffix": "(opens in new tab)"
-  },
-  "auth": {
-    "loginButton": {
-      "default": "Sign in with Microsoft",
-      "generic": "Sign in"
-    },
-    "userMenu": {
-      "adminPanel": "Admin Panel",
-      "logout": "Logout"
-    },
-    "sessionExpired": "Your session has ended. Redirecting you to the login page…"
-  },
-  "controls": {
-    "languageSelector": {
-      "trigger": "Language",
-      "ariaLabel": "Change language",
-      "locales": {
-        "en": "English",
-        "de": "Deutsch"
-      }
-    },
-    "themeToggle": {
-      "ariaLabel": "Toggle theme"
-    }
-  },
-  "notifications": {
-    "title": "Notifications",
-    "description": "Install the PWA shell and receive real-time alerts on this device.",
-    "empty": "No notifications yet",
-    "actions": {
-      "open": "Notifications",
-      "close": "Close",
-      "enable": "Enable push",
-      "disable": "Disable push",
-      "test": "Send test notification",
-      "working": "Working…",
-      "markAllRead": "Mark all read"
-    },
-    "status": {
-      "checking": "Checking support…",
-      "disabled": "Disabled",
-      "enabled": "Enabled",
-      "denied": "Permission denied",
-      "deniedDetails": "Notifications are blocked in your browser settings. Enable them to subscribe to push updates.",
-      "unavailable": "Unsupported",
-      "unavailableDetails": "This browser does not support service workers or push messaging."
-    },
-    "toggle": {
-      "label": "Push notifications",
-      "description": "Receive real-time alerts on this device"
-    },
-    "form": {
-      "label": "Device label",
-      "placeholder": "e.g. MacBook Pro",
-      "help": "Shown in admin tools so you can recognize this device later."
-    },
-    "errors": {
-      "generic": "Unable to update notification settings. Please try again."
-    },
-    "preview": {
-      "title": "Push ready",
-      "body": "You will now receive alerts on this device."
-    }
-  },
-  "header": {
-    "logoAlt": "Home",
-    "navigation": {
-      "endpoints": "Endpoints",
-      "extract": "Extract",
-      "classify": "Classify",
-      "consumptions": "Consumptions",
-      "componentsLibrary": "Components Library",
-      "mobileMenu": "Open menu"
-    }
-  },
-  "footer": {
-    "poweredBy": "Built with FastAPI and Next.js"
-  },
-  "home": {
-    "hero": {
-      "subheading": "A production-ready template for building enterprise web applications",
-      "loginCta": "Sign in"
-    },
-    "authenticated": {
-      "welcome": {
-        "title": "Welcome to the Template App",
-        "subtitle": "A production-ready foundation for building enterprise web applications with FastAPI and Next.js"
-      },
-      "whatIsThis": {
-        "title": "What is this template?",
-        "description": "This is a complete starter kit for building modular, scalable web applications. Clone this repository, customize the app identity, and start building your features—the infrastructure is already done."
-      },
-      "stack": {
-        "title": "Tech Stack",
-        "items": {
-          "backend": "FastAPI Backend — RESTful API with automatic OpenAPI documentation and modular architecture",
-          "frontend": "Next.js Frontend — React-based UI with App Router, server components, and auto-generated TypeScript SDK",
-          "auth": "Dev stub login — a fake local user for the workshop (no identity provider)",
-          "storage": "Multiple Storage Options — PostgreSQL for relational data, CosmosDB for documents, Azure Blob Storage for files",
-          "ai": "AI Integration — Built-in OpenAI endpoints for chat, extraction, classification, and structured outputs",
-          "pwa": "Progressive Web App — Installable with push notifications and offline support"
-        }
-      },
-      "coreModules": {
-        "title": "Pre-built Core Modules",
-        "description": "These endpoints are ready to use—no coding required:",
-        "items": {
-          "postgresql": "PostgreSQL — CRUD operations for relational data",
-          "cosmosdb": "CosmosDB — Document storage with auto-create databases/collections",
-          "blobStorage": "Blob Storage — File upload/download with SAS tokens",
-          "openai": "OpenAI — Chat, extract, classify with GPT models",
-          "pdf": "PDF — Conversion, preprocessing, OCR enhancement",
-          "audio": "Audio — Transcription and synthesis",
-          "search": "Search — Semantic search operations"
-        },
-        "card": {
-          "postgresql": "CRUD for relational data",
-          "cosmosdb": "Document storage",
-          "blobStorage": "File upload/download",
-          "openai": "Chat, extract, classify",
-          "pdf": "PDF processing & OCR",
-          "audio": "Transcription & synthesis"
-        }
-      },
-      "workflow": {
-        "title": "Development Workflow",
-        "description": "Follow this pipeline to build new features:",
-        "steps": {
-          "docs": "Document First — Create specs in docs/ with UI mockups and API design",
-          "backend": "Build Backend — Create custom modules in backend/src/app/modules/custom/",
-          "generate": "Generate SDK — Run pnpm update-api-client to get typed frontend functions",
-          "frontend": "Build Frontend — Use the generated SDK to build pages matching your mockups",
-          "commit": "Test & Commit — Run pre-commit hooks, tests, and update CHANGELOG.md"
-        },
-        "card": {
-          "step1": { "title": "Document", "desc": "Create specs in docs/" },
-          "step2": { "title": "Backend", "desc": "Build custom modules" },
-          "step3": {
-            "title": "Generate SDK",
-            "desc": "pnpm update-api-client"
-          },
-          "step4": { "title": "Frontend", "desc": "Build pages with SDK" },
-          "step5": { "title": "Ship", "desc": "Test & commit" }
-        }
-      },
-      "codexCommands": {
-        "title": "Codex CLI Commands",
-        "description": "Use these slash commands to accelerate development:",
-        "items": {
-          "buildDocs": "/prompts:build-docs — Generate project documentation from requirements documents",
-          "buildApp": "/prompts:build-app FEATURE=\"name\" — Build a complete feature following the pipeline"
-        },
-        "card": {
-          "buildDocsDesc": "Generate project documentation from requirements documents",
-          "buildAppDesc": "Build a complete feature following the development pipeline"
-        }
-      },
-      "getStarted": {
-        "title": "Get Started",
-        "description": "Explore the template capabilities:",
-        "items": {
-          "docs": "📖 Read the <docsLink>OpenAPI documentation</docsLink> to see all available endpoints",
-          "extract": "🧪 Try the <extractLink>Extract</extractLink> page to test AI-powered document extraction",
-          "classify": "🏷️ Try the <classifyLink>Classify</classifyLink> page to test AI-powered classification",
-          "components": "🧭 Browse the <componentsLink>Components Library</componentsLink> for production-ready UI primitives",
-          "consumptions": "📊 Check the <consumptionsLink>Consumptions</consumptionsLink> page to monitor API usage"
-        }
-      },
-      "customization": {
-        "title": "Customization Guide",
-        "description": "When building your app from this template:",
-        "keep": {
-          "title": "Keep as-is",
-          "items": "Authentication system, core modules, middleware, API proxy, i18n infrastructure"
-        },
-        "extend": {
-          "title": "Extend",
-          "items": "Navigation, translations, app identity, settings"
-        },
-        "replace": {
-          "title": "Replace",
-          "items": "This home page content, feature pages, custom backend modules"
-        }
-      }
-    }
-  },
-  "healthStatus": {
-    "connected": "Currently connected to <url>{address}</url>.",
-    "checking": "Checking status...",
-    "live": "status: live",
-    "down": "status: down"
-  },
-  "extract": {
-    "title": "Extract Endpoint",
-    "cards": {
-      "input": {
-        "title": "Input",
-        "description": "PDF file and extraction settings",
-        "fields": {
-          "pdfFile": {
-            "label": "PDF file",
-            "description": "Content to be classified. Can be a raw text, or an audio or a PDF file encoded in base64."
-          }
-        }
-      },
-      "output": {
-        "title": "Output",
-        "description": "Schema for the output of the extraction. Should follow the OpenAI schema format.",
-        "descriptionWithLink": "Schema for the extraction output. Follow the <link>OpenAI structured outputs schema</link>.",
-        "tabs": {
-          "schema": "Schema",
-          "result": "Result"
-        },
-        "sections": {
-          "extraction": "Extraction",
-          "metadata": "Metadata"
-        },
-        "empty": "Run an extraction to see the result.",
-        "loading": "Extracting..."
-      }
-    },
-    "buttons": {
-      "run": "Run Extraction"
-    },
-    "errors": {
-      "missingPdf": "Please upload a PDF file.",
-      "invalidSchema": "Output schema is not valid JSON.",
-      "requestFailed": "Request failed",
-      "unexpected": "Unexpected error"
-    }
-  },
-  "classify": {
-    "title": "Classify Endpoint",
-    "cards": {
-      "input": {
-        "title": "Input",
-        "description": "Payload for different content types to be preprocessed and sent to the OpenAI API.",
-        "fields": {
-          "contentType": {
-            "label": "Content type",
-            "description": "Type of the content to be classified.",
-            "options": {
-              "pdf": "PDF",
-              "audio": "Audio",
-              "text": "Text"
-            }
-          },
-          "pdfFile": {
-            "label": "PDF file",
-            "description": "Content to be classified. Can be a raw text, or an audio or a PDF file encoded in base64."
-          },
-          "audioFile": {
-            "label": "Audio file",
-            "description": "Content to be classified. Can be a raw text, or an audio or a PDF file encoded in base64.",
-            "remove": "Remove"
-          },
-          "textContent": {
-            "label": "Text content",
-            "description": "Content to be classified. Can be a raw text, or an audio or a PDF file encoded in base64.",
-            "placeholder": "Enter text to classify"
-          },
-          "preprocessing": {
-            "label": "Preprocessing",
-            "description": "Preprocess configuration for the content. Use None for text content.",
-            "show": "Show settings",
-            "hide": "Hide settings"
-          },
-          "audio": {
-            "targetFormat": {
-              "label": "Target format",
-              "description": "Desired output format. Only \"mp3\" is currently supported.",
-              "value": "mp3"
-            },
-            "bitrate": {
-              "label": "Audio bitrate",
-              "description": "Output bitrate in kilobits per second (kbps)."
-            },
-            "sampleRate": {
-              "label": "Sample rate",
-              "description": "Output sample-rate in hertz."
-            },
-            "channels": {
-              "label": "Channels",
-              "description": "Number of channels: 1=mono, 2=stereo.",
-              "options": {
-                "mono": "Mono",
-                "stereo": "Stereo"
-              }
-            },
-            "window": {
-              "label": "Window config",
-              "description": "Windowing configuration applied after preprocessing.",
-              "enable": "Enable",
-              "maxMinutes": {
-                "label": "Max minutes",
-                "description": "Maximum duration per window (in minutes)."
-              },
-              "maxSize": {
-                "label": "Max size (MB)",
-                "description": "Maximum file size per window (in megabytes)."
-              }
-            }
-          }
-        }
-      },
-      "output": {
-        "title": "Output",
-        "description": "List of possible classes to classify the content into",
-        "tabs": {
-          "classes": "Classes",
-          "result": "Result"
-        },
-        "classes": {
-          "itemTitle": "Class {index}",
-          "remove": "Remove",
-          "nameLabel": "Name",
-          "nameDescription": "Name of the class to classify",
-          "namePlaceholder": "Invoice",
-          "descriptionLabel": "Description",
-          "descriptionDescription": "Description of the class to classify",
-          "descriptionPlaceholder": "A document that serves as a bill for goods or services.",
-          "add": "Add class",
-          "defaults": {
-            "invoice": {
-              "name": "Invoice",
-              "description": "A document that serves as a bill for goods or services."
-            },
-            "receipt": {
-              "name": "Receipt",
-              "description": "A document that serves as proof of a transaction."
-            }
-          }
-        },
-        "result": {
-          "classification": "Classification",
-          "metadata": "Metadata",
-          "empty": "Run a classification to see the result."
-        },
-        "loading": "Classifying..."
-      }
-    },
-    "errors": {
-      "missingPdf": "Please upload a PDF file.",
-      "missingAudio": "Please upload an audio file.",
-      "missingText": "Please enter text content.",
-      "missingClass": "Please add at least one class with a name and description.",
-      "requestFailed": "Request failed",
-      "unexpected": "Unexpected error"
-    },
-    "buttons": {
-      "run": "Run Classification"
-    }
-  },
-  "consumptions": {
-    "title": "Consumptions",
-    "description": "Inspect recent usage, aggregated totals, and the most expensive paths.",
-    "loading": "Loading consumption data...",
-    "emptyState": "Consumption metrics will appear once the backend reports usage.",
-    "errors": {
-      "load": "Unable to load consumptions.",
-      "aggregatedLoad": "Unable to load aggregated consumptions.",
-      "limitsLoad": "Unable to load consumption limits.",
-      "heading": "We could not load consumption data.",
-      "aggregatedHeading": "Aggregated data unavailable.",
-      "aggregatedNone": "No aggregated consumption data for this period.",
-      "recentNone": "No recent consumption records available."
-    },
-    "limits": {
-      "title": "Active Limits",
-      "description": "Consumption limits currently in effect.",
-      "none": "No consumption limits configured.",
-      "global": "Global",
-      "tokens": "tokens",
-      "configureLink": "Configure limits in Settings"
-    },
-    "buttons": {
-      "retry": "Retry"
-    },
-    "period": {
-      "selectorLabel": "Period",
-      "labels": {
-        "minute": "Last Minute",
-        "daily": "Daily",
-        "monthly": "Monthly"
-      },
-      "descriptions": {
-        "minute": "Aggregated usage for the past minute, grouped by path.",
-        "daily": "Aggregated usage for the current day, grouped by path.",
-        "monthly": "Aggregated usage for the current month, grouped by path."
-      }
-    },
-    "metrics": {
-      "selectorLabel": "Metric",
-      "options": {
-        "cost": "Cost (USD)",
-        "tokens": "Tokens"
-      }
-    },
-    "totals": {
-      "cost": {
-        "title": "Total Cost ({period})",
-        "description": "Summed from aggregated usage for the selected period.",
-        "note": "Requests for newer models might not report cost yet—use tokens as the most reliable reference."
-      },
-      "tokens": {
-        "title": "Total Tokens ({period})",
-        "description": "Summed from aggregated usage for the selected period."
-      }
-    },
-    "topPaths": {
-      "titleTokens": "Top Paths By Tokens",
-      "titleCost": "Top Paths By Cost",
-      "refreshing": "Refreshing aggregated data..."
-    },
-    "recent": {
-      "title": "Recent Consumptions",
-      "description": "Last {count} records returned. Limit can be adjusted in the request.",
-      "table": {
-        "path": "Path",
-        "tokens": "Tokens",
-        "cost": "Cost (USD)",
-        "timestamp": "Timestamp"
-      }
-    }
-  },
-  "forms": {
-    "pdfPreprocessing": {
-      "title": "PDF processing settings",
-      "description": "Preprocess configuration for the content. Use None for text content.",
-      "fields": {
-        "dpi": {
-          "label": "DPI",
-          "description": "DPI (dots per inch) to use when converting PDF pages to images."
-        },
-        "contrast": {
-          "label": "Contrast factor",
-          "description": "> 1.0 increases contrast, < 1.0 decreases contrast."
-        },
-        "grayscale": {
-          "label": "Grayscale",
-          "description": "Whether to convert the PDF pages to grayscale.",
-          "options": {
-            "yes": "Yes",
-            "no": "No"
-          }
-        },
-        "ocrEnhancement": {
-          "label": "OCR enhancement",
-          "description": "Type of OCR enhancement to apply. 'none' disables it.",
-          "options": {
-            "all": "All",
-            "text": "Text",
-            "tables": "Tables",
-            "keyPairs": "Key pairs",
-            "ocrOnly": "OCR only",
-            "none": "None"
-          }
-        },
-        "window": {
-          "label": "Window config",
-          "description": "Configuration for the PDF window processing. If not provided, the PDF will be processed all at once.",
-          "enable": "Enable"
-        },
-        "windowSize": {
-          "label": "Window size",
-          "description": "Number of pages to process in each window."
-        },
-        "windowOverlap": {
-          "label": "Window overlap",
-          "description": "Number of pages to overlap between consecutive windows."
-        }
-      }
-    },
-    "extractSettings": {
-      "fields": {
-        "model": {
-          "label": "Model",
-          "description": "Model name to be used for the OpenAI query. Should be the id of the model in Azure OpenAI.",
-          "loading": "Loading models...",
-          "noModels": "No models available"
-        },
-        "strict": {
-          "label": "Strict",
-          "description": "Whether to strictly validate the output schema.",
-          "options": {
-            "enabled": "Enabled",
-            "disabled": "Disabled"
-          }
-        }
-      }
-    },
-    "classifySettings": {
-      "fields": {
-        "model": {
-          "label": "Model",
-          "description": "Model name to be used for the OpenAI query. Should be the id of the model in Azure OpenAI.",
-          "loading": "Loading models...",
-          "noModels": "No models available"
-        }
-      }
-    }
-  },
-  "components": {
-    "pdfUpload": {
-      "errors": {
-        "invalidFile": "Please upload a valid PDF file"
-      },
-      "dropzone": {
-        "active": "Drop the PDF here...",
-        "title": "Drag & drop a PDF file here",
-        "subtitle": "or click to select a file",
-        "button": "Browse Files"
-      },
-      "preview": {
-        "title": "PDF Preview",
-        "loading": "Generating preview...",
-        "remove": "Remove file"
-      }
-    }
-  },
-  "roles": {
-    "badges": {
-      "admin": "Admin",
-      "dev": "Developer"
-    },
-    "promotedModal": {
-      "title": "You are now an Administrator",
-      "description": "As the first user to log in, you have been automatically assigned the Admin role.",
-      "permissions": "You can now access the Settings page to manage consumption limits and add other administrators.",
-      "confirm": "Got it"
-    },
-    "devPromotedModal": {
-      "title": "Developer Access Granted",
-      "description": "You are running in a development environment and have been automatically assigned the Developer role.",
-      "permissions": "You have full access to all features including Settings, Consumptions, and admin functions. This role is only granted in local and test environments.",
-      "confirm": "Got it"
-    }
-  },
-  "sidebar": {
-    "toggleMenu": "Toggle menu",
-    "expand": "Expand sidebar",
-    "collapse": "Collapse sidebar",
-    "groups": {
-      "features": "Features",
-      "evaluate": "Evaluate",
-      "admin": "Admin"
-    },
-    "navigation": {
-      "home": "Home",
-      "extract": "Extract",
-      "classify": "Classify",
-      "evaluate": "Evaluate",
-      "evaluateExtract": "Extraction experiment",
-      "evaluateClassify": "Classification experiment",
-      "evaluateHistory": "History",
-      "consumptions": "Consumptions",
-      "components": "Components",
-      "settings": "Settings",
-      "info": "Info"
-    }
-  },
-  "breadcrumb": {
-    "ariaLabel": "Breadcrumb navigation",
-    "home": "Home",
-    "extract": "Extract",
-    "classify": "Classify",
-    "consumptions": "Consumptions",
-    "components": "Components",
-    "settings": "Settings",
-    "evaluate": "Evaluate",
-    "history": "History",
-    "info": "Info"
-  },
-  "settings": {
-    "title": "Settings",
-    "description": "Manage administrators and configure application settings.",
-    "loading": "Loading...",
-    "admins": {
-      "title": "Administrators",
-      "description": "Manage users with admin access to this application.",
-      "add": "Add Admin",
-      "none": "No administrators configured.",
-      "addDialog": {
-        "title": "Add Administrator",
-        "description": "Search for a user to grant admin access.",
-        "searchPlaceholder": "Search by name or email...",
-        "searchHint": "Start typing to search for users",
-        "noResults": "No users found matching your search."
-      },
-      "actions": {
-        "add": "Add",
-        "remove": "Remove admin access",
-        "cancel": "Cancel",
-        "retry": "Retry"
-      },
-      "messages": {
-        "added": "Administrator added successfully.",
-        "removed": "Administrator removed successfully.",
-        "errorAdd": "Failed to add administrator.",
-        "errorRemove": "Failed to remove administrator.",
-        "errorLoad": "Failed to load administrators.",
-        "cannotRemoveLast": "Cannot remove the last administrator."
-      }
-    },
-    "limits": {
-      "title": "Consumption Limits",
-      "description": "Set cost limits to control API usage. Limits can be global or path-specific.",
-      "add": "Add Limit",
-      "none": "No consumption limits configured. Add a limit to start controlling costs.",
-      "overrideWarning": "This will override the existing {period} limit for {scope}.",
-      "period": {
-        "label": "Period",
-        "minute": "Per Minute",
-        "daily": "Daily",
-        "monthly": "Monthly"
-      },
-      "path": {
-        "label": "Path",
-        "placeholder": "/core/openai/chat",
-        "global": "Global (all paths)",
-        "help": "Leave empty for a global limit, or specify a path for path-specific limits."
-      },
-      "maxCost": {
-        "label": "Max Cost (USD)",
-        "placeholder": "100.00",
-        "help": "Leave empty for no cost limit."
-      },
-      "maxTokens": {
-        "label": "Max Tokens",
-        "placeholder": "500000",
-        "help": "Leave empty for no token limit."
-      },
-      "actions": {
-        "save": "Save",
-        "update": "Update",
-        "saving": "Saving...",
-        "delete": "Delete",
-        "deleting": "Deleting...",
-        "cancel": "Cancel"
-      },
-      "messages": {
-        "saved": "Limit saved successfully.",
-        "deleted": "Limit deleted successfully.",
-        "errorSave": "Failed to save limit.",
-        "errorDelete": "Failed to delete limit.",
-        "errorLoad": "Failed to load limits."
-      },
-      "table": {
-        "period": "Period",
-        "path": "Path",
-        "maxCost": "Max Cost",
-        "maxTokens": "Max Tokens",
-        "actions": "Actions",
-        "global": "Global"
-      }
-    },
-    "broadcast": {
-      "title": "Broadcast Notification",
-      "description": "Send a push notification to all users with registered devices.",
-      "titleLabel": "Title",
-      "titlePlaceholder": "Notification title...",
-      "bodyLabel": "Description",
-      "bodyPlaceholder": "Optional notification body...",
-      "bodyHelp": "This notification will be sent to all users with registered devices.",
-      "send": "Send Notification",
-      "sending": "Sending...",
-      "messages": {
-        "success": "Notification sent successfully to {count} device(s).",
-        "error": "Failed to send notification.",
-        "emptyTitle": "Please enter a title."
-      }
-    }
-  },
-  "evaluate": {
-    "extract": {
-      "title": "Extraction experiment",
-      "steps": {
-        "folder": {
-          "title": "1) Select or upload a folder",
-          "description": "Each PDF must have a matching JSON ground truth file with the same name. Select an existing folder or upload new files."
-        },
-        "settings": {
-          "title": "2) Extraction Settings",
-          "description": "Configure model and PDF processing options."
-        },
-        "schema": {
-          "title": "Output Schema",
-          "description": "JSON schema for extraction. Must match ground truth structure."
-        },
-        "run": {
-          "title": "3) Run Evaluation",
-          "description": "Set an experiment name and run the evaluation."
-        }
-      },
-      "experimentName": "Experiment Name",
-      "experimentNamePlaceholder": "Enter experiment name…",
-      "pdfFilesCount": "{count} PDF file(s) in selected folder",
-      "runButton": "Run Evaluation",
-      "processing": "Processing…",
-      "phases": {
-        "extract": "Extracting PDFs",
-        "summary": "Evaluating Results",
-        "aiSummary": "Generating AI Summary",
-        "store": "Saving Experiment"
-      },
-      "workflowProgress": "Workflow Progress",
-      "runId": "Run ID: {id}",
-      "workflowStarted": "Workflow started. Processing…",
-      "results": {
-        "title": "Evaluation Results",
-        "description": "Summary of extraction accuracy across all items.",
-        "totalItems": "Total Items",
-        "successful": "Successful",
-        "failed": "Failed",
-        "avgPrecision": "Avg Precision",
-        "avgRecall": "Avg Recall",
-        "avgF1": "Avg F1",
-        "perItem": "Per-Item Results",
-        "extractionFailed": "(extraction failed)",
-        "differences": "{count} differences",
-        "noDiscrepancies": "No discrepancies - perfect match!",
-        "complete": "Evaluation complete: {successful}/{total} successful"
-      },
-      "table": {
-        "field": "Field",
-        "predicted": "Predicted",
-        "groundTruth": "Ground Truth",
-        "similarity": "Similarity",
-        "empty": "(empty)"
-      },
-      "ai": {
-        "title": "AI Analysis & Recommendations",
-        "description": "AI-generated analysis of errors and suggested schema improvements.",
-        "errorAnalysis": "Error Analysis",
-        "recommendations": "General Recommendations",
-        "suggestedSchema": "Suggested Schema",
-        "suggestedSchemaHint": "Complete improved schema based on the error analysis. Copy and use it for your next evaluation."
-      },
-      "errors": {
-        "title": "Evaluation Error",
-        "noFolder": "Please select a folder with files first",
-        "noPdfs": "No PDF files found in the selected folder",
-        "invalidSchema": "Output schema is not valid JSON.",
-        "workflowFailed": "Workflow failed",
-        "startFailed": "Failed to start workflow"
-      }
-    },
-    "classify": {
-      "title": "Classification experiment",
-      "steps": {
-        "folder": {
-          "title": "1) Select or upload a folder",
-          "description": "Each PDF must have a matching JSON ground truth file with the same name."
-        },
-        "settings": {
-          "title": "2) Classification Settings",
-          "description": "Configure model and define classification classes."
-        },
-        "run": {
-          "title": "3) Run Classification",
-          "description": "Set an experiment name and run the evaluation."
-        }
-      },
-      "classes": "Classes",
-      "addClass": "Add Class",
-      "removeClass": "Remove",
-      "classNamePlaceholder": "Invoice",
-      "classDescriptionPlaceholder": "A document that serves as a bill for goods or services.",
-      "experimentName": "Experiment Name",
-      "experimentNamePlaceholder": "Enter experiment name…",
-      "pdfFilesCount": "{count} PDF file(s) in selected folder",
-      "runButton": "Run Classification",
-      "processing": "Processing…",
-      "phases": {
-        "classify": "Classifying PDFs",
-        "summary": "Evaluating Results",
-        "aiSummary": "Generating AI Summary",
-        "store": "Saving Experiment"
-      },
-      "workflowProgress": "Workflow Progress",
-      "runId": "Run ID: {id}",
-      "workflowStarted": "Workflow started. Processing…",
-      "results": {
-        "title": "Classification Results",
-        "description": "Summary of classification accuracy across all items.",
-        "totalItems": "Total Items",
-        "successful": "Successful",
-        "failed": "Failed",
-        "accuracy": "Accuracy",
-        "perItem": "Per-Item Results",
-        "classificationFailed": "(classification failed)",
-        "complete": "Classification complete: {successful}/{total} successful"
-      },
-      "ai": {
-        "title": "AI Analysis & Recommendations",
-        "description": "AI-generated analysis and suggested class improvements.",
-        "errorAnalysis": "Error Analysis",
-        "recommendations": "General Recommendations",
-        "suggestedClasses": "Suggested Classes",
-        "suggestedClassesHint": "Improved class definitions based on the error analysis."
-      },
-      "errors": {
-        "title": "Evaluation Error",
-        "noFolder": "Please select a folder with files first",
-        "noPdfs": "No PDF files found in the selected folder",
-        "workflowFailed": "Workflow failed",
-        "startFailed": "Failed to start workflow"
-      }
-    },
-    "history": {
-      "title": "Experiment History",
-      "refresh": "Refresh",
-      "loading": "Loading…",
-      "empty": "No experiments found. Run an evaluation to see results here.",
-      "backToHistory": "Back to History",
-      "tabs": {
-        "overview": "Overview",
-        "config": "Configuration",
-        "aiSummary": "AI Summary",
-        "items": "Item Results"
-      },
-      "metadata": {
-        "created": "Created",
-        "completed": "Completed",
-        "dataset": "Dataset",
-        "files": "Files"
-      },
-      "metrics": {
-        "title": "Evaluation Metrics",
-        "totalItems": "Total Items",
-        "f1Score": "F1 Score",
-        "accuracy": "Accuracy",
-        "precision": "Precision",
-        "recall": "Recall"
-      },
-      "error": "Error",
-      "processedFiles": "Processed Files",
-      "extractionConfig": "Extraction Configuration",
-      "errorAnalysis": "Error Analysis",
-      "recommendations": "Recommendations",
-      "suggestedSchema": "Suggested Schema",
-      "noAiSummary": "No AI summary available for this experiment.",
-      "noItemResults": "No item results available.",
-      "filesCount": "{count} files",
-      "itemsCount": "{count} items"
-    }
-  },
-  "info": {
-    "subtitle": "Learn about what this application can do",
-    "overview": "This application provides AI-powered document processing capabilities. Upload documents, extract structured data, classify content into categories, and measure accuracy with automated evaluations. Below you will find a detailed description of each feature.",
-    "features": {
-      "extract": {
-        "title": "Document Extraction",
-        "description": "Upload a PDF document and extract structured data from it using AI. Define an output schema that describes the fields you want to extract, and the system will return the data in that exact structure.",
-        "flow": {
-          "upload": "Upload PDF",
-          "aiProcess": "AI Processing",
-          "structuredData": "Structured Data"
-        },
-        "capabilities": {
-          "upload": "Upload PDF files and preview them directly in the browser",
-          "schema": "Define a custom JSON schema to control exactly which fields are extracted",
-          "preview": "View extraction results side-by-side with the original document",
-          "models": "Choose from available AI models and configure processing settings"
-        }
-      },
-      "classify": {
-        "title": "Document Classification",
-        "description": "Classify documents, audio files, or text into categories you define. Create a list of classes with descriptions, and the AI will determine which class the content belongs to.",
-        "flow": {
-          "input": "Document Input",
-          "analyze": "AI Analysis",
-          "categorize": "Category Result"
-        },
-        "capabilities": {
-          "multiFormat": "Supports PDF documents, audio files, and plain text as input",
-          "customClasses": "Define your own classification categories with names and descriptions",
-          "confidence": "View the classification result along with metadata and confidence details",
-          "preprocessing": "Configure PDF and audio preprocessing settings for optimal results"
-        }
-      },
-      "evaluate": {
-        "title": "Evaluation & Quality Assurance",
-        "description": "Measure the accuracy of AI extraction and classification by running batch evaluations against ground truth data. Compare results across experiments to track quality improvements over time.",
-        "flow": {
-          "groundTruth": "Ground Truth",
-          "batchRun": "Batch AI Run",
-          "metrics": "Metrics",
-          "improve": "Improve",
-          "track": "Track History"
-        },
-        "capabilities": {
-          "extractEval": "Run extraction evaluations that compare AI output against ground truth JSON files, calculating precision, recall, and F1 scores",
-          "classifyEval": "Run classification evaluations that measure accuracy across multiple documents and generate confusion matrices",
-          "history": "Browse past experiments, compare metrics, and review detailed per-item results",
-          "aiSummary": "Get AI-generated analysis of errors and recommendations for improving extraction schemas or class definitions"
-        }
-      }
-    }
-  },
-  "notFound": {
-    "title": "Page Not Found",
-    "description": "The page you are looking for does not exist.",
-    "goHome": "Go Home"
-  },
-  "blobFolder": {
-    "selectFolder": "Select a folder…",
-    "load": "Load",
-    "refresh": "Refresh",
-    "blobRoot": "Blob root: {path}",
-    "matchingPairs": "{count} matching PDF/JSON pair(s)",
-    "unmatched": "({count} unmatched)",
-    "uploadFiles": "Upload files",
-    "filesInFolder": "Files in folder",
-    "processingFiles": "Processing files…",
-    "loadingFiles": "Loading files…",
-    "noFiles": "No files yet. Upload to populate this folder.",
-    "delete": "Delete",
-    "errors": {
-      "selectOrEnter": "Select or enter a folder name",
-      "loadFailed": "Failed to load files"
-    },
-    "messages": {
-      "loaded": "Loaded folder {name}",
-      "initialized": "Initialized folder {name}",
-      "uploaded": "Uploaded {count} file(s)",
-      "deleted": "Deleted {name}",
-      "createdFolder": "Created folder: {name}"
-    }
-  },
-  "pdfDirectory": {
-    "selectFolder": "Select PDF and JSON folder",
-    "selectDifferent": "Select a different folder",
-    "replaceTip": "Choose another folder to replace the current selection.",
-    "matchingTip": "Each PDF must have a matching JSON file with the same name",
-    "selectedFiles": "Selected files",
-    "clear": "Clear",
-    "errors": {
-      "needBothTypes": "Folder must contain at least one PDF file and one JSON file.",
-      "unmatched": "Some files are unmatched: {files}. Only matched pairs will be used for evaluation."
-    }
-  },
-  "pdfHighlighter": {
-    "drawing": {
-      "start": "Start Drawing",
-      "exit": "Exit Drawing",
-      "rectangle": "Rectangle",
-      "polygon": "Polygon",
-      "points": "Points:",
-      "labelPlaceholder": "Label",
-      "drawingActive": "Drawing Mode Active - Click and drag to highlight",
-      "viewHighlights": "View Highlights ({count})",
-      "noHighlights": "No highlights created yet",
-      "viewDetails": "View Details",
-      "remove": "Remove",
-      "close": "Close",
-      "highlights": "Highlights ({count})",
-      "add": "Add"
-    }
-  }
+	"errors": {
+		"generic": {
+			"title": "Something went wrong",
+			"description": "An unexpected error occurred. Please try again or return to the homepage.",
+			"retry": "Try again",
+			"goHome": "Go to homepage"
+		}
+	},
+	"metadata": {
+		"description": "A minimal workshop starter for building an invoice intake app with a FastAPI backend and a Next.js frontend."
+	},
+	"common": {
+		"clientName": "Workshop",
+		"projectName": "Invoice Intake",
+		"appName": "Invoice Intake - Workshop",
+		"companyName": "Workshop",
+		"companyUrlLabel": "",
+		"externalLinkSuffix": "(opens in new tab)"
+	},
+	"auth": {
+		"loginButton": {
+			"default": "Sign in with Microsoft",
+			"generic": "Sign in"
+		},
+		"userMenu": {
+			"adminPanel": "Admin Panel",
+			"logout": "Logout"
+		},
+		"sessionExpired": "Your session has ended. Redirecting you to the login page…"
+	},
+	"controls": {
+		"languageSelector": {
+			"trigger": "Language",
+			"ariaLabel": "Change language",
+			"locales": {
+				"en": "English",
+				"de": "Deutsch"
+			}
+		},
+		"themeToggle": {
+			"ariaLabel": "Toggle theme"
+		}
+	},
+	"notifications": {
+		"title": "Notifications",
+		"description": "Install the PWA shell and receive real-time alerts on this device.",
+		"empty": "No notifications yet",
+		"actions": {
+			"open": "Notifications",
+			"close": "Close",
+			"enable": "Enable push",
+			"disable": "Disable push",
+			"test": "Send test notification",
+			"working": "Working…",
+			"markAllRead": "Mark all read"
+		},
+		"status": {
+			"checking": "Checking support…",
+			"disabled": "Disabled",
+			"enabled": "Enabled",
+			"denied": "Permission denied",
+			"deniedDetails": "Notifications are blocked in your browser settings. Enable them to subscribe to push updates.",
+			"unavailable": "Unsupported",
+			"unavailableDetails": "This browser does not support service workers or push messaging."
+		},
+		"toggle": {
+			"label": "Push notifications",
+			"description": "Receive real-time alerts on this device"
+		},
+		"form": {
+			"label": "Device label",
+			"placeholder": "e.g. MacBook Pro",
+			"help": "Shown in admin tools so you can recognize this device later."
+		},
+		"errors": {
+			"generic": "Unable to update notification settings. Please try again."
+		},
+		"preview": {
+			"title": "Push ready",
+			"body": "You will now receive alerts on this device."
+		}
+	},
+	"header": {
+		"logoAlt": "Home",
+		"navigation": {
+			"endpoints": "Endpoints",
+			"extract": "Extract",
+			"classify": "Classify",
+			"consumptions": "Consumptions",
+			"componentsLibrary": "Components Library",
+			"mobileMenu": "Open menu"
+		}
+	},
+	"footer": {
+		"poweredBy": "Built with FastAPI and Next.js"
+	},
+	"home": {
+		"hero": {
+			"subheading": "A production-ready template for building enterprise web applications",
+			"loginCta": "Sign in"
+		},
+		"authenticated": {
+			"welcome": {
+				"title": "Welcome to the Template App",
+				"subtitle": "A production-ready foundation for building enterprise web applications with FastAPI and Next.js"
+			},
+			"whatIsThis": {
+				"title": "What is this template?",
+				"description": "This is a complete starter kit for building modular, scalable web applications. Clone this repository, customize the app identity, and start building your features—the infrastructure is already done."
+			},
+			"stack": {
+				"title": "Tech Stack",
+				"items": {
+					"backend": "FastAPI Backend — RESTful API with automatic OpenAPI documentation and modular architecture",
+					"frontend": "Next.js Frontend — React-based UI with App Router, server components, and auto-generated TypeScript SDK",
+					"auth": "Dev stub login — a fake local user for the workshop (no identity provider)",
+					"storage": "Multiple Storage Options — PostgreSQL for relational data, CosmosDB for documents, Azure Blob Storage for files",
+					"ai": "AI Integration — Built-in OpenAI endpoints for chat, extraction, classification, and structured outputs",
+					"pwa": "Progressive Web App — Installable with push notifications and offline support"
+				}
+			},
+			"coreModules": {
+				"title": "Pre-built Core Modules",
+				"description": "These endpoints are ready to use—no coding required:",
+				"items": {
+					"postgresql": "PostgreSQL — CRUD operations for relational data",
+					"cosmosdb": "CosmosDB — Document storage with auto-create databases/collections",
+					"blobStorage": "Blob Storage — File upload/download with SAS tokens",
+					"openai": "OpenAI — Chat, extract, classify with GPT models",
+					"pdf": "PDF — Conversion, preprocessing, OCR enhancement",
+					"audio": "Audio — Transcription and synthesis",
+					"search": "Search — Semantic search operations"
+				},
+				"card": {
+					"postgresql": "CRUD for relational data",
+					"cosmosdb": "Document storage",
+					"blobStorage": "File upload/download",
+					"openai": "Chat, extract, classify",
+					"pdf": "PDF processing & OCR",
+					"audio": "Transcription & synthesis"
+				}
+			},
+			"workflow": {
+				"title": "Development Workflow",
+				"description": "Follow this pipeline to build new features:",
+				"steps": {
+					"docs": "Document First — Create specs in docs/ with UI mockups and API design",
+					"backend": "Build Backend — Create custom modules in backend/src/app/modules/custom/",
+					"generate": "Generate SDK — Run pnpm update-api-client to get typed frontend functions",
+					"frontend": "Build Frontend — Use the generated SDK to build pages matching your mockups",
+					"commit": "Test & Commit — Run pre-commit hooks, tests, and update CHANGELOG.md"
+				},
+				"card": {
+					"step1": {
+						"title": "Document",
+						"desc": "Create specs in docs/"
+					},
+					"step2": {
+						"title": "Backend",
+						"desc": "Build custom modules"
+					},
+					"step3": {
+						"title": "Generate SDK",
+						"desc": "pnpm update-api-client"
+					},
+					"step4": {
+						"title": "Frontend",
+						"desc": "Build pages with SDK"
+					},
+					"step5": {
+						"title": "Ship",
+						"desc": "Test & commit"
+					}
+				}
+			},
+			"codexCommands": {
+				"title": "Codex CLI Commands",
+				"description": "Use these slash commands to accelerate development:",
+				"items": {
+					"buildDocs": "/prompts:build-docs — Generate project documentation from requirements documents",
+					"buildApp": "/prompts:build-app FEATURE=\"name\" — Build a complete feature following the pipeline"
+				},
+				"card": {
+					"buildDocsDesc": "Generate project documentation from requirements documents",
+					"buildAppDesc": "Build a complete feature following the development pipeline"
+				}
+			},
+			"getStarted": {
+				"title": "Get Started",
+				"description": "Explore the template capabilities:",
+				"items": {
+					"docs": "📖 Read the <docsLink>OpenAPI documentation</docsLink> to see all available endpoints",
+					"extract": "🧪 Try the <extractLink>Extract</extractLink> page to test AI-powered document extraction",
+					"classify": "🏷️ Try the <classifyLink>Classify</classifyLink> page to test AI-powered classification",
+					"components": "🧭 Browse the <componentsLink>Components Library</componentsLink> for production-ready UI primitives",
+					"consumptions": "📊 Check the <consumptionsLink>Consumptions</consumptionsLink> page to monitor API usage"
+				}
+			},
+			"customization": {
+				"title": "Customization Guide",
+				"description": "When building your app from this template:",
+				"keep": {
+					"title": "Keep as-is",
+					"items": "Authentication system, core modules, middleware, API proxy, i18n infrastructure"
+				},
+				"extend": {
+					"title": "Extend",
+					"items": "Navigation, translations, app identity, settings"
+				},
+				"replace": {
+					"title": "Replace",
+					"items": "This home page content, feature pages, custom backend modules"
+				}
+			}
+		}
+	},
+	"healthStatus": {
+		"connected": "Currently connected to <url>{address}</url>.",
+		"checking": "Checking status...",
+		"live": "status: live",
+		"down": "status: down"
+	},
+	"extract": {
+		"title": "Extract Endpoint",
+		"cards": {
+			"input": {
+				"title": "Input",
+				"description": "PDF file and extraction settings",
+				"fields": {
+					"pdfFile": {
+						"label": "PDF file",
+						"description": "Content to be classified. Can be a raw text, or an audio or a PDF file encoded in base64."
+					}
+				}
+			},
+			"output": {
+				"title": "Output",
+				"description": "Schema for the output of the extraction. Should follow the OpenAI schema format.",
+				"descriptionWithLink": "Schema for the extraction output. Follow the <link>OpenAI structured outputs schema</link>.",
+				"tabs": {
+					"schema": "Schema",
+					"result": "Result"
+				},
+				"sections": {
+					"extraction": "Extraction",
+					"metadata": "Metadata"
+				},
+				"empty": "Run an extraction to see the result.",
+				"loading": "Extracting..."
+			}
+		},
+		"buttons": {
+			"run": "Run Extraction"
+		},
+		"errors": {
+			"missingPdf": "Please upload a PDF file.",
+			"invalidSchema": "Output schema is not valid JSON.",
+			"requestFailed": "Request failed",
+			"unexpected": "Unexpected error"
+		}
+	},
+	"classify": {
+		"title": "Classify Endpoint",
+		"cards": {
+			"input": {
+				"title": "Input",
+				"description": "Payload for different content types to be preprocessed and sent to the OpenAI API.",
+				"fields": {
+					"contentType": {
+						"label": "Content type",
+						"description": "Type of the content to be classified.",
+						"options": {
+							"pdf": "PDF",
+							"audio": "Audio",
+							"text": "Text"
+						}
+					},
+					"pdfFile": {
+						"label": "PDF file",
+						"description": "Content to be classified. Can be a raw text, or an audio or a PDF file encoded in base64."
+					},
+					"audioFile": {
+						"label": "Audio file",
+						"description": "Content to be classified. Can be a raw text, or an audio or a PDF file encoded in base64.",
+						"remove": "Remove"
+					},
+					"textContent": {
+						"label": "Text content",
+						"description": "Content to be classified. Can be a raw text, or an audio or a PDF file encoded in base64.",
+						"placeholder": "Enter text to classify"
+					},
+					"preprocessing": {
+						"label": "Preprocessing",
+						"description": "Preprocess configuration for the content. Use None for text content.",
+						"show": "Show settings",
+						"hide": "Hide settings"
+					},
+					"audio": {
+						"targetFormat": {
+							"label": "Target format",
+							"description": "Desired output format. Only \"mp3\" is currently supported.",
+							"value": "mp3"
+						},
+						"bitrate": {
+							"label": "Audio bitrate",
+							"description": "Output bitrate in kilobits per second (kbps)."
+						},
+						"sampleRate": {
+							"label": "Sample rate",
+							"description": "Output sample-rate in hertz."
+						},
+						"channels": {
+							"label": "Channels",
+							"description": "Number of channels: 1=mono, 2=stereo.",
+							"options": {
+								"mono": "Mono",
+								"stereo": "Stereo"
+							}
+						},
+						"window": {
+							"label": "Window config",
+							"description": "Windowing configuration applied after preprocessing.",
+							"enable": "Enable",
+							"maxMinutes": {
+								"label": "Max minutes",
+								"description": "Maximum duration per window (in minutes)."
+							},
+							"maxSize": {
+								"label": "Max size (MB)",
+								"description": "Maximum file size per window (in megabytes)."
+							}
+						}
+					}
+				}
+			},
+			"output": {
+				"title": "Output",
+				"description": "List of possible classes to classify the content into",
+				"tabs": {
+					"classes": "Classes",
+					"result": "Result"
+				},
+				"classes": {
+					"itemTitle": "Class {index}",
+					"remove": "Remove",
+					"nameLabel": "Name",
+					"nameDescription": "Name of the class to classify",
+					"namePlaceholder": "Invoice",
+					"descriptionLabel": "Description",
+					"descriptionDescription": "Description of the class to classify",
+					"descriptionPlaceholder": "A document that serves as a bill for goods or services.",
+					"add": "Add class",
+					"defaults": {
+						"invoice": {
+							"name": "Invoice",
+							"description": "A document that serves as a bill for goods or services."
+						},
+						"receipt": {
+							"name": "Receipt",
+							"description": "A document that serves as proof of a transaction."
+						}
+					}
+				},
+				"result": {
+					"classification": "Classification",
+					"metadata": "Metadata",
+					"empty": "Run a classification to see the result."
+				},
+				"loading": "Classifying..."
+			}
+		},
+		"errors": {
+			"missingPdf": "Please upload a PDF file.",
+			"missingAudio": "Please upload an audio file.",
+			"missingText": "Please enter text content.",
+			"missingClass": "Please add at least one class with a name and description.",
+			"requestFailed": "Request failed",
+			"unexpected": "Unexpected error"
+		},
+		"buttons": {
+			"run": "Run Classification"
+		}
+	},
+	"consumptions": {
+		"title": "Consumptions",
+		"description": "Inspect recent usage, aggregated totals, and the most expensive paths.",
+		"loading": "Loading consumption data...",
+		"emptyState": "Consumption metrics will appear once the backend reports usage.",
+		"errors": {
+			"load": "Unable to load consumptions.",
+			"aggregatedLoad": "Unable to load aggregated consumptions.",
+			"limitsLoad": "Unable to load consumption limits.",
+			"heading": "We could not load consumption data.",
+			"aggregatedHeading": "Aggregated data unavailable.",
+			"aggregatedNone": "No aggregated consumption data for this period.",
+			"recentNone": "No recent consumption records available."
+		},
+		"limits": {
+			"title": "Active Limits",
+			"description": "Consumption limits currently in effect.",
+			"none": "No consumption limits configured.",
+			"global": "Global",
+			"tokens": "tokens",
+			"configureLink": "Configure limits in Settings"
+		},
+		"buttons": {
+			"retry": "Retry"
+		},
+		"period": {
+			"selectorLabel": "Period",
+			"labels": {
+				"minute": "Last Minute",
+				"daily": "Daily",
+				"monthly": "Monthly"
+			},
+			"descriptions": {
+				"minute": "Aggregated usage for the past minute, grouped by path.",
+				"daily": "Aggregated usage for the current day, grouped by path.",
+				"monthly": "Aggregated usage for the current month, grouped by path."
+			}
+		},
+		"metrics": {
+			"selectorLabel": "Metric",
+			"options": {
+				"cost": "Cost (USD)",
+				"tokens": "Tokens"
+			}
+		},
+		"totals": {
+			"cost": {
+				"title": "Total Cost ({period})",
+				"description": "Summed from aggregated usage for the selected period.",
+				"note": "Requests for newer models might not report cost yet—use tokens as the most reliable reference."
+			},
+			"tokens": {
+				"title": "Total Tokens ({period})",
+				"description": "Summed from aggregated usage for the selected period."
+			}
+		},
+		"topPaths": {
+			"titleTokens": "Top Paths By Tokens",
+			"titleCost": "Top Paths By Cost",
+			"refreshing": "Refreshing aggregated data..."
+		},
+		"recent": {
+			"title": "Recent Consumptions",
+			"description": "Last {count} records returned. Limit can be adjusted in the request.",
+			"table": {
+				"path": "Path",
+				"tokens": "Tokens",
+				"cost": "Cost (USD)",
+				"timestamp": "Timestamp"
+			}
+		}
+	},
+	"forms": {
+		"pdfPreprocessing": {
+			"title": "PDF processing settings",
+			"description": "Preprocess configuration for the content. Use None for text content.",
+			"fields": {
+				"dpi": {
+					"label": "DPI",
+					"description": "DPI (dots per inch) to use when converting PDF pages to images."
+				},
+				"contrast": {
+					"label": "Contrast factor",
+					"description": "> 1.0 increases contrast, < 1.0 decreases contrast."
+				},
+				"grayscale": {
+					"label": "Grayscale",
+					"description": "Whether to convert the PDF pages to grayscale.",
+					"options": {
+						"yes": "Yes",
+						"no": "No"
+					}
+				},
+				"ocrEnhancement": {
+					"label": "OCR enhancement",
+					"description": "Type of OCR enhancement to apply. 'none' disables it.",
+					"options": {
+						"all": "All",
+						"text": "Text",
+						"tables": "Tables",
+						"keyPairs": "Key pairs",
+						"ocrOnly": "OCR only",
+						"none": "None"
+					}
+				},
+				"window": {
+					"label": "Window config",
+					"description": "Configuration for the PDF window processing. If not provided, the PDF will be processed all at once.",
+					"enable": "Enable"
+				},
+				"windowSize": {
+					"label": "Window size",
+					"description": "Number of pages to process in each window."
+				},
+				"windowOverlap": {
+					"label": "Window overlap",
+					"description": "Number of pages to overlap between consecutive windows."
+				}
+			}
+		},
+		"extractSettings": {
+			"fields": {
+				"model": {
+					"label": "Model",
+					"description": "Model name to be used for the OpenAI query. Should be the id of the model in Azure OpenAI.",
+					"loading": "Loading models...",
+					"noModels": "No models available"
+				},
+				"strict": {
+					"label": "Strict",
+					"description": "Whether to strictly validate the output schema.",
+					"options": {
+						"enabled": "Enabled",
+						"disabled": "Disabled"
+					}
+				}
+			}
+		},
+		"classifySettings": {
+			"fields": {
+				"model": {
+					"label": "Model",
+					"description": "Model name to be used for the OpenAI query. Should be the id of the model in Azure OpenAI.",
+					"loading": "Loading models...",
+					"noModels": "No models available"
+				}
+			}
+		}
+	},
+	"components": {
+		"pdfUpload": {
+			"errors": {
+				"invalidFile": "Please upload a valid PDF file"
+			},
+			"dropzone": {
+				"active": "Drop the PDF here...",
+				"title": "Drag & drop a PDF file here",
+				"subtitle": "or click to select a file",
+				"button": "Browse Files"
+			},
+			"preview": {
+				"title": "PDF Preview",
+				"loading": "Generating preview...",
+				"remove": "Remove file"
+			}
+		}
+	},
+	"roles": {
+		"badges": {
+			"admin": "Admin",
+			"dev": "Developer"
+		},
+		"promotedModal": {
+			"title": "You are now an Administrator",
+			"description": "As the first user to log in, you have been automatically assigned the Admin role.",
+			"permissions": "You can now access the Settings page to manage consumption limits and add other administrators.",
+			"confirm": "Got it"
+		},
+		"devPromotedModal": {
+			"title": "Developer Access Granted",
+			"description": "You are running in a development environment and have been automatically assigned the Developer role.",
+			"permissions": "You have full access to all features including Settings, Consumptions, and admin functions. This role is only granted in local and test environments.",
+			"confirm": "Got it"
+		}
+	},
+	"sidebar": {
+		"toggleMenu": "Toggle menu",
+		"expand": "Expand sidebar",
+		"collapse": "Collapse sidebar",
+		"groups": {
+			"features": "Features",
+			"evaluate": "Evaluate",
+			"admin": "Admin"
+		},
+		"navigation": {
+			"home": "Home",
+			"extract": "Extract",
+			"classify": "Classify",
+			"evaluate": "Evaluate",
+			"evaluateExtract": "Extraction experiment",
+			"evaluateClassify": "Classification experiment",
+			"evaluateHistory": "History",
+			"consumptions": "Consumptions",
+			"components": "Components",
+			"settings": "Settings",
+			"info": "Info"
+		}
+	},
+	"breadcrumb": {
+		"ariaLabel": "Breadcrumb navigation",
+		"home": "Home",
+		"extract": "Extract",
+		"classify": "Classify",
+		"consumptions": "Consumptions",
+		"components": "Components",
+		"settings": "Settings",
+		"evaluate": "Evaluate",
+		"history": "History",
+		"info": "Info"
+	},
+	"settings": {
+		"title": "Settings",
+		"description": "Manage administrators and configure application settings.",
+		"loading": "Loading...",
+		"admins": {
+			"title": "Administrators",
+			"description": "Manage users with admin access to this application.",
+			"add": "Add Admin",
+			"none": "No administrators configured.",
+			"addDialog": {
+				"title": "Add Administrator",
+				"description": "Search for a user to grant admin access.",
+				"searchPlaceholder": "Search by name or email...",
+				"searchHint": "Start typing to search for users",
+				"noResults": "No users found matching your search."
+			},
+			"actions": {
+				"add": "Add",
+				"remove": "Remove admin access",
+				"cancel": "Cancel",
+				"retry": "Retry"
+			},
+			"messages": {
+				"added": "Administrator added successfully.",
+				"removed": "Administrator removed successfully.",
+				"errorAdd": "Failed to add administrator.",
+				"errorRemove": "Failed to remove administrator.",
+				"errorLoad": "Failed to load administrators.",
+				"cannotRemoveLast": "Cannot remove the last administrator."
+			}
+		},
+		"limits": {
+			"title": "Consumption Limits",
+			"description": "Set cost limits to control API usage. Limits can be global or path-specific.",
+			"add": "Add Limit",
+			"none": "No consumption limits configured. Add a limit to start controlling costs.",
+			"overrideWarning": "This will override the existing {period} limit for {scope}.",
+			"period": {
+				"label": "Period",
+				"minute": "Per Minute",
+				"daily": "Daily",
+				"monthly": "Monthly"
+			},
+			"path": {
+				"label": "Path",
+				"placeholder": "/core/openai/chat",
+				"global": "Global (all paths)",
+				"help": "Leave empty for a global limit, or specify a path for path-specific limits."
+			},
+			"maxCost": {
+				"label": "Max Cost (USD)",
+				"placeholder": "100.00",
+				"help": "Leave empty for no cost limit."
+			},
+			"maxTokens": {
+				"label": "Max Tokens",
+				"placeholder": "500000",
+				"help": "Leave empty for no token limit."
+			},
+			"actions": {
+				"save": "Save",
+				"update": "Update",
+				"saving": "Saving...",
+				"delete": "Delete",
+				"deleting": "Deleting...",
+				"cancel": "Cancel"
+			},
+			"messages": {
+				"saved": "Limit saved successfully.",
+				"deleted": "Limit deleted successfully.",
+				"errorSave": "Failed to save limit.",
+				"errorDelete": "Failed to delete limit.",
+				"errorLoad": "Failed to load limits."
+			},
+			"table": {
+				"period": "Period",
+				"path": "Path",
+				"maxCost": "Max Cost",
+				"maxTokens": "Max Tokens",
+				"actions": "Actions",
+				"global": "Global"
+			}
+		},
+		"broadcast": {
+			"title": "Broadcast Notification",
+			"description": "Send a push notification to all users with registered devices.",
+			"titleLabel": "Title",
+			"titlePlaceholder": "Notification title...",
+			"bodyLabel": "Description",
+			"bodyPlaceholder": "Optional notification body...",
+			"bodyHelp": "This notification will be sent to all users with registered devices.",
+			"send": "Send Notification",
+			"sending": "Sending...",
+			"messages": {
+				"success": "Notification sent successfully to {count} device(s).",
+				"error": "Failed to send notification.",
+				"emptyTitle": "Please enter a title."
+			}
+		}
+	},
+	"evaluate": {
+		"extract": {
+			"title": "Extraction experiment",
+			"steps": {
+				"folder": {
+					"title": "1) Select or upload a folder",
+					"description": "Each PDF must have a matching JSON ground truth file with the same name. Select an existing folder or upload new files."
+				},
+				"settings": {
+					"title": "2) Extraction Settings",
+					"description": "Configure model and PDF processing options."
+				},
+				"schema": {
+					"title": "Output Schema",
+					"description": "JSON schema for extraction. Must match ground truth structure."
+				},
+				"run": {
+					"title": "3) Run Evaluation",
+					"description": "Set an experiment name and run the evaluation."
+				}
+			},
+			"experimentName": "Experiment Name",
+			"experimentNamePlaceholder": "Enter experiment name…",
+			"pdfFilesCount": "{count} PDF file(s) in selected folder",
+			"runButton": "Run Evaluation",
+			"processing": "Processing…",
+			"phases": {
+				"extract": "Extracting PDFs",
+				"summary": "Evaluating Results",
+				"aiSummary": "Generating AI Summary",
+				"store": "Saving Experiment"
+			},
+			"workflowProgress": "Workflow Progress",
+			"runId": "Run ID: {id}",
+			"workflowStarted": "Workflow started. Processing…",
+			"results": {
+				"title": "Evaluation Results",
+				"description": "Summary of extraction accuracy across all items.",
+				"totalItems": "Total Items",
+				"successful": "Successful",
+				"failed": "Failed",
+				"avgPrecision": "Avg Precision",
+				"avgRecall": "Avg Recall",
+				"avgF1": "Avg F1",
+				"perItem": "Per-Item Results",
+				"extractionFailed": "(extraction failed)",
+				"differences": "{count} differences",
+				"noDiscrepancies": "No discrepancies - perfect match!",
+				"complete": "Evaluation complete: {successful}/{total} successful"
+			},
+			"table": {
+				"field": "Field",
+				"predicted": "Predicted",
+				"groundTruth": "Ground Truth",
+				"similarity": "Similarity",
+				"empty": "(empty)"
+			},
+			"ai": {
+				"title": "AI Analysis & Recommendations",
+				"description": "AI-generated analysis of errors and suggested schema improvements.",
+				"errorAnalysis": "Error Analysis",
+				"recommendations": "General Recommendations",
+				"suggestedSchema": "Suggested Schema",
+				"suggestedSchemaHint": "Complete improved schema based on the error analysis. Copy and use it for your next evaluation."
+			},
+			"errors": {
+				"title": "Evaluation Error",
+				"noFolder": "Please select a folder with files first",
+				"noPdfs": "No PDF files found in the selected folder",
+				"invalidSchema": "Output schema is not valid JSON.",
+				"workflowFailed": "Workflow failed",
+				"startFailed": "Failed to start workflow"
+			}
+		},
+		"classify": {
+			"title": "Classification experiment",
+			"steps": {
+				"folder": {
+					"title": "1) Select or upload a folder",
+					"description": "Each PDF must have a matching JSON ground truth file with the same name."
+				},
+				"settings": {
+					"title": "2) Classification Settings",
+					"description": "Configure model and define classification classes."
+				},
+				"run": {
+					"title": "3) Run Classification",
+					"description": "Set an experiment name and run the evaluation."
+				}
+			},
+			"classes": "Classes",
+			"addClass": "Add Class",
+			"removeClass": "Remove",
+			"classNamePlaceholder": "Invoice",
+			"classDescriptionPlaceholder": "A document that serves as a bill for goods or services.",
+			"experimentName": "Experiment Name",
+			"experimentNamePlaceholder": "Enter experiment name…",
+			"pdfFilesCount": "{count} PDF file(s) in selected folder",
+			"runButton": "Run Classification",
+			"processing": "Processing…",
+			"phases": {
+				"classify": "Classifying PDFs",
+				"summary": "Evaluating Results",
+				"aiSummary": "Generating AI Summary",
+				"store": "Saving Experiment"
+			},
+			"workflowProgress": "Workflow Progress",
+			"runId": "Run ID: {id}",
+			"workflowStarted": "Workflow started. Processing…",
+			"results": {
+				"title": "Classification Results",
+				"description": "Summary of classification accuracy across all items.",
+				"totalItems": "Total Items",
+				"successful": "Successful",
+				"failed": "Failed",
+				"accuracy": "Accuracy",
+				"perItem": "Per-Item Results",
+				"classificationFailed": "(classification failed)",
+				"complete": "Classification complete: {successful}/{total} successful"
+			},
+			"ai": {
+				"title": "AI Analysis & Recommendations",
+				"description": "AI-generated analysis and suggested class improvements.",
+				"errorAnalysis": "Error Analysis",
+				"recommendations": "General Recommendations",
+				"suggestedClasses": "Suggested Classes",
+				"suggestedClassesHint": "Improved class definitions based on the error analysis."
+			},
+			"errors": {
+				"title": "Evaluation Error",
+				"noFolder": "Please select a folder with files first",
+				"noPdfs": "No PDF files found in the selected folder",
+				"workflowFailed": "Workflow failed",
+				"startFailed": "Failed to start workflow"
+			}
+		},
+		"history": {
+			"title": "Experiment History",
+			"refresh": "Refresh",
+			"loading": "Loading…",
+			"empty": "No experiments found. Run an evaluation to see results here.",
+			"backToHistory": "Back to History",
+			"tabs": {
+				"overview": "Overview",
+				"config": "Configuration",
+				"aiSummary": "AI Summary",
+				"items": "Item Results"
+			},
+			"metadata": {
+				"created": "Created",
+				"completed": "Completed",
+				"dataset": "Dataset",
+				"files": "Files"
+			},
+			"metrics": {
+				"title": "Evaluation Metrics",
+				"totalItems": "Total Items",
+				"f1Score": "F1 Score",
+				"accuracy": "Accuracy",
+				"precision": "Precision",
+				"recall": "Recall"
+			},
+			"error": "Error",
+			"processedFiles": "Processed Files",
+			"extractionConfig": "Extraction Configuration",
+			"errorAnalysis": "Error Analysis",
+			"recommendations": "Recommendations",
+			"suggestedSchema": "Suggested Schema",
+			"noAiSummary": "No AI summary available for this experiment.",
+			"noItemResults": "No item results available.",
+			"filesCount": "{count} files",
+			"itemsCount": "{count} items"
+		}
+	},
+	"info": {
+		"subtitle": "Learn about what this application can do",
+		"overview": "This application provides AI-powered document processing capabilities. Upload documents, extract structured data, classify content into categories, and measure accuracy with automated evaluations. Below you will find a detailed description of each feature.",
+		"features": {
+			"extract": {
+				"title": "Document Extraction",
+				"description": "Upload a PDF document and extract structured data from it using AI. Define an output schema that describes the fields you want to extract, and the system will return the data in that exact structure.",
+				"flow": {
+					"upload": "Upload PDF",
+					"aiProcess": "AI Processing",
+					"structuredData": "Structured Data"
+				},
+				"capabilities": {
+					"upload": "Upload PDF files and preview them directly in the browser",
+					"schema": "Define a custom JSON schema to control exactly which fields are extracted",
+					"preview": "View extraction results side-by-side with the original document",
+					"models": "Choose from available AI models and configure processing settings"
+				}
+			},
+			"classify": {
+				"title": "Document Classification",
+				"description": "Classify documents, audio files, or text into categories you define. Create a list of classes with descriptions, and the AI will determine which class the content belongs to.",
+				"flow": {
+					"input": "Document Input",
+					"analyze": "AI Analysis",
+					"categorize": "Category Result"
+				},
+				"capabilities": {
+					"multiFormat": "Supports PDF documents, audio files, and plain text as input",
+					"customClasses": "Define your own classification categories with names and descriptions",
+					"confidence": "View the classification result along with metadata and confidence details",
+					"preprocessing": "Configure PDF and audio preprocessing settings for optimal results"
+				}
+			},
+			"evaluate": {
+				"title": "Evaluation & Quality Assurance",
+				"description": "Measure the accuracy of AI extraction and classification by running batch evaluations against ground truth data. Compare results across experiments to track quality improvements over time.",
+				"flow": {
+					"groundTruth": "Ground Truth",
+					"batchRun": "Batch AI Run",
+					"metrics": "Metrics",
+					"improve": "Improve",
+					"track": "Track History"
+				},
+				"capabilities": {
+					"extractEval": "Run extraction evaluations that compare AI output against ground truth JSON files, calculating precision, recall, and F1 scores",
+					"classifyEval": "Run classification evaluations that measure accuracy across multiple documents and generate confusion matrices",
+					"history": "Browse past experiments, compare metrics, and review detailed per-item results",
+					"aiSummary": "Get AI-generated analysis of errors and recommendations for improving extraction schemas or class definitions"
+				}
+			}
+		}
+	},
+	"notFound": {
+		"title": "Page Not Found",
+		"description": "The page you are looking for does not exist.",
+		"goHome": "Go Home"
+	},
+	"blobFolder": {
+		"selectFolder": "Select a folder…",
+		"load": "Load",
+		"refresh": "Refresh",
+		"blobRoot": "Blob root: {path}",
+		"matchingPairs": "{count} matching PDF/JSON pair(s)",
+		"unmatched": "({count} unmatched)",
+		"uploadFiles": "Upload files",
+		"filesInFolder": "Files in folder",
+		"processingFiles": "Processing files…",
+		"loadingFiles": "Loading files…",
+		"noFiles": "No files yet. Upload to populate this folder.",
+		"delete": "Delete",
+		"errors": {
+			"selectOrEnter": "Select or enter a folder name",
+			"loadFailed": "Failed to load files"
+		},
+		"messages": {
+			"loaded": "Loaded folder {name}",
+			"initialized": "Initialized folder {name}",
+			"uploaded": "Uploaded {count} file(s)",
+			"deleted": "Deleted {name}",
+			"createdFolder": "Created folder: {name}"
+		}
+	},
+	"pdfDirectory": {
+		"selectFolder": "Select PDF and JSON folder",
+		"selectDifferent": "Select a different folder",
+		"replaceTip": "Choose another folder to replace the current selection.",
+		"matchingTip": "Each PDF must have a matching JSON file with the same name",
+		"selectedFiles": "Selected files",
+		"clear": "Clear",
+		"errors": {
+			"needBothTypes": "Folder must contain at least one PDF file and one JSON file.",
+			"unmatched": "Some files are unmatched: {files}. Only matched pairs will be used for evaluation."
+		}
+	},
+	"pdfHighlighter": {
+		"drawing": {
+			"start": "Start Drawing",
+			"exit": "Exit Drawing",
+			"rectangle": "Rectangle",
+			"polygon": "Polygon",
+			"points": "Points:",
+			"labelPlaceholder": "Label",
+			"drawingActive": "Drawing Mode Active - Click and drag to highlight",
+			"viewHighlights": "View Highlights ({count})",
+			"noHighlights": "No highlights created yet",
+			"viewDetails": "View Details",
+			"remove": "Remove",
+			"close": "Close",
+			"highlights": "Highlights ({count})",
+			"add": "Add"
+		}
+	},
+	"orderIntake": {
+		"title": "Order Intake",
+		"subtitle": "Upload a customer PDF order, reconcile it against the catalog, and export EDIFACT.",
+		"upload": {
+			"label": "Upload a purchase-order PDF",
+			"button": "Upload PDF",
+			"uploading": "Processing…",
+			"hint": "Bauprofil orders are supported in this stage.",
+			"error": "Upload failed"
+		},
+		"list": {
+			"heading": "Orders",
+			"empty": "No orders yet. Upload a PDF to get started.",
+			"ref": "Reference",
+			"customer": "Customer",
+			"status": "Status",
+			"lines": "Lines",
+			"flags": "Flags",
+			"open": "Open",
+			"clear": "Clear all",
+			"clearing": "Clearing…",
+			"clearConfirm": "Delete ALL orders and their files (read PDFs + generated EDIFACT)? Customers and the catalog are kept.",
+			"cleared": "Removed {orders} order(s) and {files} file(s).",
+			"clearError": "Could not clear orders"
+		},
+		"status": {
+			"in_review": "In review",
+			"edifact_generated": "EDIFACT generated",
+			"draft": "Draft"
+		},
+		"detail": {
+			"readCode": "Read",
+			"mismatchHint": "The code printed on the PDF points to a different catalog item than the one resolved from the specs. Verify before approving.",
+			"back": "Back to orders",
+			"pdfTitle": "Original PDF",
+			"linesTitle": "Extracted & reconciled lines",
+			"pos": "Pos.",
+			"extracted": "Extracted code",
+			"resolved": "Internal code",
+			"qty": "Qty",
+			"unit": "Unit",
+			"delivery": "Delivery",
+			"confidence": "Confidence",
+			"ok": "OK",
+			"unmatched": "No match",
+			"summary": "{matched} of {total} lines resolved"
+		},
+		"flags": {
+			"unmatched_code": "No catalog match — assign",
+			"weak_match": "Weak match — review",
+			"ambiguous_unit": "Ambiguous/missing unit",
+			"code_mismatch": "Read code ≠ resolved",
+			"metadata_mismatch": "JSON ≠ visible text"
+		},
+		"edifact": {
+			"generate": "Generate EDIFACT",
+			"generating": "Generating…",
+			"blockedHint": "All lines must resolve to an internal code before export.",
+			"blocked": "Blocked: lines {lines} have no internal code (MetallSoft rejects the whole order).",
+			"title": "EDIFACT ORDERS D.96A",
+			"download": "Download .edi",
+			"error": "Could not generate EDIFACT"
+		},
+		"customer": {
+			"label": "Customer",
+			"select": "Select a customer…",
+			"new": "+ New customer",
+			"create": "Create customer",
+			"creating": "Creating…",
+			"cancel": "Cancel",
+			"code": "Code (slug)",
+			"name": "Display name",
+			"country": "Country",
+			"strategy": "Extraction strategy",
+			"error": "Could not create customer",
+			"needCustomer": "Select a customer before uploading.",
+			"apiKey": "API key",
+			"apiKeyHint": "Your provider API key (e.g. OpenAI sk-...). Stored locally.",
+			"delete": "Delete",
+			"deleteConfirm": "Delete customer {code}?",
+			"codeHint": "Lowercase letters, digits, '-' or '_' only (e.g. acme-fr).",
+			"apiBaseUrl": "Provider base URL (optional, OpenAI-compatible)",
+			"apiModel": "Model (optional)"
+		},
+		"strategy": {
+			"bauprofil_text": "Deterministic (DIN table parser)",
+			"ollama": "Local model (Ollama, free)",
+			"llm_api": "External LLM (API key)"
+		},
+		"tier": {
+			"label": "Match",
+			"exact": "Exact",
+			"dimension": "By dimension",
+			"fuzzy": "Fuzzy",
+			"manual": "Manual",
+			"learned": "Learned",
+			"none": "—"
+		},
+		"assign": {
+			"placeholder": "AE-…",
+			"set": "Set",
+			"saving": "…",
+			"confirm": "Confirm",
+			"confirming": "…",
+			"confirmHint": "Accept the resolved code and teach it for this customer (the next order with the same read code resolves on its own)."
+		}
+	}
 }

@@ -2,20 +2,17 @@
 Pytest configuration and fixtures for integration testing.
 
 This conftest provides fixtures for testing against real services:
-- PostgreSQL (test database: postgres_test)
+- PostgreSQL (test database: app_test)
 - Azure Blob Storage (Azurite with test- prefix)
 - CosmosDB/MongoDB (test database)
-- OpenAI (real API calls when credentials available)
 
 Usage:
     # Run all tests
     docker compose --profile test run --rm backend-test
 
-    # Run only fast tests (no OpenAI)
-    docker compose --profile test run --rm -e PYTEST_ARGS="-m 'not slow'" backend-test
-
     # Run specific test file
-    docker compose --profile test run --rm backend-test pytest src/app/modules/core/blob_storage/tests.py
+    docker compose --profile test run --rm backend-test \
+        pytest src/app/modules/core/blob_storage/tests.py
 """
 
 import base64
@@ -30,7 +27,6 @@ from httpx import ASGITransport, AsyncClient
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 
 from src.app.services.blob_storage.service import BlobStorageService
-from src.app.services.pdf.service import PDFService
 from src.asgi import app
 from src.settings import settings
 
@@ -82,14 +78,6 @@ def setup_test_database():
 
     yield
 
-    # Optional: Drop test database after all tests (uncomment if desired)
-    # conn = get_admin_db_connection()
-    # conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
-    # cur = conn.cursor()
-    # cur.execute(f'DROP DATABASE IF EXISTS "{test_db}"')
-    # cur.close()
-    # conn.close()
-
 
 # =============================================================================
 # BLOB STORAGE CLEANUP
@@ -116,10 +104,10 @@ def setup_blob_container(blob_service):
         # Clean up test blobs after all tests
         if IS_TEST_ENV:
             try:
-                blobs = blob_service.list_blobs(prefix=TEST_BLOB_PREFIX)
+                blobs = blob_service.list_contents(TEST_BLOB_PREFIX, recursive=True)
                 for blob in blobs:
                     try:
-                        blob_service.delete_blob(blob.name)
+                        blob_service.delete(blob)
                     except Exception:
                         pass
                 print(f"\n✓ Cleaned up test blobs with prefix: {TEST_BLOB_PREFIX}")
@@ -172,102 +160,10 @@ async def async_client() -> AsyncGenerator[AsyncClient, None]:
 
 
 @pytest.fixture(scope="session")
-def example_pdf_base64() -> str:
-    """Loads the fake_invoice.pdf and returns its base64-encoded content."""
-    with open("assets/fake_invoice.pdf", "rb") as pdf_file:
-        pdf_bytes = pdf_file.read()
-        return PDFService.encode_bytes_to_base64(pdf_bytes)
-
-
-@pytest.fixture(scope="session")
 def example_image_base64() -> str:
     """Returns base64-encoded PNG image (for convert-to-pdf test)."""
     with open("assets/example_image.png", "rb") as image_file:
         return base64.b64encode(image_file.read()).decode("utf-8")
-
-
-# =============================================================================
-# OPENAI FIXTURES
-# =============================================================================
-
-
-_openai_deployment_cache: bool | None = None
-
-
-def _is_openai_deployment_available() -> bool:
-    """Check credentials AND that the deployment is accessible."""
-    global _openai_deployment_cache
-
-    if _openai_deployment_cache is not None:
-        return _openai_deployment_cache
-
-    try:
-        key = settings.azure_openai_api_key.get_secret_value()
-        if not (key and settings.azure_openai_base_url):
-            _openai_deployment_cache = False
-            return False
-
-        from openai import AzureOpenAI
-
-        client = AzureOpenAI(
-            api_key=key,
-            api_version=settings.azure_openai_api_version,
-            azure_endpoint=settings.azure_openai_base_url,
-        )
-
-        try:
-            list(client.models.list())
-            _openai_deployment_cache = True
-            return True
-        except Exception as e:
-            error_str = str(e).lower()
-            skip_patterns = [
-                "deploymentnotfound",
-                "resource not found",
-                "404",
-                "401",
-                "invalid subscription key",
-                "authenticationerror",
-                "access denied",
-            ]
-            if any(p in error_str for p in skip_patterns):
-                print(f"\n⚠ OpenAI deployment not available, skipping tests: {e}")
-                _openai_deployment_cache = False
-                return False
-            _openai_deployment_cache = True
-            return True
-    except Exception as e:
-        print(f"\n⚠ OpenAI not available: {e}")
-        _openai_deployment_cache = False
-        return False
-
-
-def pytest_collection_modifyitems(
-    config: pytest.Config,
-    items: list[pytest.Item],
-) -> None:
-    """Auto-skip openai-marked tests when deployment is unavailable."""
-    if _is_openai_deployment_available():
-        return
-    skip_marker = pytest.mark.skip(
-        reason="OpenAI deployment not available",
-    )
-    for item in items:
-        if "openai" in item.keywords:
-            item.add_marker(skip_marker)
-
-
-@pytest.fixture(scope="session")
-def openai_available() -> bool:
-    """Check if OpenAI credentials are configured and deployment exists."""
-    return _is_openai_deployment_available()
-
-
-@pytest.fixture()
-def skip_if_no_openai(openai_available: bool) -> None:
-    """Skip test if OpenAI deployment is not available."""
-    if not openai_available:
-        pytest.skip("OpenAI deployment not available")
 
 
 # =============================================================================

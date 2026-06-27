@@ -1,7 +1,6 @@
 # Frontend Agent Guidelines
 
 Read the root `AGENTS.md` first, then follow these frontend-specific guardrails.
-For detailed conventions, read `.agents/skills/frontend-development/SKILL.md`.
 
 ---
 
@@ -103,11 +102,3 @@ Two compounding issues — only the first is solvable in this repo:
 - **Hooks/utils**: `src/lib/`
 - **Assets**: `public/`
 
----
-
-## Skills (read before detailed work)
-
-- Frontend patterns & examples: `.agents/skills/frontend-development/SKILL.md`
-- Docker & infrastructure: `.agents/skills/docker-operations/SKILL.md`
-- UI exploration with Playwright: `.agents/skills/ui-exploration/SKILL.md`
-- Changelog workflow: `.agents/skills/changelog-management/SKILL.md`

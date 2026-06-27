@@ -26,7 +26,7 @@ For detailed reference, read the relevant skill before starting work.
 11. **Use timeouts** for potentially blocking commands (Docker builds, installs, etc.)
 12. **All custom modules** go in `backend/src/app/modules/custom/` with the mandatory folder layout
 13. **Respect file size limits** — Python ≤600 lines, TypeScript ≤500 lines (see component skills for details). Split by domain, never by number (`_1.py` is forbidden)
-14. **No temporary workarounds for missing prerequisites** — if code would be clean *after* a follow-up step (SDK regen, alembic upgrade, container rebuild, dependency install), do that step first. Never ship a cast/shim/stub/comment-marked-TODO with intent to clean up later. The workaround IS the bug. If running the prerequisite needs user confirmation (rebuild, push, destructive op), *ask and wait* — don't write the shim and continue. See `.agents/skills/schema-change/SKILL.md` for the canonical schema↔SDK flow.
+14. **No temporary workarounds for missing prerequisites** — if code would be clean *after* a follow-up step (SDK regen, alembic upgrade, container rebuild, dependency install), do that step first. Never ship a cast/shim/stub/comment-marked-TODO with intent to clean up later. The workaround IS the bug. If running the prerequisite needs user confirmation (rebuild, push, destructive op), *ask and wait* — don't write the shim and continue. See `backend/AGENTS.md` for the canonical schema↔SDK flow.
 
 ---
 
@@ -34,28 +34,11 @@ For detailed reference, read the relevant skill before starting work.
 
 **Read the component-specific AGENTS.md before making changes:**
 
-| Area | Guardrails | Detailed Skill |
-|------|-----------|----------------|
-| **Backend** | `backend/AGENTS.md` | `.agents/skills/backend-development/SKILL.md` |
-| **Frontend** | `frontend/AGENTS.md` | `.agents/skills/frontend-development/SKILL.md` |
-| **Documentation** | `docs/AGENTS.md` | `.agents/skills/build-docs/SKILL.md` |
-
----
-
-## Cross-Cutting Skills
-
-Read these skills when working on shared concerns:
-
-| Skill | Path | Use When |
-|-------|------|----------|
-| Schema → SDK → Client | `.agents/skills/schema-change/SKILL.md` | Whenever you edit a backend schema, ORM model, or endpoint signature — keeps SDK and client code in lockstep, no temporary casts (root rule 14) |
-| Debugging | `.agents/skills/debugging/SKILL.md` | Inspecting logs, testing endpoints directly, diagnosing errors |
-| Docker & Infrastructure | `.agents/skills/docker-operations/SKILL.md` | Starting services, disk space, testing, timeouts |
-| Build App | `.agents/skills/build-app/SKILL.md` | Building a feature end to end (docs → backend → SDK → frontend) |
-| Build Docs | `.agents/skills/build-docs/SKILL.md` | Generating feature docs and diagrams |
-| Excalidraw | `.agents/skills/excalidraw/SKILL.md` | Creating diagrams and UI mockups |
-| UI Exploration | `.agents/skills/ui-exploration/SKILL.md` | Browsing the running app with Playwright to verify UI changes |
-| Changelog Management | `.agents/skills/changelog-management/SKILL.md` | Formatting `CHANGELOG.md` entries correctly |
+| Area | Guardrails |
+|------|-----------|
+| **Backend** | `backend/AGENTS.md` |
+| **Frontend** | `frontend/AGENTS.md` |
+| **Documentation** | `docs/AGENTS.md` |
 
 ---
 
@@ -114,7 +97,6 @@ review:
 
 ## Commit and Changelog
 
-- Read `.agents/skills/changelog-management/SKILL.md` before writing changelog entries
 - Follow [Keep a Changelog](https://keepachangelog.com/) conventions
 - Record all changes in `CHANGELOG.md` (this is a standalone repo — there is no
   separate template changelog)
@@ -142,6 +124,6 @@ The project tracks changes in two places:
 
 ## Strict Typing
 
-All code must use explicit, precise types. Review all changes against the typing policies in the component skills:
-- **Backend (Python):** `.agents/skills/backend-development/SKILL.md` § Type Annotations
-- **Frontend (TypeScript):** `.agents/skills/frontend-development/SKILL.md` § Strict Typing
+All code must use explicit, precise types. No `any`/`# type: ignore` escape
+hatches; no temporary casts to make the SDK compile. Backend uses precise Python
+type hints; the frontend runs TypeScript in strict mode.

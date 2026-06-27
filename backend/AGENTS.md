@@ -1,7 +1,6 @@
 # Backend Agent Guidelines
 
 Read the root `AGENTS.md` first, then follow these backend-specific guardrails.
-For detailed conventions, read `.agents/skills/backend-development/SKILL.md`.
 
 ---
 
@@ -65,12 +64,3 @@ prek run ruff-format ruff-check --all-files  # Quick lint only
 Never run `docker compose ... backend-test pytest ...` — this bypasses migrations.
 Use `PYTEST_ARGS` instead.
 
----
-
-## Skills (read before detailed work)
-
-- Backend conventions & examples: `.agents/skills/backend-development/SKILL.md`
-- Schema/model → frontend SDK flow: `.agents/skills/schema-change/SKILL.md` (mandatory whenever you touch `schemas/io.py` or `db/models_*.py`)
-- Docker & testing infrastructure: `.agents/skills/docker-operations/SKILL.md`
-- Debugging & inspecting services: `.agents/skills/debugging/SKILL.md`
-- Changelog workflow: `.agents/skills/changelog-management/SKILL.md`
